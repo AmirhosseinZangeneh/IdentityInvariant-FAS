@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.env
+.env.*
+env/
+env_*/
+venv/
+.venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Datasets and restricted media
+datasets/*
+!datasets/README.md
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Generated frames/manifests
+data_processed/
+manifests/generated/
+
+# Training artifacts
+outputs/
+checkpoints/
+runs/
+logs/
+wandb/
+*.pt
+*.pth
+*.ckpt
+
+# Generated result artifacts
+results/generated/
+
+# Archives
+*.zip
+*.rar
+*.7z

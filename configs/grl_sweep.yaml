@@ -1,0 +1,27 @@
+dataset:
+  name: NUAA
+  root: datasets
+  partition: test
+  image_size: 160
+  horizontal_flip: false
+
+model:
+  name: ii_ecnn
+  grl_lambda: 0.05
+
+training:
+  seed: 42
+  folds: 5
+  val_subject_ratio: 0.20
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  num_workers: 0
+  subject_loss_weight: 0.10
+  warmup_epochs: 5
+  output_dir: outputs/grl_lambda_sweep
+
+grl_values:
+  - 0.01
+  - 0.05
+  - 0.10

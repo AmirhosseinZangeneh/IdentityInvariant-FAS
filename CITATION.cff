@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the associated paper once available."
+title: "IdentityInvariant-FAS"
+type: software
+authors:
+  - family-names: "Zangeneh"
+    given-names: "Amirhossein"
+year: 2026
+license: MIT
+repository-code: "https://github.com/USERNAME/IdentityInvariant-FAS"

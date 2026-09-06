@@ -1,0 +1,18 @@
+dataset:
+  name: MSU-MFSD
+  manifest: data_processed/MSU-MFSD/manifest.csv
+  image_size: 160
+
+model:
+  name: ii_ecnn
+  grl_lambda: 0.05
+
+training:
+  seed: 42
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  num_workers: 0
+  subject_loss_weight: 0.10
+  warmup_epochs: 5
+  output_dir: outputs/msu_mfsd/ii_ecnn

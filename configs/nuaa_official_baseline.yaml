@@ -1,0 +1,19 @@
+dataset:
+  name: NUAA
+  root: datasets
+  image_size: 160
+  horizontal_flip: false
+
+model:
+  name: paper_ecnn
+
+training:
+  seed: 42
+  val_subject_ratio: 0.20
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  num_workers: 0
+  subject_loss_weight: 0.0
+  warmup_epochs: 0
+  output_dir: outputs/nuaa_official/paper_ecnn

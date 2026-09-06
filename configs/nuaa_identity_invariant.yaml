@@ -1,0 +1,49 @@
+seed: 42
+
+output_dir: outputs/nuaa_identity_invariant
+
+dataset:
+  name: NUAA
+  root: datasets/NUAA
+
+  image_size: 224
+
+  num_workers: 4
+
+model:
+  name: IdentityInvariantECNN
+
+  num_subjects: 16
+
+  grl_lambda: 0.05
+
+  subject_hidden_dim: 128
+
+training:
+  epochs: 100
+
+  batch_size: 32
+
+  optimizer: AdamW
+
+  lr: 0.0001
+
+  weight_decay: 0.0001
+
+  scheduler: cosine
+
+  warmup_epochs: 5
+
+  subject_weight: 0.1
+
+evaluation:
+  metric: ACER
+
+  save_predictions: true
+
+checkpoint:
+  save_best_only: true
+
+  monitor: acer
+
+  mode: min
