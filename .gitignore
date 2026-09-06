@@ -28,6 +28,10 @@ datasets/*
 *.avi
 *.mkv
 
+# Internal development reports
+REFACTOR_REPORT.md
+VALIDATION_REPORT.md
+
 # Generated frames/manifests
 data_processed/
 manifests/generated/
