@@ -10,9 +10,7 @@ dataset:
   horizontal_flip: false
 
 model:
-  name: ii_ecnn
-
-  grl_lambda: 0.05
+  name: paper_ecnn
 
 training:
   seed: 42
@@ -21,7 +19,7 @@ training:
 
   val_subject_ratio: 0.20
 
-  epochs: 100
+  epochs: 2
 
   batch_size: 32
 
@@ -31,7 +29,7 @@ training:
 
   num_workers: 0
 
-  subject_loss_weight: 0.10
+  subject_loss_weight: 0.0
 
   warmup_epochs: 5
 
@@ -42,4 +40,4 @@ training:
 
     min_delta: 0.0001
 
-  output_dir: outputs/nuaa_subject_kfold/ii_ecnn_fair_comparison_lambda_0.05
+  output_dir: outputs/debug/paper_ecnn

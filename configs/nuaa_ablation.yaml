@@ -1,8 +1,12 @@
 dataset:
   name: NUAA
-  root: datasets
+
+  root: datasets/NUAA
+
   partition: test
+
   image_size: 160
+
   horizontal_flip: false
 
 model:
@@ -10,12 +14,30 @@ model:
 
 training:
   seed: 42
+
   folds: 5
+
   val_subject_ratio: 0.20
-  epochs: 30
+
+  epochs: 100
+
   batch_size: 32
+
   learning_rate: 0.001
+
+  weight_decay: 0.01
+
   num_workers: 0
+
   subject_loss_weight: 0.10
+
   warmup_epochs: 5
-  output_dir: outputs/nuaa_subject_kfold/ablation_ecnn
+
+  early_stopping:
+    enabled: true
+
+    patience: 15
+
+    min_delta: 0.0001
+
+  output_dir: outputs/nuaa_subject_kfold/ablation_ecnn_fair_comparison

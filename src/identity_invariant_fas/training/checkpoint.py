@@ -6,14 +6,13 @@ import os
 import random
 
 from pathlib import Path
-
 from typing import Any
 
 import numpy as np
-
 import torch
 
 from torch import nn
+
 
 
 def normalize_legacy_state_dict(
@@ -40,6 +39,7 @@ def normalize_legacy_state_dict(
     return normalized
 
 
+
 def get_rng_state() -> dict[str, Any]:
     """Capture random states for exact experiment recovery."""
 
@@ -50,9 +50,28 @@ def get_rng_state() -> dict[str, Any]:
     }
 
     if torch.cuda.is_available():
+
         state["cuda"] = torch.cuda.get_rng_state_all()
 
     return state
+
+
+
+def _normalize_torch_rng_state(
+    state: Any,
+) -> torch.Tensor:
+    """
+    Convert stored RNG state into uint8 CPU tensor format.
+    """
+
+    if isinstance(state, torch.Tensor):
+        return state.detach().cpu().to(torch.uint8)
+
+    return torch.tensor(
+        state,
+        dtype=torch.uint8,
+        device="cpu",
+    )
 
 
 def restore_rng_state(
@@ -61,27 +80,44 @@ def restore_rng_state(
     """Restore random states from checkpoint."""
 
     if "python" in state:
+
         random.setstate(
             state["python"]
         )
 
+
     if "numpy" in state:
+
         np.random.set_state(
             state["numpy"]
         )
 
+
     if "torch" in state:
-        torch.set_rng_state(
+
+        torch_state = _normalize_torch_rng_state(
             state["torch"]
         )
+
+        torch.set_rng_state(
+            torch_state
+        )
+
 
     if (
         "cuda" in state
         and torch.cuda.is_available()
     ):
+
+        cuda_states = [
+            _normalize_torch_rng_state(item)
+            for item in state["cuda"]
+        ]
+
         torch.cuda.set_rng_state_all(
-            state["cuda"]
+            cuda_states
         )
+
 
 
 def save_checkpoint(
@@ -153,6 +189,7 @@ def save_checkpoint(
     )
 
 
+
 def load_checkpoint(
     path: str | Path,
     model: nn.Module,
@@ -192,6 +229,7 @@ def load_checkpoint(
         }
 
 
+
     state_dict = normalize_legacy_state_dict(
         state_dict
     )
@@ -201,6 +239,7 @@ def load_checkpoint(
         state_dict,
         strict=strict,
     )
+
 
 
     if (
@@ -216,6 +255,7 @@ def load_checkpoint(
         )
 
 
+
     if (
         scheduler is not None
         and
@@ -229,7 +269,11 @@ def load_checkpoint(
         )
 
 
-    rng_state = metadata.get("rng_state")
+
+    rng_state = metadata.get(
+        "rng_state"
+    )
+
 
     if (
         restore_rng

@@ -46,12 +46,21 @@ class IdentityInvariantECNN(nn.Module):
     def extract_features(self, x: Tensor) -> Tensor:
         return self.encoder(x)
 
-    def forward(self, x: Tensor, return_feature: bool = False):
+    def forward(
+        self,
+        x: Tensor,
+        return_feature: bool = False
+    ):
+
         features = self.extract_features(x)
+
         spoof_logits = self.spoof_classifier(features)
 
-        if return_feature:
-            return spoof_logits, features
+        subject_logits = self.subject_classifier(
+            self.grl(features)
+        )
 
-        subject_logits = self.subject_classifier(self.grl(features))
+        if return_feature:
+            return spoof_logits, subject_logits, features
+
         return spoof_logits, subject_logits
