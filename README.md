@@ -96,10 +96,15 @@ python experiments/grl_sweep.py --config configs/grl_sweep.yaml
 
 ## Identity leakage
 
-Use the same evaluation image size as the training configuration:
+Use the [group-aware closed-set probe API](docs/IDENTITY_PROBING.md) for
+publication protocols, with explicit sample, identity, and group metadata.
+The historical NUAA command below is exploratory only: it lacks verified
+group/session metadata and now requires explicit opt-in. Use the same
+evaluation image size as the training configuration:
 
 ```bash
 python experiments/identity_leakage_nuaa.py ^
+  --allow-legacy-sample-cv ^
   --model ii_ecnn ^
   --checkpoint outputs/nuaa_subject_kfold/ii_ecnn_lambda_0.05/fold_1/best_model.pt ^
   --num-subjects 12 ^
@@ -107,9 +112,10 @@ python experiments/identity_leakage_nuaa.py ^
   --output results/generated/identity_leakage_fold1.json
 ```
 
-The probe measures linearly decodable identity on held-out images of known
-identity classes. It is not described as a subject-disjoint identity
-classification task.
+Both probe paths require known identity classes for the identity classifier.
+The legacy command does not prevent frames from the same video/session from
+crossing folds and must not support publication claims of independent-group
+identity recoverability.
 
 ## MSU-MFSD
 

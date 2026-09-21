@@ -1,4 +1,4 @@
-"""Evaluate linearly decodable identity leakage from frozen NUAA features."""
+"""Legacy exploratory NUAA probe; source grouping and identity provenance are unresolved."""
 
 from __future__ import annotations
 
@@ -43,7 +43,17 @@ def main() -> None:
     parser.add_argument("--image-size", type=int, default=160)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--allow-legacy-sample-cv", action="store_true",
+        help="Explicitly opt into exploratory sample-level CV with possible group leakage.",
+    )
     args = parser.parse_args()
+    if not args.allow_legacy_sample_cv:
+        parser.error(
+            "NUAA lacks verified group/session metadata for publication probing. "
+            "Use the group-aware identity_probe API with audited metadata, or explicitly "
+            "pass --allow-legacy-sample-cv for the historical exploratory procedure."
+        )
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     samples = load_nuaa_samples(args.nuaa_root, partition=args.partition)
@@ -74,6 +84,8 @@ def main() -> None:
     load_checkpoint(args.checkpoint, model, map_location=device)
     features, subjects = extract_features(model, loader, device)
     result = cross_validated_identity_probe(features, subjects)
+    result["protocol"] = "legacy_exploratory_sample_level_cv"
+    result["group_leakage_checked"] = False
     result["feature_dim"] = int(features.shape[1])
     result["image_size"] = args.image_size
     write_json(result, args.output)

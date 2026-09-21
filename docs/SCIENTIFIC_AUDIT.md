@@ -84,13 +84,16 @@ The refactored strict protocol reserves validation **subjects**, not samples.
 ## 7. Identity leakage probe semantics
 
 Closed-set identity probing requires the same identity classes to be represented
-in probe training and testing. Therefore the corrected probe is
-sample-disjoint/subject-overlapping, not subject-disjoint. Calling a
-subject-disjoint closed-set identity classifier would make accuracy collapse to
-zero for purely definitional reasons.
+in probe training and testing. The publication path now requires independent
+groups as well as disjoint samples; the sample-level utility is retained only
+as legacy/exploratory. Identities may be unseen to the PAD encoder but must be
+known to the identity classifier. Genuinely unseen classifier identities need
+verification, retrieval, or open-set identification rather than ordinary
+closed-set multiclass evaluation.
 
 For video datasets, use session/video groups to prevent near-duplicate frames
-from crossing probe folds.
+from crossing probe folds. See [identity probing](IDENTITY_PROBING.md) for the
+validated group-aware API and the current metadata limitations.
 
 ## Publication status
 

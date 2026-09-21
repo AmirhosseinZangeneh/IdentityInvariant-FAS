@@ -1,6 +1,8 @@
-"""Linear probing for subject-identity leakage in frozen representations."""
+"""Legacy exploratory sample-level probing; use identity_probe for grouped protocols."""
 
 from __future__ import annotations
+
+import warnings
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -18,13 +20,20 @@ def cross_validated_identity_probe(
     seed: int = 42,
     max_iter: int = 5000,
 ) -> dict:
-    """Measure linearly decodable identity using held-out images.
+    """Legacy/exploratory sample-level CV, retained for historical compatibility.
 
     Each fold contains examples from the same identity classes in training and
     testing; otherwise closed-set identity accuracy is undefined. The split is
-    sample-disjoint, not subject-disjoint. For frame-based datasets, a
-    session/video-group split should be preferred when group identifiers exist.
+    sample-disjoint, not subject-disjoint.
+    This API cannot check video/session leakage and is not the publication path.
+    Use identity_probe.evaluate_closed_set_identity_probe with explicit metadata.
     """
+    warnings.warn(
+        "cross_validated_identity_probe is legacy/exploratory sample-level CV; "
+        "it cannot prevent video/session leakage. Use evaluate_closed_set_identity_probe.",
+        FutureWarning,
+        stacklevel=2,
+    )
     features = np.asarray(features)
     subjects = np.asarray(subjects)
     if features.ndim != 2:
