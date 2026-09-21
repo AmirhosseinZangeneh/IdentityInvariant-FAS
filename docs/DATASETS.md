@@ -7,6 +7,10 @@ not implemented by the new manifest layer.
 
 ## NUAA
 
+For deterministic source metadata generation and the unresolved identity
+provenance findings, see [NUAA source manifest](NUAA_SOURCE_MANIFEST.md).
+This preparation layer does not generate subject-disjoint folds.
+
 The project uses the NUAA face-detector-output format. Place these items under
 `datasets/`:
 
