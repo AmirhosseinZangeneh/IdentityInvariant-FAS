@@ -131,8 +131,10 @@ See [`docs/DATASETS.md`](docs/DATASETS.md) for protocol notes.
 ## Replay-Attack
 
 Replay-Attack is license-restricted and is not distributed with this project.
-A manifest adapter is included so the same evaluation stack can be used after
-official access is obtained.
+The [Replay metadata/protocol API](docs/REPLAY_PROTOCOL.md) validates explicit
+client cohorts and separates PAD recordings from enrollment for future RQ1/RQ3
+preparation. Official metadata and raw-data verification are required before
+experiments. The existing generic manifest adapter remains available.
 
 ## Metrics
 

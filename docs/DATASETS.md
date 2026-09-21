@@ -56,6 +56,13 @@ experiment step rather than silently mixing frame and video metrics.
 
 ## Replay-Attack
 
+The new [Replay protocol layer](REPLAY_PROTOCOL.md) uses an explicit official
+client roster and recording metadata, separating PAD from enrollment and
+validating client-disjoint train/devel/test cohorts. Local raw data are absent;
+only synthetic validation has been performed. Use this layer for future
+controlled RQ1/RQ3 preparation. The generic CSV interface below is retained
+for compatibility and does not validate official protocol semantics.
+
 The database is restricted by its EULA and is not included. After official
 access is granted, prepare face frames and a manifest with:
 
