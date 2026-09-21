@@ -1,5 +1,10 @@
 # Dataset Protocols
 
+The separate [sample metadata manifest](SAMPLE_MANIFEST.md) infrastructure is
+available for future protocol reconstruction. Existing loaders and experiments
+continue to use their current representations; canonical fold assignment is
+not implemented by the new manifest layer.
+
 ## NUAA
 
 The project uses the NUAA face-detector-output format. Place these items under
