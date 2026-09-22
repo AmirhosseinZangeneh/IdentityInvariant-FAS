@@ -1,0 +1,497 @@
+{
+  "experiment_ready": false,
+  "fidelity_status": "manual_review_pending",
+  "historical_manifest_sha256": "05c0f9c3c2d62b69fda0ed03351d7a78e016fb83f83ee4f228b9ef759d586adc",
+  "note": "Historical eight v1 crops; inspection preparation only, no promotion to v2 or fidelity approval. Paths relative to data_processed/MSU-MFSD.",
+  "records": [
+    {
+      "annotation_filepath": "scene01/attack/attack_client002_android_SD_ipad_video_scene01.face",
+      "annotation_line_number": 1,
+      "annotation_raw_line": "0, 264, 127, 434, 332, 316.26, 223.78, 389.58, 230.79",
+      "annotation_sha256": "0e26101fc245ce27ec118295c05559fa058e08436200df6a220050dfc9f60574",
+      "annotation_values": [
+        264.0,
+        127.0,
+        434.0,
+        332.0,
+        316.26,
+        223.78,
+        389.58,
+        230.79
+      ],
+      "attack_type": "ipad_video",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "crop_box": [
+        264,
+        127,
+        434,
+        332
+      ],
+      "crop_filepath": "crops/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/000000.png",
+      "crop_sha256": "95bb60f7910c13736b451c2a9b0cbada1031a8e12864a6412f02319af56abaea",
+      "dataset": "MSU-MFSD",
+      "frame_index": 0,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        170,
+        205
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": "iPad Air",
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/000000.png",
+      "review_overlay": "preprocessing-review-v1/review/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622_000000.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7511569,
+      "source_filepath": "scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4"
+    },
+    {
+      "annotation_filepath": "scene01/attack/attack_client002_android_SD_ipad_video_scene01.face",
+      "annotation_line_number": 2,
+      "annotation_raw_line": "1, 267, 126, 435, 331, 315.88, 224.04, 388.89, 230.27",
+      "annotation_sha256": "0e26101fc245ce27ec118295c05559fa058e08436200df6a220050dfc9f60574",
+      "annotation_values": [
+        267.0,
+        126.0,
+        435.0,
+        331.0,
+        315.88,
+        224.04,
+        388.89,
+        230.27
+      ],
+      "attack_type": "ipad_video",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "crop_box": [
+        267,
+        126,
+        435,
+        331
+      ],
+      "crop_filepath": "crops/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/000001.png",
+      "crop_sha256": "faeed5ccf9cf4ea09262542770c0ffb977106c74b648a2f5b4df3ac7f4a36caf",
+      "dataset": "MSU-MFSD",
+      "frame_index": 1,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        168,
+        205
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": "iPad Air",
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/000001.png",
+      "review_overlay": "preprocessing-review-v1/review/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622_000001.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7511569,
+      "source_filepath": "scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client002_android_SD_scene01.face",
+      "annotation_line_number": 1,
+      "annotation_raw_line": "0, 263, 155, 426, 349, 301.22, 254.72, 373.19, 245.96",
+      "annotation_sha256": "53cdff98c87b0fa57b881e3f829621abb9cc4d67625fde123068837125338ccb",
+      "annotation_values": [
+        263.0,
+        155.0,
+        426.0,
+        349.0,
+        301.22,
+        254.72,
+        373.19,
+        245.96
+      ],
+      "attack_type": null,
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "002",
+      "crop_box": [
+        263,
+        155,
+        426,
+        349
+      ],
+      "crop_filepath": "crops/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/000000.png",
+      "crop_sha256": "f10bd22dc940d2bd28b44125cdd084f9f582740fcd02173f4db3618164150f66",
+      "dataset": "MSU-MFSD",
+      "frame_index": 0,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        163,
+        194
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/000000.png",
+      "review_overlay": "preprocessing-review-v1/review/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b_000000.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7452636,
+      "source_filepath": "scene01/real/real_client002_android_SD_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client002_android_SD_scene01.face",
+      "annotation_line_number": 2,
+      "annotation_raw_line": "1, 262, 155, 425, 349, 301.93, 253.55, 372.62, 245.30",
+      "annotation_sha256": "53cdff98c87b0fa57b881e3f829621abb9cc4d67625fde123068837125338ccb",
+      "annotation_values": [
+        262.0,
+        155.0,
+        425.0,
+        349.0,
+        301.93,
+        253.55,
+        372.62,
+        245.3
+      ],
+      "attack_type": null,
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "002",
+      "crop_box": [
+        262,
+        155,
+        425,
+        349
+      ],
+      "crop_filepath": "crops/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/000001.png",
+      "crop_sha256": "d7e80dc76f92eaebd73571418b3047a9f3461816a0498ccbedee5b275925ddf9",
+      "dataset": "MSU-MFSD",
+      "frame_index": 1,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        163,
+        194
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/000001.png",
+      "review_overlay": "preprocessing-review-v1/review/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b_000001.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7452636,
+      "source_filepath": "scene01/real/real_client002_android_SD_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client002_laptop_SD_scene01.face",
+      "annotation_line_number": 1,
+      "annotation_raw_line": "0, 334, 117, 445, 254, 367.72, 182.65, 427.36, 182.02",
+      "annotation_sha256": "503657a16d627164f8268f647e645b3cae548040b51e4abf02b2354d9bf37b75",
+      "annotation_values": [
+        334.0,
+        117.0,
+        445.0,
+        254.0,
+        367.72,
+        182.65,
+        427.36,
+        182.02
+      ],
+      "attack_type": null,
+      "capture_device": "laptop",
+      "class_label": 0,
+      "client_id": "002",
+      "crop_box": [
+        334,
+        117,
+        445,
+        254
+      ],
+      "crop_filepath": "crops/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/000000.png",
+      "crop_sha256": "377abb77bd21227f646473a1764e4f70d536f805e10b9f97dc6527c498341e64",
+      "dataset": "MSU-MFSD",
+      "frame_index": 0,
+      "oriented_frame_size": [
+        640,
+        480
+      ],
+      "output_size": [
+        111,
+        137
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        640,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/000000.png",
+      "review_overlay": "preprocessing-review-v1/review/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a_000000.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 64257978,
+      "source_filepath": "scene01/real/real_client002_laptop_SD_scene01.mov",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client002_laptop_SD_scene01.face",
+      "annotation_line_number": 2,
+      "annotation_raw_line": "1, 335, 118, 444, 252, 367.43, 182.32, 426.77, 181.90",
+      "annotation_sha256": "503657a16d627164f8268f647e645b3cae548040b51e4abf02b2354d9bf37b75",
+      "annotation_values": [
+        335.0,
+        118.0,
+        444.0,
+        252.0,
+        367.43,
+        182.32,
+        426.77,
+        181.9
+      ],
+      "attack_type": null,
+      "capture_device": "laptop",
+      "class_label": 0,
+      "client_id": "002",
+      "crop_box": [
+        335,
+        118,
+        444,
+        252
+      ],
+      "crop_filepath": "crops/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/000001.png",
+      "crop_sha256": "ac29585e06e80ba1fcb27ad5a54e766b4b30c650f15831885aa82426c4073ec7",
+      "dataset": "MSU-MFSD",
+      "frame_index": 1,
+      "oriented_frame_size": [
+        640,
+        480
+      ],
+      "output_size": [
+        109,
+        134
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        640,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/000001.png",
+      "review_overlay": "preprocessing-review-v1/review/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a_000001.png",
+      "reviewer": null,
+      "rotation_degrees": 0,
+      "sample_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 64257978,
+      "source_filepath": "scene01/real/real_client002_laptop_SD_scene01.mov",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client003_android_SD_scene01.face",
+      "annotation_line_number": 1,
+      "annotation_raw_line": "0, 318, 128, 486, 338, 366.58, 227.30, 446.54, 226.18",
+      "annotation_sha256": "020d267b1e1ce38b7ee0edd5a53c7cdf5e3917435101a40b4a300cf73dadd9d2",
+      "annotation_values": [
+        318.0,
+        128.0,
+        486.0,
+        338.0,
+        366.58,
+        227.3,
+        446.54,
+        226.18
+      ],
+      "attack_type": null,
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "003",
+      "crop_box": [
+        318,
+        128,
+        486,
+        338
+      ],
+      "crop_filepath": "crops/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/000000.png",
+      "crop_sha256": "1a621cb270bdb095737a177b42a989441deb70b19a9acc7b5af6eecaf5cb5abf",
+      "dataset": "MSU-MFSD",
+      "frame_index": 0,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        168,
+        210
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/000000.png",
+      "review_overlay": "preprocessing-review-v1/review/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6_000000.png",
+      "reviewer": null,
+      "rotation_degrees": 180,
+      "sample_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7461670,
+      "source_filepath": "scene01/real/real_client003_android_SD_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4"
+    },
+    {
+      "annotation_filepath": "scene01/real/real_client003_android_SD_scene01.face",
+      "annotation_line_number": 2,
+      "annotation_raw_line": "1, 320, 128, 489, 339, 369.34, 228.85, 448.91, 227.45",
+      "annotation_sha256": "020d267b1e1ce38b7ee0edd5a53c7cdf5e3917435101a40b4a300cf73dadd9d2",
+      "annotation_values": [
+        320.0,
+        128.0,
+        489.0,
+        339.0,
+        369.34,
+        228.85,
+        448.91,
+        227.45
+      ],
+      "attack_type": null,
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "003",
+      "crop_box": [
+        320,
+        128,
+        489,
+        339
+      ],
+      "crop_filepath": "crops/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/000001.png",
+      "crop_sha256": "73cca60dee1adbcdb550454b6c2d084e77d9773ac730eca9efb87f958f340e0a",
+      "dataset": "MSU-MFSD",
+      "frame_index": 1,
+      "oriented_frame_size": [
+        720,
+        480
+      ],
+      "output_size": [
+        169,
+        211
+      ],
+      "pad_partition": "train",
+      "preprocessing_config_digest": "9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "presentation_device": null,
+      "raw_frame_size": [
+        720,
+        480
+      ],
+      "review_checks": {
+        "eye_placement": "pending",
+        "face_box_placement": "pending",
+        "half_open_endpoint_convention": "pending",
+        "source_frame_correspondence": "pending",
+        "upright_orientation": "pending"
+      },
+      "review_crop": "preprocessing-review-v1/crops/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/000001.png",
+      "review_overlay": "preprocessing-review-v1/review/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6_000001.png",
+      "reviewer": null,
+      "rotation_degrees": 180,
+      "sample_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "session_id": null,
+      "source_byte_size": 7461670,
+      "source_filepath": "scene01/real/real_client003_android_SD_scene01.mp4",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4"
+    }
+  ],
+  "schema": "msu-existing-crop-review-v1"
+}

@@ -1,0 +1,99 @@
+{
+  "conclusion": "Source/release/native-decoder correspondence remains unresolved; no production mapping adopted",
+  "conclusion_class": 4,
+  "direct_source_facts": [
+    {
+      "file": "README.txt",
+      "finding": "Defines Frame index, box, eyes and coordinates relative to rotated frames; does not state numeric base or generation decoder.",
+      "lines": [
+        103,
+        104,
+        106
+      ]
+    },
+    {
+      "file": "DecFrames.m",
+      "finding": "Reads avg_frame_rate and passes -r rounded to two decimals for Android/laptop BMP export, using filename pattern _%03d.bmp.",
+      "lines": [
+        91,
+        95,
+        103,
+        105
+      ]
+    },
+    {
+      "file": "DecFrames.m",
+      "finding": "Loads numeric matrix; fidx=M(:,1); t indexes annotation rows; output sidecar number is fidx(t)+1; eyes come from row t. No annotation-index video seek or array frame access.",
+      "lines": [
+        122,
+        123,
+        124,
+        125,
+        126,
+        128
+      ]
+    },
+    {
+      "file": "DecFrames.m",
+      "finding": "Detects TAG:rotate=180 and prints notice; rotated variable never drives a transform in this file.",
+      "lines": [
+        81,
+        82,
+        87,
+        88
+      ]
+    },
+    {
+      "file": "DecFrames.m",
+      "finding": "Existing >=100 BMP exports are reused; no check that each sidecar has a matching BMP.",
+      "lines": [
+        100,
+        101,
+        114
+      ]
+    }
+  ],
+  "experiment_ready": false,
+  "files": {
+    "DecFrames.m": {
+      "byte_size": 4847,
+      "sha256": "9fef6faaddb174cbbd4e43aece752def946e7ffbff38021edc549788985615bc"
+    },
+    "DecFrames_attack_scene01.m": {
+      "byte_size": 260,
+      "sha256": "fc4b7c6ef7c73cf3740e4a9f4d958425543078de03d116b8cba3beb54f8cfd23"
+    },
+    "DecFrames_real_scene01.m": {
+      "byte_size": 256,
+      "sha256": "aa45ab73b34460ce5b5de20da525f4a1a04b40b0f9f93994aa3fc9404d5d09a9"
+    },
+    "README.txt": {
+      "byte_size": 8569,
+      "sha256": "6e0f2f1ce5d8601fee4f3096e6b300929d0ec259dd947fcf1e08f75080c14497"
+    },
+    "ffmpeg/README.txt": {
+      "byte_size": 3245,
+      "sha256": "a0ece34c381bf3272d3e2036427ea24f6ebc6fe4354923bd0b726dbd39e78dcc"
+    },
+    "ffmpeg/bin/ffmpeg.exe": {
+      "byte_size": 22474752,
+      "sha256": "d8c98d17919bac4c7c128bcc04502d82807a689fcb1dc31824551377ebad1ee6"
+    },
+    "ffmpeg/bin/ffprobe.exe": {
+      "byte_size": 22420992,
+      "sha256": "d0d87d92e282d3629cf6713b06633c7851ad6bc2509b7113e3a095fe6264d44b"
+    }
+  },
+  "inferences": [
+    "Annotation i is associated with exported BMP ordinal i+1 by same-basename eye sidecars; BMP numbering starts at 001 in controlled bundled exports. This supports zero-based exported-image ordinal semantics, not a native decoder index guarantee.",
+    "Rounded-rate output can duplicate frames: a fixed native offset is not implied by MATLAB row indexing."
+  ],
+  "missing_evidence": [
+    "PittPatt annotation-generation source/command and original processed stream/timebase",
+    "Definition of annotation box endpoint inclusivity",
+    "Verified annotation-to-native correspondence for the release"
+  ],
+  "missing_referenced_helper": "decode.m (referenced by README, absent from local release)",
+  "readme_explicit_zero_or_one_based_statement": false,
+  "schema": "msu-index-source-evidence-v1"
+}

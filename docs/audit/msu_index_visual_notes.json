@@ -1,0 +1,18 @@
+{
+  "experiment_ready": false,
+  "fidelity_status": "manual_review_pending",
+  "human_review_status": "pending",
+  "inspected_sheets": [
+    "sheets/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b_000150.png",
+    "sheets/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6_000150.png",
+    "sheets/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a_000119.png",
+    "sheets/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b_000231.png"
+  ],
+  "inspection_type": "assistant qualitative inspection, not human fidelity approval",
+  "observations": [
+    "Three interior A/B/C sheets show upright faces with broadly similar nearby-frame box/eye placement; display-scale inspection cannot discriminate a one-frame temporal offset.",
+    "The printed-photo endpoint sheet has only B available; availability alone is not grounds for adopting B."
+  ],
+  "review_root": "data_processed/MSU-MFSD/index-evidence/candidates-v1",
+  "schema": "msu-index-visual-notes-v1"
+}

@@ -1,0 +1,430 @@
+{
+  "experiment_ready": false,
+  "interpretation": "Reproduces image export, not annotation generation. No sidecar-to-native mapping adopted. Raw unrotated pixel comparison; no PAD metrics.",
+  "protocol_lock_digest": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+  "records": [
+    {
+      "annotation_max": 299,
+      "attack_type": "ipad_video",
+      "avg_frame_rate_fraction": "13500000/451267",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "comparisons": [
+        {
+          "annotation_index": 0,
+          "available": true,
+          "export_filepath": "ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_001.bmp",
+          "export_sha256": "5811bc3f6382659363fc41f9860246cbd5530e851beb392bab6b58dbb55b69c1",
+          "exported_file_number": 1,
+          "nearby_native_pixel_mae": {
+            "0": 0.0,
+            "1": 1.177848186728395,
+            "2": 1.6467399691358025
+          }
+        },
+        {
+          "annotation_index": 1,
+          "available": true,
+          "export_filepath": "ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_002.bmp",
+          "export_sha256": "51dab0e7ba5a77ccc92cf8cd6e225505a45d13b9e850f86b5ca31d4ba583ceae",
+          "exported_file_number": 2,
+          "nearby_native_pixel_mae": {
+            "0": 1.177848186728395,
+            "1": 0.0,
+            "2": 1.5193161651234568,
+            "3": 3.0699893904320987
+          }
+        },
+        {
+          "annotation_index": 2,
+          "available": true,
+          "export_filepath": "ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_003.bmp",
+          "export_sha256": "b74c0004820f6d302aa0b16a499274a6a040208a662e6f468654a24299f690c7",
+          "exported_file_number": 3,
+          "nearby_native_pixel_mae": {
+            "0": 1.6467399691358025,
+            "1": 1.5193161651234568,
+            "2": 0.0,
+            "3": 1.917314814814815,
+            "4": 2.528937114197531
+          }
+        },
+        {
+          "annotation_index": 150,
+          "available": true,
+          "export_filepath": "ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_151.bmp",
+          "export_sha256": "51c092775531359c22170fc7fe9ec6753c1517f697d260a0603d68bce4e40cf7",
+          "exported_file_number": 151,
+          "nearby_native_pixel_mae": {
+            "148": 4.463567708333334,
+            "149": 3.0169309413580248,
+            "150": 0.0,
+            "151": 2.058972800925926,
+            "152": 2.4186149691358025
+          }
+        },
+        {
+          "annotation_index": 299,
+          "available": true,
+          "export_filepath": "ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_300.bmp",
+          "export_sha256": "5b63f5dea2890f39b2afa2790192f3977e5b74a6f29716f36eec33b5c987bdb2",
+          "exported_file_number": 300,
+          "nearby_native_pixel_mae": {
+            "297": 1.859832175925926,
+            "298": 1.605210262345679,
+            "299": 0.0
+          }
+        }
+      ],
+      "export_count": 300,
+      "export_unavailable_annotations": [],
+      "ffmpeg_final_progress": [
+        "frame=  300 fps=0.0 q=0.0 Lsize=N/A time=00:00:10.02 bitrate=N/A"
+      ],
+      "first_export": "attack_client002_android_SD_ipad_video_scene01_001.bmp",
+      "last_export": "attack_client002_android_SD_ipad_video_scene01_300.bmp",
+      "native_decoder": {
+        "decoded_range": [
+          0,
+          299
+        ],
+        "decoder_diagnostics": [],
+        "reported_fps": 29.915770486208828,
+        "reported_frame_count": 300.0,
+        "rotation_degrees": 0.0,
+        "stop_reason": "first_unsuccessful_read; EOF versus decoder error not independently distinguished",
+        "successful_reads": 300
+      },
+      "pad_partition": "train",
+      "relative_command": [
+        "ffmpeg/bin/ffmpeg.exe",
+        "-i",
+        "scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+        "-r",
+        "29.92",
+        "<ignored-output>/attack_client002_android_SD_ipad_video_scene01_%03d.bmp"
+      ],
+      "rounded_output_rate": "29.92",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4"
+    },
+    {
+      "annotation_max": 300,
+      "attack_type": null,
+      "avg_frame_rate_fraction": "9000000/300971",
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "002",
+      "comparisons": [
+        {
+          "annotation_index": 0,
+          "available": true,
+          "export_filepath": "31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_001.bmp",
+          "export_sha256": "8ad0cbd683fda463bba32ad81de2c0d41fd8a89943e1564244c3a4a81a7d2268",
+          "exported_file_number": 1,
+          "nearby_native_pixel_mae": {
+            "0": 0.0,
+            "1": 5.408112461419753,
+            "2": 11.118268711419754
+          }
+        },
+        {
+          "annotation_index": 1,
+          "available": true,
+          "export_filepath": "31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_002.bmp",
+          "export_sha256": "5b1eb5d802fa8abfe382b286fed10492b5ed05be86a49da3455397e42e3a4542",
+          "exported_file_number": 2,
+          "nearby_native_pixel_mae": {
+            "0": 5.408112461419753,
+            "1": 0.0,
+            "2": 8.624033564814814,
+            "3": 7.045235339506172
+          }
+        },
+        {
+          "annotation_index": 2,
+          "available": true,
+          "export_filepath": "31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_003.bmp",
+          "export_sha256": "9d24430daef2908db6e93d3bea3e030a6bf2c26c998b09db5d1421c9b7e7604f",
+          "exported_file_number": 3,
+          "nearby_native_pixel_mae": {
+            "0": 11.118268711419754,
+            "1": 8.624033564814814,
+            "2": 0.0,
+            "3": 4.417889660493827,
+            "4": 8.193784722222222
+          }
+        },
+        {
+          "annotation_index": 150,
+          "available": true,
+          "export_filepath": "31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_151.bmp",
+          "export_sha256": "befcd759c1836d83636af08d954a1d26c8ff2494ed6e15053599afa44ee8b135",
+          "exported_file_number": 151,
+          "nearby_native_pixel_mae": {
+            "148": 6.500245949074074,
+            "149": 0.0,
+            "150": 6.701541280864197,
+            "151": 9.463164544753086,
+            "152": 7.783069058641975
+          }
+        },
+        {
+          "annotation_index": 300,
+          "available": true,
+          "export_filepath": "31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_301.bmp",
+          "export_sha256": "4ee82e59eb3b5e2f111a760ea62f508c371847f13c84e2d739d0ed35f78d2cae",
+          "exported_file_number": 301,
+          "nearby_native_pixel_mae": {
+            "298": 4.0594241898148145,
+            "299": 0.0
+          }
+        }
+      ],
+      "export_count": 301,
+      "export_unavailable_annotations": [],
+      "ffmpeg_final_progress": [
+        "frame=  301 fps=0.0 q=0.0 Lsize=N/A time=00:00:10.06 bitrate=N/A dup=1 drop=0"
+      ],
+      "first_export": "real_client002_android_SD_scene01_001.bmp",
+      "last_export": "real_client002_android_SD_scene01_301.bmp",
+      "native_decoder": {
+        "decoded_range": [
+          0,
+          299
+        ],
+        "decoder_diagnostics": [],
+        "reported_fps": 29.903213266394438,
+        "reported_frame_count": 300.0,
+        "rotation_degrees": 0.0,
+        "stop_reason": "first_unsuccessful_read; EOF versus decoder error not independently distinguished",
+        "successful_reads": 300
+      },
+      "pad_partition": "train",
+      "relative_command": [
+        "ffmpeg/bin/ffmpeg.exe",
+        "-i",
+        "scene01/real/real_client002_android_SD_scene01.mp4",
+        "-r",
+        "29.90",
+        "<ignored-output>/real_client002_android_SD_scene01_%03d.bmp"
+      ],
+      "rounded_output_rate": "29.90",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "annotation_max": 238,
+      "attack_type": null,
+      "avg_frame_rate_fraction": "3585000/238469",
+      "capture_device": "laptop",
+      "class_label": 0,
+      "client_id": "002",
+      "comparisons": [
+        {
+          "annotation_index": 0,
+          "available": true,
+          "export_filepath": "5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_001.bmp",
+          "export_sha256": "4dccc487d74de768e0aaffc5a5602ee7fcd9657f7c6cb24403d9eefc860edb41",
+          "exported_file_number": 1,
+          "nearby_native_pixel_mae": {
+            "0": 0.15431532118055555,
+            "1": 3.597404513888889,
+            "2": 4.238009982638889
+          }
+        },
+        {
+          "annotation_index": 1,
+          "available": true,
+          "export_filepath": "5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_002.bmp",
+          "export_sha256": "2b992b9fb797ff0fbad231821ce2038c464a64a84eeb1cfa6f376e3603b514b6",
+          "exported_file_number": 2,
+          "nearby_native_pixel_mae": {
+            "0": 3.6072157118055554,
+            "1": 0.154111328125,
+            "2": 3.030597873263889,
+            "3": 4.166649305555556
+          }
+        },
+        {
+          "annotation_index": 2,
+          "available": true,
+          "export_filepath": "5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_003.bmp",
+          "export_sha256": "801d4de62005c5d0c122dde93fa442d879b5b4e4045a8c5b770425a389b75afc",
+          "exported_file_number": 3,
+          "nearby_native_pixel_mae": {
+            "0": 4.2475792100694445,
+            "1": 3.0320225694444445,
+            "2": 0.15371744791666667,
+            "3": 3.225085720486111,
+            "4": 4.490873480902778
+          }
+        },
+        {
+          "annotation_index": 119,
+          "available": true,
+          "export_filepath": "5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_120.bmp",
+          "export_sha256": "a1963c182400c911ddbab22f7bd6a87ae443a61829a06dabd2d5ab81553558af",
+          "exported_file_number": 120,
+          "nearby_native_pixel_mae": {
+            "117": 2.8244032118055555,
+            "118": 2.3067306857638887,
+            "119": 0.15252387152777777,
+            "120": 2.352380642361111,
+            "121": 2.978978949652778
+          }
+        },
+        {
+          "annotation_index": 238,
+          "available": true,
+          "export_filepath": "5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_239.bmp",
+          "export_sha256": "fdc3cb52de858d4bcc0ae798efee68824665f279e30906a056c650b2f1ef1f63",
+          "exported_file_number": 239,
+          "nearby_native_pixel_mae": {
+            "236": 2.917883029513889,
+            "237": 2.368930121527778,
+            "238": 0.1536599392361111
+          }
+        }
+      ],
+      "export_count": 239,
+      "export_unavailable_annotations": [],
+      "ffmpeg_final_progress": [
+        "frame=  239 fps=235 q=0.0 Lsize=N/A time=00:00:15.90 bitrate=N/A"
+      ],
+      "first_export": "real_client002_laptop_SD_scene01_001.bmp",
+      "last_export": "real_client002_laptop_SD_scene01_239.bmp",
+      "native_decoder": {
+        "decoded_range": [
+          0,
+          238
+        ],
+        "decoder_diagnostics": [],
+        "reported_fps": 15.033400567788686,
+        "reported_frame_count": 239.0,
+        "rotation_degrees": 0.0,
+        "stop_reason": "first_unsuccessful_read; EOF versus decoder error not independently distinguished",
+        "successful_reads": 239
+      },
+      "pad_partition": "train",
+      "relative_command": [
+        "ffmpeg/bin/ffmpeg.exe",
+        "-i",
+        "scene01/real/real_client002_laptop_SD_scene01.mov",
+        "-r",
+        "15.03",
+        "<ignored-output>/real_client002_laptop_SD_scene01_%03d.bmp"
+      ],
+      "rounded_output_rate": "15.03",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "annotation_max": 300,
+      "attack_type": null,
+      "avg_frame_rate_fraction": "27000000/903853",
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "003",
+      "comparisons": [
+        {
+          "annotation_index": 0,
+          "available": true,
+          "export_filepath": "07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_001.bmp",
+          "export_sha256": "44e84e2dbd29715d402ec477f47f1e85d60e58bb31b20d35b2b6c9e93f436d74",
+          "exported_file_number": 1,
+          "nearby_native_pixel_mae": {
+            "0": 0.0,
+            "1": 7.674520640432099,
+            "2": 10.734884259259259
+          }
+        },
+        {
+          "annotation_index": 1,
+          "available": true,
+          "export_filepath": "07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_002.bmp",
+          "export_sha256": "8ff4e9a7ff56bbfd5170d26f5d8f3081173e8fc74826008b9d935bf0a3fd0a15",
+          "exported_file_number": 2,
+          "nearby_native_pixel_mae": {
+            "0": 7.674520640432099,
+            "1": 0.0,
+            "2": 5.812128665123457,
+            "3": 8.778636188271605
+          }
+        },
+        {
+          "annotation_index": 2,
+          "available": true,
+          "export_filepath": "07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_003.bmp",
+          "export_sha256": "8ff4e9a7ff56bbfd5170d26f5d8f3081173e8fc74826008b9d935bf0a3fd0a15",
+          "exported_file_number": 3,
+          "nearby_native_pixel_mae": {
+            "0": 7.674520640432099,
+            "1": 0.0,
+            "2": 5.812128665123457,
+            "3": 8.778636188271605,
+            "4": 9.066975308641975
+          }
+        },
+        {
+          "annotation_index": 150,
+          "available": true,
+          "export_filepath": "07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_151.bmp",
+          "export_sha256": "a1cff0225a258aa0ab12aa1f704281fca2f90f61e39b6557ece78daf9be85abb",
+          "exported_file_number": 151,
+          "nearby_native_pixel_mae": {
+            "148": 2.245591242283951,
+            "149": 0.0,
+            "150": 2.847105516975309,
+            "151": 2.7269743441358023,
+            "152": 2.860745563271605
+          }
+        },
+        {
+          "annotation_index": 300,
+          "available": true,
+          "export_filepath": "07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_301.bmp",
+          "export_sha256": "9fc6ec3608ad1957c7c5ed4c6585843af55f4595e844f1c6a18cddcb98d42b1b",
+          "exported_file_number": 301,
+          "nearby_native_pixel_mae": {
+            "298": 1.9036583719135802,
+            "299": 0.0
+          }
+        }
+      ],
+      "export_count": 301,
+      "export_unavailable_annotations": [],
+      "ffmpeg_final_progress": [
+        "frame=  301 fps=287 q=0.0 Lsize=N/A time=00:00:10.07 bitrate=N/A dup=1 drop=0"
+      ],
+      "first_export": "real_client003_android_SD_scene01_001.bmp",
+      "last_export": "real_client003_android_SD_scene01_301.bmp",
+      "native_decoder": {
+        "decoded_range": [
+          0,
+          299
+        ],
+        "decoder_diagnostics": [],
+        "reported_fps": 29.872114160156574,
+        "reported_frame_count": 300.0,
+        "rotation_degrees": 180.0,
+        "stop_reason": "first_unsuccessful_read; EOF versus decoder error not independently distinguished",
+        "successful_reads": 300
+      },
+      "pad_partition": "train",
+      "relative_command": [
+        "ffmpeg/bin/ffmpeg.exe",
+        "-i",
+        "scene01/real/real_client003_android_SD_scene01.mp4",
+        "-r",
+        "29.87",
+        "<ignored-output>/real_client003_android_SD_scene01_%03d.bmp"
+      ],
+      "rounded_output_rate": "29.87",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4"
+    }
+  ],
+  "schema": "msu-bundled-export-evidence-v1",
+  "tool_sha256": {
+    "ffmpeg/bin/ffmpeg.exe": "d8c98d17919bac4c7c128bcc04502d82807a689fcb1dc31824551377ebad1ee6",
+    "ffmpeg/bin/ffprobe.exe": "d0d87d92e282d3629cf6713b06633c7851ad6bc2509b7113e3a095fe6264d44b"
+  }
+}

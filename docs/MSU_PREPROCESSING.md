@@ -247,6 +247,12 @@ audit is intentionally not a claim of complete extraction readiness.
 
 ## Gate before experiments
 
+The subsequent [index-semantics evidence audit](MSU_INDEX_SEMANTICS.md) now covers
+all 280 sources, separates codec errors from endpoint availability, and reproduces
+the bundled rounded-rate export on four cases. No production mapping or fidelity
+approval resulted; the historical two-video evidence above retains its original
+scope. Current measurements and the remaining evidence gate are in that report.
+
 Undertake a separate evidence task to determine annotation-to-decoder indexing
 semantics from source evidence (including the original extraction convention)
 and controlled decoding/visual checks. Review the eight orientation/geometry overlays
