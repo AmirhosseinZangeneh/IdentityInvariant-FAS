@@ -138,7 +138,7 @@ the absence of group-leakage checks. No source groups are guessed for NUAA.
 | Existing metadata | Video-group-disjoint probing | Session-disjoint probing |
 | --- | --- | --- |
 | `FASSample` | Has `path`, `subject`, and optional `video_id`; sufficient to represent grouping when populated and audited. Integer `subject_id` is a training index, not independent identity provenance. | No session field; `camera` is a device attribute, not a session identifier. |
-| MSU indexing/preprocessing | Video stems populate `video_id`, and frames inherit it. Structurally supported; source-key uniqueness, identity provenance, and groups per identity still require validation for a chosen cohort. | No session IDs are preserved; additional verified metadata is required. |
+| MSU indexing/preprocessing | The [canonical MSU audit](MSU_PROTOCOL.md) verifies two bona-fide videos per client, one per camera. Legacy preprocessing preserves video stems but has a documented subject-ID normalization blocker; canonical frame integration is pending. | No verified session IDs; camera separation must not be called session separation. |
 | NUAA loader | Leaves `video_id` and `camera` empty; current caller extracts only features and subjects. Not sufficient. | Filename session-like tokens are documented locally but not extracted or verified as independent recording keys. Not sufficient. |
 | Canonical `SampleRecord` CSV | Has a unique `sample_id` and source `subject_id`, but no group/video field. A separate audited observation table is required. | No session field. |
 | Existing external-manifest adapter | Can carry producer-supplied `video_id`, but its presence alone does not establish independent groups. No new dataset integration is performed here. | No explicit session field. |
@@ -146,5 +146,6 @@ the absence of group-leakage checks. No source groups are guessed for NUAA.
 NUAA cross-class human-identity correspondence also remains unresolved in
 [the provenance audit](NUAA_SOURCE_MANIFEST.md). Its folder-derived
 `subject_id` must not be promoted to verified human identity without evidence.
-No existing dataset has been newly certified for a probe protocol by this
-infrastructure change, and no scientific probe experiment was run.
+The subsequent MSU audit establishes metadata readiness for video-group
+probing, subject to its preprocessing limitations. No scientific probe
+experiment was run.

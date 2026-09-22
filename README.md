@@ -119,8 +119,10 @@ identity recoverability.
 
 ## MSU-MFSD
 
-MSU-MFSD is video-based. Index and sample face crops from the official videos
-and PittPatt annotations:
+MSU-MFSD is video-based. Its [canonical protocol audit](docs/MSU_PROTOCOL.md)
+verifies the local 15/20 client separation and 280-video inventory. The legacy
+frame-extraction command below remains blocked by the documented subject-ID
+normalization mismatch; preprocessing integration is a separate next step:
 
 ```bash
 python scripts/preprocess_msu.py --root datasets/MSU

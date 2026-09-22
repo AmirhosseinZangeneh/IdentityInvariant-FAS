@@ -30,6 +30,12 @@ separate official train/test experiment rather than mixing the two protocols.
 
 ## MSU-MFSD
 
+The local 35-client, 280-video release has a validated
+[official protocol lock and provenance audit](MSU_PROTOCOL.md). It has 15
+training and 20 test clients, with no official development partition. Future
+model-selection subsets must use only official training subjects and be
+labeled project-defined.
+
 Expected original structure:
 
 ```text
@@ -41,14 +47,16 @@ MSU/
 └── test_sub_list.txt
 ```
 
-The database includes PittPatt `.face` files. Use:
+The database includes PittPatt `.face` files. The legacy preprocessing command is:
 
 ```bash
 python scripts/preprocess_msu.py --root datasets/MSU
 ```
 
 The script samples a fixed number of annotated frames per video and creates
-`data_processed/MSU-MFSD/manifest.csv`.
+`data_processed/MSU-MFSD/manifest.csv`. It is currently blocked on the local
+release by the legacy loader's `02` versus `client002` normalization mismatch.
+It remains unchanged; consult the protocol audit before future preprocessing.
 
 Frame-level predictions should be aggregated to video-level scores for the
 official MSU evaluation. That aggregation is intentionally left as an explicit

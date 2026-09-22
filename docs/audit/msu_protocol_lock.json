@@ -1,0 +1,718 @@
+{
+  "annotation_count": 280,
+  "attack_type_counts": {
+    "ipad_video": 70,
+    "iphone_video": 70,
+    "printed_photo": 70
+  },
+  "audit_schema_version": 1,
+  "capture_device_counts": {
+    "android": 140,
+    "laptop": 140
+  },
+  "class_counts": {
+    "0": 70,
+    "1": 210
+  },
+  "dataset": "MSU-MFSD",
+  "discovered_client_ids": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "011",
+    "012",
+    "013",
+    "014",
+    "021",
+    "022",
+    "023",
+    "024",
+    "026",
+    "028",
+    "029",
+    "030",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "039",
+    "042",
+    "048",
+    "049",
+    "050",
+    "051",
+    "053",
+    "054",
+    "055"
+  ],
+  "discovered_human_count": 35,
+  "duplicate_paths_or_recording_ids": [],
+  "human_identity_evidence": "README naming protocol plus numeric subject matching in DecFrames.m",
+  "media_byte_size_total": 11099241100,
+  "missing_annotations": [],
+  "missing_expected_acquisition_slots": [],
+  "normalized_metadata_sha256": "cfba71ee3ffc798ea1d21a3a859dfa29f0c83210316177850dd8de562454b838",
+  "official_development_partition": null,
+  "orphan_annotations": [],
+  "partitions": {
+    "test": {
+      "attack": 120,
+      "attack_type_counts": {
+        "ipad_video": 40,
+        "iphone_video": 40,
+        "printed_photo": 40
+      },
+      "bona_fide": 40,
+      "capture_device_counts": {
+        "android": 80,
+        "laptop": 80
+      },
+      "client_count": 20,
+      "client_ids": [
+        "001",
+        "013",
+        "014",
+        "023",
+        "024",
+        "026",
+        "028",
+        "029",
+        "030",
+        "032",
+        "033",
+        "035",
+        "036",
+        "037",
+        "039",
+        "042",
+        "048",
+        "049",
+        "050",
+        "051"
+      ],
+      "videos": 160
+    },
+    "train": {
+      "attack": 90,
+      "attack_type_counts": {
+        "ipad_video": 30,
+        "iphone_video": 30,
+        "printed_photo": 30
+      },
+      "bona_fide": 30,
+      "capture_device_counts": {
+        "android": 60,
+        "laptop": 60
+      },
+      "client_count": 15,
+      "client_ids": [
+        "002",
+        "003",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "011",
+        "012",
+        "021",
+        "022",
+        "034",
+        "053",
+        "054",
+        "055"
+      ],
+      "videos": 120
+    }
+  },
+  "per_client": {
+    "001": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client001_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client001_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "002": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "003": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client003_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "005": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client005_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client005_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "006": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client006_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client006_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "007": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client007_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client007_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "008": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client008_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "009": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client009_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client009_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "011": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client011_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client011_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "012": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client012_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client012_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "013": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client013_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client013_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "014": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client014_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client014_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "021": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client021_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client021_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "022": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client022_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client022_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "023": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client023_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client023_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "024": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client024_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client024_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "026": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client026_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client026_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "028": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client028_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client028_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "029": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client029_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client029_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "030": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client030_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client030_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "032": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client032_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client032_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "033": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client033_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client033_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "034": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client034_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client034_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "035": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client035_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client035_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "036": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client036_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client036_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "037": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client037_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client037_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "039": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client039_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client039_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "042": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client042_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client042_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "048": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client048_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client048_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "049": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client049_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client049_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "050": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client050_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client050_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "051": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client051_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client051_laptop_SD_scene01.mov"
+      ],
+      "partition": "test",
+      "videos": 8
+    },
+    "053": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client053_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client053_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "054": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client054_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client054_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    },
+    "055": {
+      "attack": 6,
+      "bona_fide": 2,
+      "bona_fide_capture_devices": [
+        "android",
+        "laptop"
+      ],
+      "bona_fide_groups": [
+        "MSU-MFSD:scene01/real/real_client055_android_SD_scene01.mp4",
+        "MSU-MFSD:scene01/real/real_client055_laptop_SD_scene01.mov"
+      ],
+      "partition": "train",
+      "videos": 8
+    }
+  },
+  "presentation_device_counts": {
+    "iPad Air": 70,
+    "iPhone 5S": 70,
+    "printed paper": 70
+  },
+  "protocol": "official_public_train_test",
+  "recording_count": 280,
+  "resolution_token_counts": {
+    "SD": 280
+  },
+  "rq1_readiness": {
+    "test": {
+      "android_laptop_separation_possible": true,
+      "at_least_two_video_groups_per_identity": true,
+      "bona_fide_videos_per_identity": {
+        "001": 2,
+        "013": 2,
+        "014": 2,
+        "023": 2,
+        "024": 2,
+        "026": 2,
+        "028": 2,
+        "029": 2,
+        "030": 2,
+        "032": 2,
+        "033": 2,
+        "035": 2,
+        "036": 2,
+        "037": 2,
+        "039": 2,
+        "042": 2,
+        "048": 2,
+        "049": 2,
+        "050": 2,
+        "051": 2
+      },
+      "maximum_bona_fide_group_cv_folds": 2,
+      "session_disjoint_supported": false
+    },
+    "train": {
+      "android_laptop_separation_possible": true,
+      "at_least_two_video_groups_per_identity": true,
+      "bona_fide_videos_per_identity": {
+        "002": 2,
+        "003": 2,
+        "005": 2,
+        "006": 2,
+        "007": 2,
+        "008": 2,
+        "009": 2,
+        "011": 2,
+        "012": 2,
+        "021": 2,
+        "022": 2,
+        "034": 2,
+        "053": 2,
+        "054": 2,
+        "055": 2
+      },
+      "maximum_bona_fide_group_cv_folds": 2,
+      "session_disjoint_supported": false
+    }
+  },
+  "rq3_official_unseen_subject_partition_validated": true,
+  "source_fingerprints": {
+    "DecFrames.m": "9fef6faaddb174cbbd4e43aece752def946e7ffbff38021edc549788985615bc",
+    "README.txt": "6e0f2f1ce5d8601fee4f3096e6b300929d0ec259dd947fcf1e08f75080c14497",
+    "test_sub_list.txt": "87ee61282553af3ed61a4fba9afea5eb7cb7883368bb6fadfe608528d01885bd",
+    "train_sub_list.txt": "08d55993685dd1bf0a7161a10ce18cf991559358c2c062466fba1f52363436f2"
+  },
+  "train_test_overlap": [],
+  "unexpected_client_ids": [],
+  "unlisted_recordings": [],
+  "unresolved_ambiguities": [
+    "No verified recording-session IDs; scene01 and camera tokens are not sessions.",
+    "Video validity, frame indexing, rotation and crop fidelity remain untested without decoding.",
+    "Metadata establishes client provenance; face content and byte-identical media copies were not checked.",
+    "Subject lists enumerate humans, not files; completeness uses the documented eight acquisition slots.",
+    "Attack-source camera cannot be assigned per recording from the filename; not inferred."
+  ],
+  "validation": {
+    "annotation_contents_fingerprinted": true,
+    "client_sets_disjoint": true,
+    "complete_eight_video_slots_per_client": true,
+    "media_contents_hashed": false,
+    "media_decoded": false,
+    "nonempty_media_files": true,
+    "official_15_20_counts": true,
+    "source_files_exist": true,
+    "unique_recording_groups": true
+  }
+}
