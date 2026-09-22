@@ -1,8 +1,12 @@
-"""MSU-MFSD indexing helpers."""
+"""Legacy MSU indexing: unnormalized IDs and filename-stem groups.
+
+Use msu_protocol and msu_preprocessing for canonical, locked provenance.
+"""
 
 from __future__ import annotations
 
 import re
+import warnings
 from pathlib import Path
 
 from ..constants import ATTACK_LABEL, BONA_FIDE_LABEL
@@ -18,7 +22,12 @@ def read_subject_list(path: str | Path) -> set[str]:
 
 
 def index_msu_videos(root: str | Path) -> list[FASSample]:
-    """Index original MSU-MFSD videos using the official subject split files."""
+    """Legacy compatibility API; not the canonical preprocessing path."""
+    warnings.warn(
+        "Legacy MSU loader uses unnormalized subject IDs and video stems. "
+        "Use load_msu_protocol and msu_preprocessing for canonical provenance.",
+        FutureWarning, stacklevel=2,
+    )
     root = Path(root)
     train_subjects = read_subject_list(root / "train_sub_list.txt")
     test_subjects = read_subject_list(root / "test_sub_list.txt")

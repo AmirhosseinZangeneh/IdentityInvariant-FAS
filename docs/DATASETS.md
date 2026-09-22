@@ -47,16 +47,18 @@ MSU/
 └── test_sub_list.txt
 ```
 
-The database includes PittPatt `.face` files. The legacy preprocessing command is:
+The database includes PittPatt `.face` files. The canonical preprocessing command
+validates the reviewed raw lock and annotations before optional decoding:
 
 ```bash
-python scripts/preprocess_msu.py --root datasets/MSU
+python scripts/preprocess_msu.py --root datasets/MSU --mode plan --output-root data_processed/MSU-MFSD/preprocessing-plan-v1
 ```
 
-The script samples a fixed number of annotated frames per video and creates
-`data_processed/MSU-MFSD/manifest.csv`. It is currently blocked on the local
-release by the legacy loader's `02` versus `client002` normalization mismatch.
-It remains unchanged; consult the protocol audit before future preprocessing.
+The [preprocessing schema and audit](MSU_PREPROCESSING.md) replace the script's
+legacy CSV output with structured frame/source/annotation/crop provenance.
+Canonical protocol loading resolves `02` versus `client002`; the old loader is
+explicitly deprecated. Full extraction is still blocked on the documented
+decoder/annotation endpoint discrepancy and manual crop/orientation review.
 
 Frame-level predictions should be aggregated to video-level scores for the
 official MSU evaluation. That aggregation is intentionally left as an explicit

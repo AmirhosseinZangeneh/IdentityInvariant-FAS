@@ -144,7 +144,12 @@ model-selection split must use only official training subjects and be labeled
 project-defined. Test identities must not guide tuning or threshold selection.
 No development split, custom fold, threshold, or training migration is added.
 
-## Existing preprocessing fidelity audit
+## Historical preprocessing fidelity audit (protocol-lock commit)
+
+The following records the state at `77ae855`; the raw audit remains unchanged.
+The subsequent [preprocessing integration](MSU_PREPROCESSING.md) replaces the
+script path, resolves normalization via this canonical protocol, and records
+controlled decoder/crop evidence plus a newly discovered endpoint discrepancy.
 
 `scripts/preprocess_msu.py` consumes `index_msu_videos` and original videos plus
 sibling `.face` files. It selects up to 30 annotated frame indices by uniform
@@ -172,7 +177,7 @@ bundled README notes rotated Android footage and boxes relative to rotated
 frames; decoder orientation, index alignment, crop validity, frame coverage,
 and write success remain untested. No preprocessing was run in this task.
 
-## Gate before the first controlled experiment
+## Original protocol-lock gate
 
 Review and accept this metadata lock, then undertake a separate minimal
 preprocessing integration/verification task: resolve the legacy normalization
@@ -182,3 +187,5 @@ verify orientation and crop/index fidelity on controlled samples. Define the
 training-only model-selection rule and the exact RQ1 cohort/camera direction
 before extracting frozen features or training models. Session claims require
 new source evidence, not inferred camera or directory labels.
+
+For the current remaining gate, see [MSU preprocessing](MSU_PREPROCESSING.md#gate-before-experiments).

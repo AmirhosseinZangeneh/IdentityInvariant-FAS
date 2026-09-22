@@ -170,7 +170,7 @@ def test_outputs_cannot_modify_raw_root(msu_root, tmp_path):
 def test_legacy_loader_padding_limitation_is_reproduced(msu_root):
     from identity_invariant_fas.data.msu import index_msu_videos
 
-    with pytest.raises(ValueError, match="absent from official MSU split lists"):
+    with pytest.warns(FutureWarning, match="Legacy MSU loader"), pytest.raises(ValueError, match="absent from official MSU split lists"):
         index_msu_videos(msu_root)
 
 

@@ -120,14 +120,17 @@ identity recoverability.
 ## MSU-MFSD
 
 MSU-MFSD is video-based. Its [canonical protocol audit](docs/MSU_PROTOCOL.md)
-verifies the local 15/20 client separation and 280-video inventory. The legacy
-frame-extraction command below remains blocked by the documented subject-ID
-normalization mismatch; preprocessing integration is a separate next step:
+verifies the local 15/20 client separation and 280-video inventory. The
+[canonical preprocessing pipeline](docs/MSU_PREPROCESSING.md) reuses that lock,
+resolves numeric subject IDs, and preserves source/frame/crop provenance.
+Start with annotation validation without decoding:
 
 ```bash
-python scripts/preprocess_msu.py --root datasets/MSU
+python scripts/preprocess_msu.py --root datasets/MSU --mode plan --output-root data_processed/MSU-MFSD/preprocessing-plan-v1
 ```
 
+Controlled checks found an annotation/decoder endpoint discrepancy; full
+extraction and experiments remain gated on its resolution and geometry review.
 See [`docs/DATASETS.md`](docs/DATASETS.md) for protocol notes.
 
 ## Replay-Attack

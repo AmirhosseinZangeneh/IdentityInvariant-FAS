@@ -1,0 +1,55 @@
+{
+  "interpretation": "Decoder frame counts are observations, not grounds for deleting or shifting source annotations. Any unavailable selected index must fail preprocessing.",
+  "libraries": {
+    "codec_versions": [
+      "FFMPEG:                      YES (prebuilt binaries)",
+      "avcodec:                   YES (61.19.100)",
+      "avformat:                  YES (61.7.100)",
+      "avutil:                    YES (59.39.100)",
+      "swscale:                   YES (8.3.100)"
+    ],
+    "numpy": "2.5.2",
+    "opencv": "5.0.0",
+    "python": "3.12.10"
+  },
+  "protocol_lock_digest": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+  "records": [
+    {
+      "annotated_indices_not_decoded": [
+        300
+      ],
+      "annotation_index_range": [
+        0,
+        300
+      ],
+      "decoded_index_range": [
+        0,
+        299
+      ],
+      "metadata_rotation_degrees": 0.0,
+      "reported_frame_count": 300.0,
+      "scope": "Sequential AUTO=0 reads through first failed read; no crops written; no visual inspection of intermediate frames.",
+      "sequential_successful_reads": 300,
+      "video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "annotated_indices_not_decoded": [
+        300
+      ],
+      "annotation_index_range": [
+        0,
+        300
+      ],
+      "decoded_index_range": [
+        0,
+        299
+      ],
+      "metadata_rotation_degrees": 180.0,
+      "reported_frame_count": 300.0,
+      "scope": "Sequential AUTO=0 reads through first failed read; no crops written; no visual inspection of intermediate frames.",
+      "sequential_successful_reads": 300,
+      "video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4"
+    }
+  ],
+  "schema": "msu-decoder-boundary-review-v1"
+}
