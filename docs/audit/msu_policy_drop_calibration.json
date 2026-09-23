@@ -1,0 +1,60 @@
+{
+  "config": {
+    "binary_sha256": "d8c98d17919bac4c7c128bcc04502d82807a689fcb1dc31824551377ebad1ee6",
+    "correspondence": "annotation i -> filename i+1 is a candidate sidecar association, not proven annotation generation",
+    "count_transport": "same image2/BMP; -updatefirst 1 to Windows NUL with -y; equivalence requires training calibration",
+    "export": "original image2 BMP with default vsync and first filename number 1; no added -xerror",
+    "ffprobe_sha256": "d0d87d92e282d3629cf6713b06633c7851ad6bc2509b7113e3a095fe6264d44b",
+    "rate_rule": "avg_frame_rate numerator/denominator rounded to two decimals, as DecFrames.m num2str(%.02f)",
+    "rotation": "original export pixels unchanged; review only assumes metadata 0/180 should be applied",
+    "version": "bundled-decframes-rounded-rate-image2-v1"
+  },
+  "config_digest": "92a81eefbe44dd485d3baa9955b1fa8f7f15f029865069e349051792774bd318",
+  "experiment_ready": false,
+  "passed": true,
+  "protocol_lock_digest": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+  "records": [
+    {
+      "actual_file_count": 267,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 1,
+        "dup_frames": 3,
+        "export_count": 267,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": "printed_photo",
+      "avg_frame_rate": "23850000/1446061",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "022",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 1,
+        "dup_frames": 3,
+        "export_count": 267,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/b32d0da05367ed7d879dd952fc4ea84c55dfcfca25a7859f049c6e4c8a50c66d/attack_client022_android_SD_printed_photo_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "048c83d4246ab708ee1fad59cea1646f25bfbd8a75f41c4acfa77ab20d9ea4c3"
+        }
+      },
+      "rounded_rate": "16.49",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client022_android_SD_printed_photo_scene01.mp4"
+    }
+  ],
+  "schema": "msu-export-counter-calibration-v1",
+  "scope_limit": "Empirical equivalence on explicit training matrix with same image2/BMP encoder/muxer; not proof across arbitrary builds",
+  "training_only": true
+}

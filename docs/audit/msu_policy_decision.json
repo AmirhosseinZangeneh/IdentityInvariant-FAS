@@ -1,0 +1,12 @@
+{
+  "experiment_ready": false,
+  "fidelity_status": "manual_review_pending",
+  "frozen_policy": null,
+  "ordering": "Source and training technical evidence assessed before new test export observations; no policy frozen",
+  "policy_state": "P4",
+  "reason": "Availability and filename association do not prove PittPatt generation correspondence; human review is absent",
+  "schema": "msu-frame-domain-policy-state-v1",
+  "selection_evidence_digest": "694dbab998531201598eeefc727a896b13c7e015466ca09f24e6069afac922cd",
+  "selection_partition": "train",
+  "test_evidence_used_for_selection": false
+}

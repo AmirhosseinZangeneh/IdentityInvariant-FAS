@@ -1,0 +1,280 @@
+{
+  "codec_records": [
+    {
+      "classification": "bundled_decoder_error",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [],
+      "native_reported_frame_count": 301.0,
+      "native_successful_reads": 301,
+      "original_style_export_count": 301,
+      "original_style_export_diagnostics": [
+        "ac tex damaged -3, 1024",
+        "[prores] ac tex damaged 1024, 1024"
+      ],
+      "pad_partition": "train",
+      "prior_strict_bundled_diagnostics": [
+        "[prores] ac tex damaged -3, 1024",
+        "[prores] ac tex damaged 1024, 1024"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client005_laptop_SD_iphone_video_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "bundled_decoder_error",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [],
+      "native_reported_frame_count": 301.0,
+      "native_successful_reads": 301,
+      "original_style_export_count": 301,
+      "original_style_export_diagnostics": [
+        "ac tex damaged -3, 1024"
+      ],
+      "pad_partition": "train",
+      "prior_strict_bundled_diagnostics": [
+        "[null] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 3000 >= 3000",
+        "[prores] ac tex damaged -3, 1024",
+        "    Last message repeated 1 times"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client007_laptop_SD_ipad_video_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] error, wrong slice data size",
+        "[prores] error decoding picture header"
+      ],
+      "native_reported_frame_count": 300.0,
+      "native_successful_reads": 127,
+      "original_style_export_count": 300,
+      "original_style_export_diagnostics": [
+        "error, wrong slice data size",
+        "[prores] error decoding picture header",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "pad_partition": "train",
+      "prior_strict_bundled_diagnostics": [
+        "[prores] error, wrong slice data size",
+        "[prores] error decoding picture header",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] error, slice out of bounds",
+        "[prores] error decoding picture header"
+      ],
+      "native_reported_frame_count": 301.0,
+      "native_successful_reads": 247,
+      "original_style_export_count": 301,
+      "original_style_export_diagnostics": [
+        "error, slice out of bounds",
+        "[prores] error decoding picture header",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "pad_partition": "test",
+      "prior_strict_bundled_diagnostics": [
+        "[null] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 3000 >= 3000",
+        "[prores] error, slice out of bounds",
+        "[prores] error decoding picture header",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client023_laptop_SD_iphone_video_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] ac tex damaged 2048, 2048"
+      ],
+      "native_reported_frame_count": 205.0,
+      "native_successful_reads": 205,
+      "original_style_export_count": 205,
+      "original_style_export_diagnostics": [
+        "[prores] ac tex damaged 2048, 2048",
+        "[prores] ac tex damaged 1025, 1024"
+      ],
+      "pad_partition": "test",
+      "prior_strict_bundled_diagnostics": [
+        "[prores] ac tex damaged 2048, 2048",
+        "[prores] ac tex damaged 1025, 1024"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client028_laptop_SD_printed_photo_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] invalid plane data size"
+      ],
+      "native_reported_frame_count": 213.0,
+      "native_successful_reads": 213,
+      "original_style_export_count": 213,
+      "original_style_export_diagnostics": [
+        "invalid plane data size",
+        "[prores] ac tex damaged 2195, 1024",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "pad_partition": "test",
+      "prior_strict_bundled_diagnostics": [
+        "[null] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 6000 >= 6000",
+        "[prores] invalid plane data size",
+        "[prores] ac tex damaged 2195, 1024",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client049_laptop_SD_printed_photo_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] ac tex damaged 1029, 1024",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size"
+      ],
+      "native_reported_frame_count": 211.0,
+      "native_successful_reads": 211,
+      "original_style_export_count": 211,
+      "original_style_export_diagnostics": [
+        "invalid plane data size",
+        "[prores] invalid plane data size",
+        "ssage rep[prores] iinvalid plane data size",
+        "emes[prores]  invalid plane data size",
+        "d 2[prores]  timesinvalid plane data size",
+        "invalid plane data size",
+        "invalid plane data size",
+        "[prores] ac tex damaged 1029, 1024",
+        "[prores] ac tex damaged 1266, 1024",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "pad_partition": "test",
+      "prior_strict_bundled_diagnostics": [
+        "[null] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 6000 >= 6000",
+        "[prores] invalid plane data size",
+        "    Last message repeated 7 times",
+        "[prores] ac tex damaged 1029, 1024",
+        "[prores] ac tex damaged 1266, 1024",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client051_laptop_SD_printed_photo_scene01.mov",
+      "unavailable_export_annotations": []
+    },
+    {
+      "classification": "both_paths_problematic",
+      "export_returncode": 0,
+      "future_action": "fail_closed_pending_documented_codec_resolution; no automatic exclusion or alternate decoder",
+      "native_recheck_diagnostics": [
+        "[prores] ac tex damaged 1024, 1024",
+        "[prores] invalid plane data size",
+        "[prores] invalid plane data size"
+      ],
+      "native_reported_frame_count": 301.0,
+      "native_successful_reads": 301,
+      "original_style_export_count": 301,
+      "original_style_export_diagnostics": [
+        "invalid plane data size",
+        "[prores] invalid plane data size",
+        "[prores] ac tex damaged 1024, 1024",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "pad_partition": "train",
+      "prior_strict_bundled_diagnostics": [
+        "[prores] invalid plane data size",
+        "    Last message repeated 1 times",
+        "[prores] ac tex damaged 1024, 1024",
+        "    Last message repeated 1 times",
+        "[prores] error decoding picture",
+        "Error while decoding stream #0:0: Error number -1 occurred"
+      ],
+      "process_success_certified": false,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client053_laptop_SD_ipad_video_scene01.mov",
+      "unavailable_export_annotations": []
+    }
+  ],
+  "drop_frames": 41,
+  "dup_frames": 101,
+  "experiment_ready": false,
+  "interpretation": "Export availability only; codec diagnostics and unknown annotation-generation domain prevent fidelity inference. Test observations do not select policy.",
+  "nonzero_exit_records": 0,
+  "partitions": {
+    "test": {
+      "count": 160,
+      "total_export_frames": 44349,
+      "unavailable_annotations": 0
+    },
+    "train": {
+      "count": 120,
+      "total_export_frames": 33604,
+      "unavailable_annotations": 0
+    }
+  },
+  "policy_state_before_test": {
+    "experiment_ready": false,
+    "fidelity_status": "manual_review_pending",
+    "frozen_policy": null,
+    "ordering": "Source and training technical evidence assessed before new test export observations; no policy frozen",
+    "policy_state": "P4",
+    "reason": "Availability and filename association do not prove PittPatt generation correspondence; human review is absent",
+    "schema": "msu-frame-domain-policy-state-v1",
+    "selection_evidence_digest": "694dbab998531201598eeefc727a896b13c7e015466ca09f24e6069afac922cd",
+    "selection_partition": "train",
+    "test_evidence_used_for_selection": false
+  },
+  "readiness_requirements": {
+    "codec_policy_locked": false,
+    "experiment_ready": false,
+    "frame_domain_frozen": false,
+    "human_correspondence_review_completed": false,
+    "human_geometry_review_completed": false,
+    "no_silent_annotation_loss_or_remapping": true,
+    "preprocessing_digest_locked": false,
+    "selected_frame_coverage_validated": false,
+    "training_only_model_selection_defined": false
+  },
+  "records_audited": 280,
+  "records_with_diagnostics": 8,
+  "records_with_dropping": 8,
+  "records_with_duplication": 50,
+  "records_with_unavailable_annotations": 0,
+  "schema": "msu-export-release-summary-v1",
+  "scope": "all_280_locked_recordings",
+  "test_audit_digest": "23305e62dd9d4df0125e87ddfba64b9b48b1ce2aa2a6b3d0a0b84d6fa73d9411",
+  "total_export_frames": 77953,
+  "training_audit_digest": "694dbab998531201598eeefc727a896b13c7e015466ca09f24e6069afac922cd",
+  "unavailable_annotations": 0,
+  "unknown_availability_records": 0
+}

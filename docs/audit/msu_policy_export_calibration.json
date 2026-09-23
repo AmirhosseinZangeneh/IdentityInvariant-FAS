@@ -1,0 +1,725 @@
+{
+  "config": {
+    "binary_sha256": "d8c98d17919bac4c7c128bcc04502d82807a689fcb1dc31824551377ebad1ee6",
+    "correspondence": "annotation i -> filename i+1 is a candidate sidecar association, not proven annotation generation",
+    "count_transport": "same image2/BMP; -updatefirst 1 to Windows NUL with -y; equivalence requires training calibration",
+    "export": "original image2 BMP with default vsync and first filename number 1; no added -xerror",
+    "ffprobe_sha256": "d0d87d92e282d3629cf6713b06633c7851ad6bc2509b7113e3a095fe6264d44b",
+    "rate_rule": "avg_frame_rate numerator/denominator rounded to two decimals, as DecFrames.m num2str(%.02f)",
+    "rotation": "original export pixels unchanged; review only assumes metadata 0/180 should be applied",
+    "version": "bundled-decframes-rounded-rate-image2-v1"
+  },
+  "config_digest": "92a81eefbe44dd485d3baa9955b1fa8f7f15f029865069e349051792774bd318",
+  "experiment_ready": false,
+  "passed": true,
+  "protocol_lock_digest": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+  "records": [
+    {
+      "actual_file_count": 300,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": "ipad_video",
+      "avg_frame_rate": "13500000/451267",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "5811bc3f6382659363fc41f9860246cbd5530e851beb392bab6b58dbb55b69c1"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "51dab0e7ba5a77ccc92cf8cd6e225505a45d13b9e850f86b5ca31d4ba583ceae"
+        },
+        "149": {
+          "available": true,
+          "export_file_number": 150,
+          "export_ordinal": 149,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_150.bmp",
+          "original_annotation_index": 149,
+          "sha256": "d0ac9755e38c3f9c6df36aeda4b11e3ec7820df70f59ae66141f0cd84b1a9566"
+        },
+        "150": {
+          "available": true,
+          "export_file_number": 151,
+          "export_ordinal": 150,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_151.bmp",
+          "original_annotation_index": 150,
+          "sha256": "51c092775531359c22170fc7fe9ec6753c1517f697d260a0603d68bce4e40cf7"
+        },
+        "151": {
+          "available": true,
+          "export_file_number": 152,
+          "export_ordinal": 151,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_152.bmp",
+          "original_annotation_index": 151,
+          "sha256": "863fc99c9a467ba58ab67357c29a69dd95c588726ce72bf3cea12e8d814d115d"
+        },
+        "298": {
+          "available": true,
+          "export_file_number": 299,
+          "export_ordinal": 298,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_299.bmp",
+          "original_annotation_index": 298,
+          "sha256": "de12ea1494d35be5bf2de998d2906d1bf1a259bc5d9f96d779c62dbce2ef16e2"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/ee05246005d4c7ac960270965a728fe4e71dfd2d006e7545aa14e420f0a6c622/attack_client002_android_SD_ipad_video_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "5b63f5dea2890f39b2afa2790192f3977e5b74a6f29716f36eec33b5c987bdb2"
+        }
+      },
+      "rounded_rate": "29.92",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4"
+    },
+    {
+      "actual_file_count": 301,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": "iphone_video",
+      "avg_frame_rate": "3000000/100141",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "8add9b427c2d4c56065beb04791bcaad55efc32dffd41e8b1d2180490b51197c"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "290bbaf212e71bb269d95dace573adde3e2db0941f58d47827b4d598952a088f"
+        },
+        "149": {
+          "available": true,
+          "export_file_number": 150,
+          "export_ordinal": 149,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_150.bmp",
+          "original_annotation_index": 149,
+          "sha256": "edb6de2821ad420528e392f1fb66e68522452ff80ce31dd276cd4368596eb34c"
+        },
+        "150": {
+          "available": true,
+          "export_file_number": 151,
+          "export_ordinal": 150,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_151.bmp",
+          "original_annotation_index": 150,
+          "sha256": "14c6c8a2bd981006fcfb30a7cdc18cfae93e2243fced1cde0104b499d192d0ee"
+        },
+        "151": {
+          "available": true,
+          "export_file_number": 152,
+          "export_ordinal": 151,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_152.bmp",
+          "original_annotation_index": 151,
+          "sha256": "45b3d4c7002ad81deedfe15653afedcc293d4c47881879c425965d8278c0cf80"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "f10c831eb1c44fc96c27795f4e7225554cc5b5d1b3d9a13795671791102ca423"
+        },
+        "300": {
+          "available": true,
+          "export_file_number": 301,
+          "export_ordinal": 300,
+          "filepath": "retained/ee2820a58f6e22ea3ff11ef0888207667823b48e4756ba6afbb8e03fe5fc3a00/attack_client002_android_SD_iphone_video_scene01_301.bmp",
+          "original_annotation_index": 300,
+          "sha256": "5dc29b3dd93f846c022615cb897bad1c92485bbbb91c7dbb7ad47c72533086c3"
+        }
+      },
+      "rounded_rate": "29.96",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4"
+    },
+    {
+      "actual_file_count": 233,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 2,
+        "export_count": 233,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": "printed_photo",
+      "avg_frame_rate": "519750/34963",
+      "capture_device": "android",
+      "class_label": 1,
+      "client_id": "002",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 2,
+        "export_count": 233,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "a5de1861a24c607dcd964db65279b5b73b8ec719f9b2cb8b21d5b2c0121242bd"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "0573275623d1d469ccf8914fc8b8c5e32b15597e9c3da4c87e057abe27e8b3eb"
+        },
+        "115": {
+          "available": true,
+          "export_file_number": 116,
+          "export_ordinal": 115,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_116.bmp",
+          "original_annotation_index": 115,
+          "sha256": "b7f2b319d5214e7d2237db8beb41878c736e12f103ca411e727cf4edbc36d423"
+        },
+        "116": {
+          "available": true,
+          "export_file_number": 117,
+          "export_ordinal": 116,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_117.bmp",
+          "original_annotation_index": 116,
+          "sha256": "5f98f89e3e5292cc1c2c1d1084cc42a60bfac23c3591b66e3a0fb011121e7b31"
+        },
+        "117": {
+          "available": true,
+          "export_file_number": 118,
+          "export_ordinal": 117,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_118.bmp",
+          "original_annotation_index": 117,
+          "sha256": "3318cfa8fbbf73eeacb58a2f6149649e264533f0fee99b18c4af1e32338306ec"
+        },
+        "231": {
+          "available": true,
+          "export_file_number": 232,
+          "export_ordinal": 231,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_232.bmp",
+          "original_annotation_index": 231,
+          "sha256": "99ee7257e522083a93daccbf9b50492d7ac56e304755876cce63ce05b77969f6"
+        },
+        "232": {
+          "available": true,
+          "export_file_number": 233,
+          "export_ordinal": 232,
+          "filepath": "retained/a29653c14464fca59ce54f38fc6dca62b2e3e242a3a6a6a668aafd11762f0a8b/attack_client002_android_SD_printed_photo_scene01_233.bmp",
+          "original_annotation_index": 232,
+          "sha256": "2371f2771d9f93b63dbb8075ef9a07f19804151bbf4e34ab40c58be978810d29"
+        }
+      },
+      "rounded_rate": "14.87",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4"
+    },
+    {
+      "actual_file_count": 300,
+      "actual_image2": {
+        "diagnostics": [
+          "error, wrong slice data size",
+          "[prores] error decoding picture header",
+          "Error while decoding stream #0:0: Error number -1 occurred"
+        ],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": "ipad_video",
+      "avg_frame_rate": "375000/12499",
+      "capture_device": "laptop",
+      "class_label": 1,
+      "client_id": "008",
+      "disk_free_image2": {
+        "diagnostics": [
+          "[prores] error, wrong slice data size",
+          "[prores] error decoding picture header",
+          "Error while decoding stream #0:0: Error number -1 occurred"
+        ],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "9b5360ebbee11ac4d7676c9c8d2fcbaede7ae81e6326267c27cb2a0511275ee3"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "247cff2bfc5d1c39b17a498ed7132f07474c85f6c99b95849d60d2ed54026263"
+        },
+        "149": {
+          "available": true,
+          "export_file_number": 150,
+          "export_ordinal": 149,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_150.bmp",
+          "original_annotation_index": 149,
+          "sha256": "dc4a74d2f7b50654d4cbe3a1513f6512dda51a968885b44638ea46b1b781c07f"
+        },
+        "150": {
+          "available": true,
+          "export_file_number": 151,
+          "export_ordinal": 150,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_151.bmp",
+          "original_annotation_index": 150,
+          "sha256": "e89c58db718e197f02f753afea54eee2ee012c3fded195db2c8394a822a1ef98"
+        },
+        "151": {
+          "available": true,
+          "export_file_number": 152,
+          "export_ordinal": 151,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_152.bmp",
+          "original_annotation_index": 151,
+          "sha256": "3808bb24148e8a78b8974ac26cc27dbd336f2eea95efd3374913c498e9032101"
+        },
+        "298": {
+          "available": true,
+          "export_file_number": 299,
+          "export_ordinal": 298,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_299.bmp",
+          "original_annotation_index": 298,
+          "sha256": "61fc27163ff0be0569a8fddcea6a54284a388e4c992d43a28d1df3d340df32d6"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/9ba47bcfd4c88a6b26642413cfcb9696ae2ed231af3b3d5469ebf771adaa8ea3/attack_client008_laptop_SD_ipad_video_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "96a9192ea5931e1d64810043df71943281e4ed0f172f57d5cdb0dbebcd0fb1c9"
+        }
+      },
+      "rounded_rate": "30.00",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov"
+    },
+    {
+      "actual_file_count": 301,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": null,
+      "avg_frame_rate": "9000000/300971",
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "002",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "8ad0cbd683fda463bba32ad81de2c0d41fd8a89943e1564244c3a4a81a7d2268"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "5b1eb5d802fa8abfe382b286fed10492b5ed05be86a49da3455397e42e3a4542"
+        },
+        "149": {
+          "available": true,
+          "export_file_number": 150,
+          "export_ordinal": 149,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_150.bmp",
+          "original_annotation_index": 149,
+          "sha256": "dd9a39c59dfd105ef349231d282f9cc1e1f9bda4730277562e3a7c6a8534aaf9"
+        },
+        "150": {
+          "available": true,
+          "export_file_number": 151,
+          "export_ordinal": 150,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_151.bmp",
+          "original_annotation_index": 150,
+          "sha256": "befcd759c1836d83636af08d954a1d26c8ff2494ed6e15053599afa44ee8b135"
+        },
+        "151": {
+          "available": true,
+          "export_file_number": 152,
+          "export_ordinal": 151,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_152.bmp",
+          "original_annotation_index": 151,
+          "sha256": "9f5378286e4e42d811863ccb16c499e1c12ee4bd1b92044affed378ea898af58"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "badad0ed3bdc653dc968a80dad6684c3ca46141a415db9f32d8ff2ca0030c6da"
+        },
+        "300": {
+          "available": true,
+          "export_file_number": 301,
+          "export_ordinal": 300,
+          "filepath": "retained/31225a6160c602538da5baa907a1c42b3edcadb299ac2345d2dd80d0ecc84a8b/real_client002_android_SD_scene01_301.bmp",
+          "original_annotation_index": 300,
+          "sha256": "4ee82e59eb3b5e2f111a760ea62f508c371847f13c84e2d739d0ed35f78d2cae"
+        }
+      },
+      "rounded_rate": "29.90",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "actual_file_count": 239,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 239,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": null,
+      "avg_frame_rate": "3585000/238469",
+      "capture_device": "laptop",
+      "class_label": 0,
+      "client_id": "002",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 239,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "4dccc487d74de768e0aaffc5a5602ee7fcd9657f7c6cb24403d9eefc860edb41"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "2b992b9fb797ff0fbad231821ce2038c464a64a84eeb1cfa6f376e3603b514b6"
+        },
+        "118": {
+          "available": true,
+          "export_file_number": 119,
+          "export_ordinal": 118,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_119.bmp",
+          "original_annotation_index": 118,
+          "sha256": "047a84198d2b4fa5f029dac10c8a1828c64a0f1082afbf3cf37577027d693b44"
+        },
+        "119": {
+          "available": true,
+          "export_file_number": 120,
+          "export_ordinal": 119,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_120.bmp",
+          "original_annotation_index": 119,
+          "sha256": "a1963c182400c911ddbab22f7bd6a87ae443a61829a06dabd2d5ab81553558af"
+        },
+        "120": {
+          "available": true,
+          "export_file_number": 121,
+          "export_ordinal": 120,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_121.bmp",
+          "original_annotation_index": 120,
+          "sha256": "5363ac51cb865f5d74c579b37ea75c7dd2049af11117cc548b2fb520a3020bd9"
+        },
+        "237": {
+          "available": true,
+          "export_file_number": 238,
+          "export_ordinal": 237,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_238.bmp",
+          "original_annotation_index": 237,
+          "sha256": "00833930e216e66460f7265dae893a806b94152fb23a392a5768226805f69886"
+        },
+        "238": {
+          "available": true,
+          "export_file_number": 239,
+          "export_ordinal": 238,
+          "filepath": "retained/5b073f6562039a8415cfdfc531c947435c8acff7960070da5d880305bf846a2a/real_client002_laptop_SD_scene01_239.bmp",
+          "original_annotation_index": 238,
+          "sha256": "fdc3cb52de858d4bcc0ae798efee68824665f279e30906a056c650b2f1ef1f63"
+        }
+      },
+      "rounded_rate": "15.03",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "actual_file_count": 301,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": null,
+      "avg_frame_rate": "27000000/903853",
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "003",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 1,
+        "export_count": 301,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "44e84e2dbd29715d402ec477f47f1e85d60e58bb31b20d35b2b6c9e93f436d74"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "8ff4e9a7ff56bbfd5170d26f5d8f3081173e8fc74826008b9d935bf0a3fd0a15"
+        },
+        "149": {
+          "available": true,
+          "export_file_number": 150,
+          "export_ordinal": 149,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_150.bmp",
+          "original_annotation_index": 149,
+          "sha256": "de64089033264aa6c494fa2cf031a3579d73336e410d20d36b674854e0018a14"
+        },
+        "150": {
+          "available": true,
+          "export_file_number": 151,
+          "export_ordinal": 150,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_151.bmp",
+          "original_annotation_index": 150,
+          "sha256": "a1cff0225a258aa0ab12aa1f704281fca2f90f61e39b6557ece78daf9be85abb"
+        },
+        "151": {
+          "available": true,
+          "export_file_number": 152,
+          "export_ordinal": 151,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_152.bmp",
+          "original_annotation_index": 151,
+          "sha256": "9d3f1df35247ff951f6b36b0cd847c4ff4319c450be7dbc11967287e9e9aec52"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "268d888843a2cb0072d8ef494b0fa93bfdcb6fb18dd8997de9a981a7ab49f0c4"
+        },
+        "300": {
+          "available": true,
+          "export_file_number": 301,
+          "export_ordinal": 300,
+          "filepath": "retained/07aa0399134d9304392e6cbe1da98ec8c57e734c378bdb1bc318fa7e2e0327b6/real_client003_android_SD_scene01_301.bmp",
+          "original_annotation_index": 300,
+          "sha256": "9fc6ec3608ad1957c7c5ed4c6585843af55f4595e844f1c6a18cddcb98d42b1b"
+        }
+      },
+      "rounded_rate": "29.87",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4"
+    },
+    {
+      "actual_file_count": 300,
+      "actual_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "attack_type": null,
+      "avg_frame_rate": "27000000/904507",
+      "capture_device": "android",
+      "class_label": 0,
+      "client_id": "008",
+      "disk_free_image2": {
+        "diagnostics": [],
+        "drop_frames": 0,
+        "dup_frames": 0,
+        "export_count": 300,
+        "progress_end": true,
+        "returncode": 0
+      },
+      "equivalent_count_dup_drop": true,
+      "numbering_contiguous_from_one": true,
+      "pad_partition": "train",
+      "retained_exports": {
+        "0": {
+          "available": true,
+          "export_file_number": 1,
+          "export_ordinal": 0,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_001.bmp",
+          "original_annotation_index": 0,
+          "sha256": "cb9c0a47c2e833c8cb6ba38541b7e02de159a2f6e754483782ae5916483ad661"
+        },
+        "1": {
+          "available": true,
+          "export_file_number": 2,
+          "export_ordinal": 1,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_002.bmp",
+          "original_annotation_index": 1,
+          "sha256": "30c95bdf214c4da3a60555feb9e0c6446748381127cdb5aba4e1065bab95f373"
+        },
+        "145": {
+          "available": true,
+          "export_file_number": 146,
+          "export_ordinal": 145,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_146.bmp",
+          "original_annotation_index": 145,
+          "sha256": "db0deef67d626887f55176ee7f221a53f9d1dfab020ecd1473b9e9b25a6749f1"
+        },
+        "146": {
+          "available": true,
+          "export_file_number": 147,
+          "export_ordinal": 146,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_147.bmp",
+          "original_annotation_index": 146,
+          "sha256": "fa984ac82689af0fe7a8fa18a4a4a473eb391d605921f345ba0e8bf42340e3a6"
+        },
+        "147": {
+          "available": true,
+          "export_file_number": 148,
+          "export_ordinal": 147,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_148.bmp",
+          "original_annotation_index": 147,
+          "sha256": "0bdfa150cae89f57a8f2211b2bebeda1858ca3ff5baa5a6ad2a3454e5a32c885"
+        },
+        "298": {
+          "available": true,
+          "export_file_number": 299,
+          "export_ordinal": 298,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_299.bmp",
+          "original_annotation_index": 298,
+          "sha256": "e2e97c552cfac46477a50dcce36b01c7f9c369a92bf7702a577623bafa612236"
+        },
+        "299": {
+          "available": true,
+          "export_file_number": 300,
+          "export_ordinal": 299,
+          "filepath": "retained/c20258cd832d4522f555a273e4d2df39d33477c5f15d81ff7ec5f5645241bb12/real_client008_android_SD_scene01_300.bmp",
+          "original_annotation_index": 299,
+          "sha256": "955c853892898f3fc507a47624ea2c61980e3c5160413bc792ed7c679403fe8d"
+        }
+      },
+      "rounded_rate": "29.85",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    }
+  ],
+  "schema": "msu-export-counter-calibration-v1",
+  "scope_limit": "Empirical equivalence on explicit training matrix with same image2/BMP encoder/muxer; not proof across arbitrary builds",
+  "training_only": true
+}

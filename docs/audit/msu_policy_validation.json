@@ -1,0 +1,28 @@
+{
+  "annotations_verified": 77873,
+  "calibrated_training_recordings": 9,
+  "codec_classifications_verified": 8,
+  "experiment_ready": false,
+  "fidelity_status": "manual_review_pending",
+  "human_review_cases_verified": 64,
+  "input_digests": {
+    "msu_index_boundaries": "1eb21eaa4e8f3a263ea63a13b80254b9d055f6ccf7ad553e37090351a7fe1544",
+    "msu_index_existing_crop_review": "e61df5b4e75b7d0794bd042bc043f243d5b17c4319700e1fdc37f1a04936a3bd",
+    "msu_index_source_evidence": "4adf1f20fc88b8d503fd57e09e4e6f67d3e6679ae5ff1d2e80fd99c1c5764edd",
+    "msu_policy_decision": "a5c0a8f3bf7a20f4a35e289ad37a3f331c1ae312ee8d821f27d23338e6a7f73a",
+    "msu_policy_drop_calibration": "ff6aa2d1947748f2c0717a0ba79b4297005b4195accd0eac5cfc1f2261af33fc",
+    "msu_policy_export_calibration": "750232f6e0e953dc75a87b95735b31cd8fc94d7509f3bdc5bcb4985b34eb8904",
+    "msu_policy_export_release": "b37ea8c12a11037ac8bfd9a6af8dc27e4845af1fa4f920cd2fd7447216188360",
+    "msu_policy_human_pack": "b0ad8ef0ae6e48615c842f1be5cbe98c3ace1f2f2d1498890532d38c6edd10d9",
+    "msu_policy_review_template": "2189b1cbc5bd738ec618474e3f85e922b2cee949f995363d1495419e6a090f25",
+    "msu_policy_test_export": "23305e62dd9d4df0125e87ddfba64b9b48b1ce2aa2a6b3d0a0b84d6fa73d9411",
+    "msu_policy_train_export": "694dbab998531201598eeefc727a896b13c7e015466ca09f24e6069afac922cd",
+    "msu_policy_training_cases": "42641da7988a2a029713a4529fd245b273f157f9cac01fa56e18ce0502d13556"
+  },
+  "locked_recordings_verified": 280,
+  "protocol_lock_digest": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+  "schema": "msu-policy-local-evidence-validation-v1",
+  "scope": "Read-only provenance, metadata and local asset validation; no decoding, policy adoption or human approval",
+  "source_files_verified": 7,
+  "validation_status": "passed"
+}

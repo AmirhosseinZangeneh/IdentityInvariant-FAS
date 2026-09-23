@@ -253,6 +253,13 @@ the bundled rounded-rate export on four cases. No production mapping or fidelity
 approval resulted; the historical two-video evidence above retains its original
 scope. Current measurements and the remaining evidence gate are in that report.
 
+The subsequent [final policy and human-fidelity gate](MSU_POLICY_GATE.md) reuses
+that evidence and completes calibrated export-domain counting across all 280
+sources. Its state remains P4 (unresolved), with human review pending and
+`experiment_ready=false`. It supplies a training-only review page combining the
+original eight crops with native/export candidate overlays. Export availability
+does not authorize a canonical preprocessing change or an annotation remapping.
+
 Undertake a separate evidence task to determine annotation-to-decoder indexing
 semantics from source evidence (including the original extraction convention)
 and controlled decoding/visual checks. Review the eight orientation/geometry overlays
