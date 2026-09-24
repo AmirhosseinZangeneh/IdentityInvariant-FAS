@@ -10,7 +10,7 @@ import subprocess
 from collections import Counter
 from pathlib import Path
 
-from .msu_preprocessing import digest, json_bytes
+from .serialization import digest, json_bytes
 
 GEOMETRY_FIELDS = (
     "orientation_acceptable", "eye_placement_acceptable", "face_box_acceptable",

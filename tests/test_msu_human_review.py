@@ -2,6 +2,8 @@
 
 import copy
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -9,6 +11,27 @@ import pytest
 from identity_invariant_fas.data import msu_human_review as review
 
 AUDIT = Path(__file__).resolve().parents[1] / "docs" / "audit"
+
+
+def test_review_validation_without_opencv():
+    code = """
+import sys
+sys.modules['cv2'] = None
+import json
+from pathlib import Path
+from identity_invariant_fas.data import msu_human_review as review
+root = Path(sys.argv[1])
+evidence = {k: json.loads((root / Path(v).name).read_bytes())
+            for k, v in review.EVIDENCE_FILES.items()}
+actual = review.validate_human_review(
+    (root / 'msu_human_review_responses.json').read_bytes(),
+    **{k: evidence[k] for k in ('pack', 'template', 'lock', 'decision', 'historical')})
+expected = json.loads((root / 'msu_human_review_validation.json').read_bytes())
+expected.pop('provenance')
+assert actual == expected
+assert 'identity_invariant_fas.data.msu_preprocessing' not in sys.modules
+"""
+    subprocess.run([sys.executable, "-c", code, str(AUDIT)], check=True)
 
 
 @pytest.fixture
@@ -169,6 +192,11 @@ def test_recorded_human_counts_and_negative_case(evidence):
     raw = (AUDIT / "msu_human_review_responses.json").read_bytes()
     audit = review.validate_human_review(raw, **{
         k: evidence[k] for k in ("pack", "template", "lock", "decision", "historical")})
+    recorded = json.loads((AUDIT / "msu_human_review_validation.json").read_bytes())
+    provenance = recorded.pop("provenance")
+    assert audit == recorded
+    for name, artifact in provenance["artifacts"].items():
+        assert review.digest(review.json_bytes(evidence[name])) == artifact["canonical_json_sha256"]
     assert audit["geometry_counts"] == {
         "orientation_acceptable": {"yes": 57, "uncertain": 7, "no": 0},
         "eye_placement_acceptable": {"yes": 64, "uncertain": 0, "no": 0},

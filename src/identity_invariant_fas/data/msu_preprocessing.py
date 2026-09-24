@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import math
 import platform
@@ -18,16 +17,9 @@ import numpy as np
 
 from ..evaluation.identity_probe import ProbeObservation
 from .msu_protocol import MSUProtocol, load_msu_protocol, verify_msu_protocol_lock
+from .serialization import digest, json_bytes
 
 SCHEMA = "msu-processed-v2"
-
-
-def json_bytes(value) -> bytes:
-    return (json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + "\n").encode("utf-8")
-
-
-def digest(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
 
 
 @dataclass(frozen=True)
