@@ -5,6 +5,11 @@ export nor a plausible overlay establishes the stream used to generate PittPatt
 annotations. No canonical preprocessing change, annotation remapping, experiment,
 training, raw-file change, or human approval is made by this task.
 
+Subsequent [human-review ingestion](MSU_HUMAN_REVIEW.md) records and validates the
+completed 64-case observations separately from this historical evidence pack.
+It preserves negative/uncertain geometry and comparative temporal preferences;
+it does not establish annotation correspondence, approve fidelity, or change P4.
+
 ## Evidence domains and source findings
 
 The immutable [raw protocol lock](audit/msu_protocol_lock.json) remains the
@@ -162,8 +167,11 @@ original raw annotation/box/eyes, each candidate's domain/index/identity,
 rotation assumption, export provenance, overlay path/hash and availability.
 It also includes the eight historical crops and their full-frame overlays:
 **64 review forms** in total. The [review template](audit/msu_policy_review_template.json)
-has null reviewer and decision fields. Automated observations are never human
-approval. Overlay coordinates use rounded raw values, explicit metadata rotation
+retains null reviewer and decision fields as the original blank template. Completed
+human observations are preserved separately in the
+[source response](audit/msu_human_review_responses.json) and
+[derived validation](audit/msu_human_review_validation.json). Automated validation
+is never scientific approval. Overlay coordinates use rounded raw values, explicit metadata rotation
 and a half-open box assumption, all still unverified.
 
 Open the self-contained local page:
@@ -233,7 +241,8 @@ migration is designed or applied. Canonical preprocessing stays fail-closed and
 
 Before the first controlled MSU experiment, independently establish annotation
 correspondence from PittPatt/source-generation evidence plus training-only
-controlled review; record actual human geometry and temporal review; resolve and
+controlled review; address the recorded human geometry concerns and obtain
+separate fidelity approval (the 64-case observations are now recorded); resolve and
 lock handling of all codec-error recordings; then freeze an evidence-supported
 frame-domain policy that retains original annotation numbers separately from any
 explicit processed-frame index. Validate complete selected-frame/crop coverage

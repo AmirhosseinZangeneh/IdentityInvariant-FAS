@@ -1,0 +1,1532 @@
+{
+  "case_id_completeness": {
+    "exact_match": true,
+    "missing": [],
+    "unexpected": [],
+    "unique_cases": 64
+  },
+  "case_kind_counts": {
+    "original_crop": 8,
+    "training_domain_comparison": 56
+  },
+  "cases": [
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:149",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:149",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 149,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:150",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:150",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 150,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:151",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:151",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 151,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:298",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:298",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 298,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:149",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:149",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 149,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:150",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:150",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 150,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:151",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:151",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 151,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:300",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4:annotation:300",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 300,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_iphone_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:115",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:115",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 115,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:116",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:116",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 116,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:117",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:117",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 117,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:231",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:231",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_minus_1"
+      },
+      "original_annotation_index": 231,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_minus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:232",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4:annotation:232",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 232,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_printed_photo_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i_plus_1"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "native_i_plus_1"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:149",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:149",
+        "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 149,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:150",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:150",
+        "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 150,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:151",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:151",
+        "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 151,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:298",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:298",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 298,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:149",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:149",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 149,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:150",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:150",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 150,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:151",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:151",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 151,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:300",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:annotation:300",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 300,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:118",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:118",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 118,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:119",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:119",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 119,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:120",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:120",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 120,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:237",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:237",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 237,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:238",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:238",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 238,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:149",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:149",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 149,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:150",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:150",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 150,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:151",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:151",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 151,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:300",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:annotation:300",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 300,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "decframes_export_i"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:0",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:0",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:1",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:1",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:145",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:145",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 145,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:146",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:146",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 146,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:147",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:147",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 147,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:298",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:298",
+        "comments": "Lower face box boundary truncates the chin. No clear temporal distinction between available candidates. Half-open endpoint convention cannot be determined visually.",
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "no",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 298,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:299",
+      "kind": "training_domain_comparison",
+      "observations": {
+        "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:299",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "uncertain",
+        "temporal_correspondence_preference": "indistinguishable"
+      },
+      "original_annotation_index": 299,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "comparison",
+        "preference": "indistinguishable"
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client002_android_SD_ipad_video_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "uncertain",
+        "half_open_endpoint_plausible": "uncertain",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "decframes_export_i"
+      },
+      "original_annotation_index": 0,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "kind": "original_crop",
+      "observations": {
+        "case_id": "original-crop:MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+        "comments": null,
+        "eye_placement_acceptable": "yes",
+        "face_box_acceptable": "yes",
+        "half_open_endpoint_plausible": "yes",
+        "orientation_acceptable": "yes",
+        "temporal_correspondence_preference": "native_i"
+      },
+      "original_annotation_index": 1,
+      "partition": "train",
+      "source_video_id": "MSU-MFSD:scene01/real/real_client003_android_SD_scene01.mp4",
+      "temporal_analysis": {
+        "applicability": "not_applicable",
+        "preference": null
+      }
+    }
+  ],
+  "experiment_ready": false,
+  "fidelity_status": "manual_review_pending",
+  "frozen_policy": null,
+  "geometry_counts": {
+    "eye_placement_acceptable": {
+      "no": 0,
+      "uncertain": 0,
+      "yes": 64
+    },
+    "face_box_acceptable": {
+      "no": 1,
+      "uncertain": 13,
+      "yes": 50
+    },
+    "half_open_endpoint_plausible": {
+      "no": 0,
+      "uncertain": 7,
+      "yes": 57
+    },
+    "orientation_acceptable": {
+      "no": 0,
+      "uncertain": 7,
+      "yes": 57
+    }
+  },
+  "human_observation_status": "recorded_and_validated",
+  "negative_geometry_cases": [
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:298",
+      "comments": "Lower face box boundary truncates the chin. No clear temporal distinction between available candidates. Half-open endpoint convention cannot be determined visually.",
+      "fields": [
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 298,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    }
+  ],
+  "original_crop_temporal_exclusion_count": 8,
+  "policy_state": "P4",
+  "provenance": {
+    "artifacts": {
+      "decision": {
+        "canonical_json_sha256": "a5c0a8f3bf7a20f4a35e289ad37a3f331c1ae312ee8d821f27d23338e6a7f73a",
+        "git_blob_bytes_sha256": "a5c0a8f3bf7a20f4a35e289ad37a3f331c1ae312ee8d821f27d23338e6a7f73a",
+        "path": "docs/audit/msu_policy_decision.json"
+      },
+      "historical": {
+        "canonical_json_sha256": "e61df5b4e75b7d0794bd042bc043f243d5b17c4319700e1fdc37f1a04936a3bd",
+        "git_blob_bytes_sha256": "e61df5b4e75b7d0794bd042bc043f243d5b17c4319700e1fdc37f1a04936a3bd",
+        "path": "docs/audit/msu_index_existing_crop_review.json"
+      },
+      "lock": {
+        "canonical_json_sha256": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+        "git_blob_bytes_sha256": "1709d0179674e61fec82bcc09a388eea07fbd4b89472a35c1448a63e55d562e8",
+        "path": "docs/audit/msu_protocol_lock.json"
+      },
+      "pack": {
+        "canonical_json_sha256": "b0ad8ef0ae6e48615c842f1be5cbe98c3ace1f2f2d1498890532d38c6edd10d9",
+        "git_blob_bytes_sha256": "b0ad8ef0ae6e48615c842f1be5cbe98c3ace1f2f2d1498890532d38c6edd10d9",
+        "path": "docs/audit/msu_policy_human_pack.json"
+      },
+      "template": {
+        "canonical_json_sha256": "2189b1cbc5bd738ec618474e3f85e922b2cee949f995363d1495419e6a090f25",
+        "git_blob_bytes_sha256": "2189b1cbc5bd738ec618474e3f85e922b2cee949f995363d1495419e6a090f25",
+        "path": "docs/audit/msu_policy_review_template.json"
+      },
+      "validation": {
+        "canonical_json_sha256": "bd020d227dd77d31afa8a32699fcf67b485837811d455f0ff05db62671cb2078",
+        "git_blob_bytes_sha256": "bd020d227dd77d31afa8a32699fcf67b485837811d455f0ff05db62671cb2078",
+        "path": "docs/audit/msu_policy_validation.json"
+      }
+    },
+    "digest_conventions": "Source response: exact input bytes. Git blobs: committed bytes. Canonical JSON: sorted indent=2 UTF-8 with final LF.",
+    "evidence_commit": "cee0d0dd026878f5d08f809d33f3f11af7ff2546",
+    "working_evidence_matches_commit": true
+  },
+  "remaining_scientific_blockers": [
+    "Negative and uncertain geometry observations remain unresolved; only the defined review sample was inspected.",
+    "Half-open endpoint responses record visual plausibility, not proof of inclusivity/exclusivity.",
+    "PittPatt input stream/timebase and annotation correspondence remain unknown; preference counts establish no domain.",
+    "Native and export candidates may share pixels; no preference winner or mapping correction is inferred.",
+    "All eight codec-error recordings still require documented resolution; none is approved.",
+    "Frame-domain policy, coverage and preprocessing fidelity approval remain blocked; training-only model selection is separate."
+  ],
+  "reviewer": "Amirhossein Zangeneh",
+  "schema": "msu-human-review-validation-v1",
+  "scope": "64 defined training cases only; not a release-wide fidelity review",
+  "source_response_sha256": "385fe217e56e95d172d0b91d7f0237e1a9462a77073ae3297f34a01adf89afa4",
+  "temporal_comparison_counts": {
+    "decframes_export_i": 30,
+    "indistinguishable": 7,
+    "native_i": 6,
+    "native_i_minus_1": 6,
+    "native_i_plus_1": 7,
+    "none": 0
+  },
+  "uncertain_geometry_cases": [
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:149",
+      "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+      "fields": [
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 149,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:150",
+      "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+      "fields": [
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 150,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov:annotation:151",
+      "comments": "Lower face box boundary truncates part of the chin; ears are outside the box.",
+      "fields": [
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 151,
+      "source_video_id": "MSU-MFSD:scene01/attack/attack_client008_laptop_SD_ipad_video_scene01.mov"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:annotation:0",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 0,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:0",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 0,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:1",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 1,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:145",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 145,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:146",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 146,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:147",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 147,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:298",
+      "comments": "Lower face box boundary truncates the chin. No clear temporal distinction between available candidates. Half-open endpoint convention cannot be determined visually.",
+      "fields": [
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 298,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4:annotation:299",
+      "comments": null,
+      "fields": [
+        "orientation_acceptable",
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 299,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client008_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "comments": null,
+      "fields": [
+        "face_box_acceptable"
+      ],
+      "original_annotation_index": 0,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_android_SD_scene01.mp4"
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:0:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "comments": null,
+      "fields": [
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 0,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    },
+    {
+      "case_id": "original-crop:MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov:frame:1:prep:9e3335e82b760e18aec7daa048e74cc401e611f4c8c75871d0216b563d153b25",
+      "comments": null,
+      "fields": [
+        "face_box_acceptable",
+        "half_open_endpoint_plausible"
+      ],
+      "original_annotation_index": 1,
+      "source_video_id": "MSU-MFSD:scene01/real/real_client002_laptop_SD_scene01.mov"
+    }
+  ],
+  "validation_status": "passed"
+}

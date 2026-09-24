@@ -1,0 +1,2 @@
+# Preserve the exact reviewer response bytes bound by the ingestion SHA-256.
+docs/audit/msu_human_review_responses.json -text
