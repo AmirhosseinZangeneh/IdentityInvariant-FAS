@@ -146,6 +146,10 @@ the absence of group-leakage checks. No source groups are guessed for NUAA.
 NUAA cross-class human-identity correspondence also remains unresolved in
 [the provenance audit](NUAA_SOURCE_MANIFEST.md). Its folder-derived
 `subject_id` must not be promoted to verified human identity without evidence.
+The [NUAA scientific-role decision](NUAA_SCIENTIFIC_ROLE.md) restricts these
+outputs to exploratory folder-token recoverability. Equal cross-class tokens
+remain proxy groups; probe accuracy changes do not establish human-identity
+suppression or generalization to unseen humans.
 The subsequent MSU audit establishes metadata readiness for video-group
 probing, subject to its preprocessing limitations. No scientific probe
 experiment was run.

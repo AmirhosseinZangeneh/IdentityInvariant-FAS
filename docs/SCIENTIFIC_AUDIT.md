@@ -25,7 +25,7 @@ legacy classes are not retroactively reinterpreted.
 ## 2. Representation analyses used a different image size
 
 Several historical leakage/t-SNE scripts resized NUAA images to 64x64, while
-the subject-k-fold training scripts used 160x160 inputs. This introduces an
+the NUAA folder-token k-fold training scripts used 160x160 inputs. This introduces an
 avoidable preprocessing mismatch.
 
 The refactored identity leakage experiment defaults to the same 160x160
@@ -90,7 +90,9 @@ the historical classes and result directories retain their original meaning.
 `experiments/controlled_identity_ablation.py` define three explicit arms of
 one `ControlledIdentityECNN` architecture. This execution path has not been
 run to produce scientific results. It delegates to the existing custom NUAA
-subject-k-fold runner; it does not change dataset identities or splits.
+folder-token k-fold runner; it does not change dataset labels or splits.
+On NUAA this is implementation-valid proxy intervention, not a verified
+human-identity intervention; see [NUAA scientific role](NUAA_SCIENTIFIC_ROLE.md).
 
 | Arm | Objective | Encoder identity scale, epochs 1..N | Scale after N |
 | --- | --- | --- | --- |
@@ -144,9 +146,10 @@ results described above. No historical output is deleted, rewritten, or
 retroactively repaired. Legacy model/config paths remain available for
 compatibility and are not the new controlled publication comparison.
 
-**Before execution:** resolve the outstanding NUAA identity-provenance gate,
-freeze an approved dataset/protocol and prospective hyperparameter-selection
-plan, and separately authorize experiments. The canonical configuration
+**Before execution:** freeze an approved dataset/protocol and prospective
+hyperparameter-selection plan, and separately authorize experiments. Human
+identity claims require verified provenance; NUAA proxy-only experiments must
+follow the scientific-role decision. The canonical configuration
 retains the existing custom repartitioning of NUAA's test partition; it is
 not an official-protocol result. Synthetic autograd tests validate the
 implementation, not identity suppression, scientific performance, or
@@ -169,28 +172,30 @@ ACER was unaffected because it averages the two rates.
 
 The refactored metrics module has one centralized implementation and tests.
 
-## 5. NUAA subject-k-fold protocol is a custom protocol
+## 5. NUAA folder-token k-fold protocol is a custom proxy protocol
 
-The historical subject-k-fold experiments loaded the NUAA `test` partition and
-then re-partitioned those identities into five subject-disjoint folds. This is
-a valid custom identity-generalization experiment, but it is **not** the
+The historical k-fold experiments loaded the NUAA `test` partition and
+then re-partitioned raw folder tokens into five folder-token-disjoint folds.
+This supports only custom proxy generalization, not verified unseen-human
+generalization. Cross-class human correspondence remains unresolved. It is **not** the
 official NUAA train/test protocol and should not be numerically compared to a
 paper reporting the official protocol without a clear qualification.
 
 For the manuscript, report separately:
 
 1. official-protocol baseline reproduction, and
-2. custom subject-disjoint evaluation used to test identity generalization.
+2. custom folder-token-disjoint evaluation used to test proxy generalization.
 
-## 6. Validation should also be identity-disjoint for the strict protocol
+## 6. Validation must respect the audited grouping semantics
 
 Historical scripts split validation samples randomly from the outer training
-pool, which allows the same subjects to occur in train and validation. The
-outer test fold remained subject-disjoint, so this does not contaminate test
-samples, but model selection can still exploit subject-specific validation
-signals.
+pool, which allows the same folder tokens to occur in train and validation.
+The outer test fold remained folder-token-disjoint; that does not certify
+human disjointness or rule out correlated content. Model selection can still
+exploit token-associated validation signals.
 
-The refactored strict protocol reserves validation **subjects**, not samples.
+The NUAA runner reserves validation **folder tokens**, not samples. Verified
+human-subject-disjoint claims require independently documented human mappings.
 
 ## 7. Identity leakage probe semantics
 

@@ -42,6 +42,40 @@ _FILE_SPECS = {
 }
 
 
+def nuaa_protocol_metadata(protocol: str, *, source_partition: str | None = None) -> dict:
+    """Fixed publication labels; folder names cannot certify human identity.
+
+    This describes existing protocols without altering sample grouping.
+    No caller-supplied identity-verification override is accepted.
+    """
+    profiles = {
+        "custom_kfold": ("NUAA custom folder-token-disjoint k-fold", "folder_token_disjoint"),
+        "official": ("NUAA official train/test", "official_source_lists"),
+        "legacy_probe": ("legacy_exploratory_sample_level_cv", "sample_level_cv"),
+    }
+    if protocol not in profiles:
+        raise ValueError("Unknown NUAA protocol; verified-human split claims are unsupported")
+    if protocol == "official":
+        if source_partition is not None:
+            raise ValueError("Official NUAA evaluation uses train and test source lists")
+        source_partition = "official_train_and_test"
+    elif source_partition not in _FILE_SPECS and source_partition != "all":
+        raise ValueError("Specify the NUAA source partition: train, test, or all")
+    label, split_semantics = profiles[protocol]
+    result = {
+        "protocol": label,
+        "source_partition": source_partition,
+        "identity_semantics": "folder_token_unverified",
+        "identity_provenance_status": "unresolved",
+        "human_identity_verified": False,
+        "split_semantics": split_semantics,
+        "folder_token_grouping": "raw_token_shared_across_class_directories",
+    }
+    if protocol != "legacy_probe":
+        result["validation_split_semantics"] = "project_defined_folder_token_disjoint"
+    return result
+
+
 def _parse_line(
     line: str,
 ) -> tuple[str, tuple[float, ...]]:
@@ -62,7 +96,7 @@ def _parse_line(
 def _subject_and_name(
     listed_path: str,
 ) -> tuple[str, str]:
-    """Extract subject identifier and filename."""
+    """Extract the raw folder token and filename, not a verified human ID."""
 
     normalized = (
         listed_path
@@ -92,8 +126,9 @@ def load_nuaa_samples(
         test: official testing lists
         all: combine all official lists
 
-    Subject-disjoint evaluation should be generated
-    separately using subject-level split utilities.
+    The compatibility field ``subject`` is a raw folder token. Custom
+    folder-token-disjoint evaluation uses the subject-level split utilities;
+    it is not verified human-subject-disjoint evaluation.
     """
 
     root = Path(root)

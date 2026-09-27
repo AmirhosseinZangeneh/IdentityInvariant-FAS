@@ -10,7 +10,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from identity_invariant_fas.data.manifest import ManifestDataset
-from identity_invariant_fas.data.nuaa import load_nuaa_samples
+from identity_invariant_fas.data.nuaa import load_nuaa_samples, nuaa_protocol_metadata
 from identity_invariant_fas.data.transforms import build_eval_transform
 from identity_invariant_fas.evaluation.identity_leakage import cross_validated_identity_probe
 from identity_invariant_fas.models import AblationECNN, IdentityInvariantECNN, PaperECNNClassifier
@@ -84,7 +84,7 @@ def main() -> None:
     load_checkpoint(args.checkpoint, model, map_location=device)
     features, subjects = extract_features(model, loader, device)
     result = cross_validated_identity_probe(features, subjects)
-    result["protocol"] = "legacy_exploratory_sample_level_cv"
+    result.update(nuaa_protocol_metadata("legacy_probe", source_partition=args.partition))
     result["group_leakage_checked"] = False
     result["feature_dim"] = int(features.shape[1])
     result["image_size"] = args.image_size

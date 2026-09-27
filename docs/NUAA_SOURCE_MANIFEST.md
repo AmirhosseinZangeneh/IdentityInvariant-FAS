@@ -3,7 +3,9 @@
 This preparation step creates the canonical seven-column sample metadata CSV
 from all four official source lists. It does **not** create canonical folds,
 establish human-subject correspondence, or integrate with training. The
-existing NUAA loader, split utilities, and experiments remain unchanged.
+source-generation step does not change NUAA loader or split behavior. See the
+subsequent [scientific-role decision](NUAA_SCIENTIFIC_ROLE.md) for prospective
+publication terminology and runner provenance labels.
 
 ## Generation
 

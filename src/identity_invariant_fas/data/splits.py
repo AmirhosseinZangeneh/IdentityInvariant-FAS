@@ -1,4 +1,9 @@
-"""Leakage-resistant subject-level splitting utilities."""
+"""Splitting on declared ``sample.subject`` keys, not identity verification.
+
+For NUAA these keys are raw folder tokens: disjointness guarantees only
+folder-token separation, including the existing equal-token grouping across
+class directories. It does not certify separation of humans.
+"""
 
 from __future__ import annotations
 

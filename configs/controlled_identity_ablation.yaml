@@ -1,8 +1,10 @@
-# Prospective custom NUAA protocol, not official train/test reproduction.
-# Do not execute until identity provenance and experiment approval are resolved.
+# Prospective NUAA folder-token-disjoint proxy experiment, not official reproduction.
+# See docs/NUAA_SCIENTIFIC_ROLE.md; no verified-human claim. Execution needs approval.
 identity_arms: [spoof_only, identity_positive, identity_adversarial]
 dataset:
   name: NUAA
+  identity_semantics: folder_token_unverified
+  split_semantics: folder_token_disjoint
   root: datasets/NUAA
   partition: test
   image_size: 160

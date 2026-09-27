@@ -13,6 +13,8 @@ from identity_invariant_fas.data.nuaa_manifest import (
     validate_nuaa_source_manifest,
 )
 from identity_invariant_fas.data.sample_manifest import load_sample_manifest
+from identity_invariant_fas.data.nuaa import load_nuaa_samples, nuaa_protocol_metadata
+from identity_invariant_fas.data.splits import build_subject_mapping, subject_kfold_split
 
 
 @pytest.fixture
@@ -55,6 +57,61 @@ def test_source_records_and_provenance(nuaa_root):
     assert audit["identity_provenance_status"] == "unresolved"
     assert audit["local_readme_sha256"] is None
     validate_nuaa_source_manifest(records, nuaa_root)
+
+
+@pytest.mark.parametrize("protocol,partition,split_semantics", [
+    ("official", None, "official_source_lists"),
+    ("custom_kfold", "test", "folder_token_disjoint"),
+    ("legacy_probe", "all", "sample_level_cv"),
+])
+def test_publication_metadata_keeps_proxy_and_official_roles_distinct(protocol, partition, split_semantics):
+    metadata = nuaa_protocol_metadata(protocol, source_partition=partition)
+    assert metadata["identity_semantics"] == "folder_token_unverified"
+    assert metadata["identity_provenance_status"] == "unresolved"
+    assert metadata["human_identity_verified"] is False
+    assert metadata["split_semantics"] == split_semantics
+    assert metadata["folder_token_grouping"] == "raw_token_shared_across_class_directories"
+    if protocol == "official":
+        assert metadata["protocol"] == "NUAA official train/test"
+        assert metadata["source_partition"] == "official_train_and_test"
+    else:
+        assert metadata["source_partition"] == partition
+    if protocol != "legacy_probe":
+        assert metadata["validation_split_semantics"] == "project_defined_folder_token_disjoint"
+    if protocol == "custom_kfold":
+        assert metadata["protocol"] == "NUAA custom folder-token-disjoint k-fold"
+
+
+@pytest.mark.parametrize("protocol,partition", [
+    ("verified_human_disjoint", "test"), ("subject_disjoint", "test"),
+    ("custom_kfold", None), ("custom_kfold", "guessed"), ("official", "test"),
+])
+def test_metadata_rejects_unsupported_certification_or_source(protocol, partition):
+    with pytest.raises(ValueError):
+        nuaa_protocol_metadata(protocol, source_partition=partition)
+
+
+def test_metadata_has_no_human_verification_override():
+    with pytest.raises(TypeError):
+        nuaa_protocol_metadata("custom_kfold", source_partition="test", human_identity_verified=True)
+    changed = nuaa_protocol_metadata("custom_kfold", source_partition="test")
+    changed["human_identity_verified"] = True
+    assert nuaa_protocol_metadata("custom_kfold", source_partition="test")["human_identity_verified"] is False
+
+
+def test_existing_cross_class_token_grouping_is_not_human_evidence(nuaa_root):
+    samples = load_nuaa_samples(nuaa_root, partition="all")
+    same_token = [sample for sample in samples if sample.subject == "0001"]
+    assert len(same_token) == 2
+    assert {sample.label for sample in same_token} == {BONA_FIDE_LABEL, ATTACK_LABEL}
+    assert set(build_subject_mapping(samples)) == {"0001", "0013", "0016"}
+    for fold in subject_kfold_split(samples, n_folds=3):
+        assert fold["train_subjects"].isdisjoint(fold["test_subjects"])
+        assert not (any(s in fold["train"] for s in same_token)
+                    and any(s in fold["test"] for s in same_token))
+    _, audit = build_nuaa_source_manifest(nuaa_root)
+    assert audit["identity_provenance_status"] == "unresolved"
+    assert "not a verified" in audit["subject_id_semantics"]
 
 
 def test_repeated_generation_and_relocation_are_byte_identical(nuaa_root, tmp_path):

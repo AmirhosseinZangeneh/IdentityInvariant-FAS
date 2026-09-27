@@ -7,7 +7,7 @@ from pathlib import Path
 
 import torch
 
-from identity_invariant_fas.data.nuaa import load_nuaa_samples
+from identity_invariant_fas.data.nuaa import load_nuaa_samples, nuaa_protocol_metadata
 from identity_invariant_fas.data.splits import build_subject_mapping, subject_train_val_split
 from identity_invariant_fas.training.checkpoint import load_checkpoint, save_checkpoint
 from identity_invariant_fas.training.datasets import SubjectAwareDataset
@@ -27,6 +27,7 @@ def main() -> None:
     args = parser.parse_args()
 
     config = load_config(args.config)
+    protocol_metadata = nuaa_protocol_metadata("official")
     seed = int(config["training"].get("seed", 42))
     seed_everything(seed)
 
@@ -99,11 +100,12 @@ def main() -> None:
                 optimizer=optimizer,
                 epoch=epoch,
                 best_metric=best_acer,
-                metadata={"protocol": "NUAA official train/test", "subject_mapping": subject_mapping},
+                metadata={**protocol_metadata, "subject_mapping": subject_mapping},
             )
 
     load_checkpoint(checkpoint_path, model, map_location=device)
     result = trainer.evaluate(test_loader)
+    result.update(protocol_metadata)
     write_json(result, output_dir / "official_test_results.json")
     print({key: value for key, value in result.items() if key != "predictions"})
 

@@ -5,12 +5,15 @@ Before generating final manuscript tables:
 1. Install the project in editable mode.
 2. Record Python, PyTorch, CUDA, and GPU versions.
 3. Use the same image size and transforms for all compared models.
-4. Keep the outer test subjects completely untouched during model selection.
+4. Keep the outer test groups completely untouched during model selection.
 5. Use subject-disjoint validation for the strict identity-generalization
-   protocol.
+   protocol only with verified human IDs. For NUAA, current splits are
+   folder-token-disjoint and support proxy claims only; see
+   [NUAA scientific role](NUAA_SCIENTIFIC_ROLE.md).
 6. Keep optimizer, learning rate, warm-up schedule, batch size, and epoch
    budget identical across GRL lambda values.
-7. Re-train the corrected architecture-matched ablation model.
+7. Use the matched three-arm controlled ablation for prospective comparisons;
+   NUAA auxiliary labels remain folder-token proxies.
 8. Re-run identity leakage and t-SNE/representation metrics at the same image
    size used during training.
 9. Report fold-level values as well as mean and standard deviation.

@@ -28,13 +28,14 @@ identity-discriminative features.
 - `IdentityInvariantECNN`: ECNN + adversarial subject branch.
 - `AblationECNN`: architecture-matched two-head model **without** GRL.
 
-The ablation is intentionally architecture-matched so that GRL is the primary
-controlled difference.
+The legacy ablation is architecture-matched but not gradient/schedule matched.
+Prospective sign comparisons use `ControlledIdentityECNN` with `spoof_only`,
+`identity_positive`, and `identity_adversarial` arms.
 
 ## Scientific status
 
 The original workspace produced promising NUAA development results, including
-reduced linear identity-probe accuracy for an intermediate GRL strength.
+reduced linear folder-token-probe accuracy for an intermediate GRL strength.
 However, the refactor uncovered several issues that must be corrected before
 those values are treated as final paper evidence:
 
@@ -43,8 +44,14 @@ those values are treated as final paper evidence:
 - the historical GRL sweep did not use the same warm-up schedule as the main
   II-ECNN experiment;
 - one sweep script swapped APCER/BPCER names;
-- the NUAA subject-k-fold experiment is a custom protocol, not the official
-  NUAA train/test protocol.
+- the NUAA folder-token k-fold experiment is a custom protocol, not the official
+  NUAA train/test protocol; folder tokens are not verified human identities.
+
+The [NUAA scientific-role decision](docs/NUAA_SCIENTIFIC_ROLE.md) preserves
+official-source-list PAD evaluation and exploratory folder-token analyses.
+NUAA alone cannot support the final human-identity suppression claim with
+current provenance. Verified-human experiments require separately audited
+identity metadata and protocols, such as the planned MSU/Replay paths.
 
 See [`docs/SCIENTIFIC_AUDIT.md`](docs/SCIENTIFIC_AUDIT.md) before using the
 legacy results in a manuscript.
@@ -65,7 +72,7 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[video,plot,dev]"
 ```
 
-## NUAA subject-disjoint experiment
+## NUAA custom folder-token-disjoint experiment
 
 Place NUAA under `datasets/` as described in
 [`docs/DATASETS.md`](docs/DATASETS.md).
@@ -82,10 +89,10 @@ II-ECNN:
 python experiments/train_nuaa_kfold.py --config configs/nuaa_iecnn.yaml
 ```
 
-Controlled ablation:
+Prospective controlled proxy ablation (requires separate execution approval):
 
 ```bash
-python experiments/train_nuaa_kfold.py --config configs/nuaa_ablation.yaml
+python experiments/controlled_identity_ablation.py --config configs/controlled_identity_ablation.yaml
 ```
 
 GRL sensitivity:
@@ -99,7 +106,7 @@ python experiments/grl_sweep.py --config configs/grl_sweep.yaml
 Use the [group-aware closed-set probe API](docs/IDENTITY_PROBING.md) for
 publication protocols, with explicit sample, identity, and group metadata.
 The historical NUAA command below is exploratory only: it lacks verified
-group/session metadata and now requires explicit opt-in. Use the same
+group/session and human-identity metadata and requires explicit opt-in. Use the same
 evaluation image size as the training configuration:
 
 ```bash
@@ -112,7 +119,8 @@ python experiments/identity_leakage_nuaa.py ^
   --output results/generated/identity_leakage_fold1.json
 ```
 
-Both probe paths require known identity classes for the identity classifier.
+Both probe paths require known target classes for the probe classifier;
+NUAA's classes are unverified folder-token proxies.
 The legacy command does not prevent frames from the same video/session from
 crossing folds and must not support publication claims of independent-group
 identity recoverability.
@@ -192,7 +200,9 @@ and repository URL after publication.
 ## NUAA official-protocol baseline
 
 For numerical comparison with work that reports the official NUAA train/test
-lists, keep this experiment separate from the custom subject-k-fold protocol:
+lists, keep this experiment separate from custom folder-token k-fold evaluation.
+Its validation subset is project-defined from official training folder tokens;
+the official train/test partition is not folder-token-disjoint:
 
 ```bash
 python experiments/train_nuaa_official.py --config configs/nuaa_official_baseline.yaml

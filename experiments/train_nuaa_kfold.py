@@ -1,4 +1,4 @@
-"""Train a configured model under the subject-disjoint NUAA protocol."""
+"""Custom NUAA folder-token-disjoint evaluation; human provenance is unresolved."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import logging
 import numpy as np
 import torch
 
-from identity_invariant_fas.data.nuaa import load_nuaa_samples
+from identity_invariant_fas.data.nuaa import load_nuaa_samples, nuaa_protocol_metadata
 from identity_invariant_fas.data.splits import subject_kfold_split
 from identity_invariant_fas.training.checkpoint import load_checkpoint, save_checkpoint
 from identity_invariant_fas.utils.config import load_config
@@ -57,6 +57,7 @@ def main() -> None:
     )
 
 
+    protocol_metadata = nuaa_protocol_metadata("custom_kfold", source_partition=partition)
     samples = load_nuaa_samples(
         config["dataset"]["root"],
         partition=partition
@@ -214,6 +215,7 @@ def main() -> None:
                     epoch=epoch,
                     best_metric=best_acer,
                     metadata={
+                        **protocol_metadata,
                         "model": config["model"],
                         "dataset": config["dataset"],
                         "training": config["training"],
@@ -295,8 +297,7 @@ def main() -> None:
         "model": config["model"]["name"],
         "identity_mode": config["model"].get("identity_mode"),
 
-        "protocol":
-            "NUAA custom subject-disjoint k-fold",
+        **protocol_metadata,
 
         "partition": partition,
 

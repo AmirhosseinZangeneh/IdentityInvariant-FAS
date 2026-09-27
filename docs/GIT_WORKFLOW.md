@@ -21,7 +21,7 @@ A useful commit sequence for the first public push:
 chore: initialize reproducible research package
 feat: add ECNN baseline and adversarial identity model
 feat: add architecture-matched GRL ablation
-feat: add subject-disjoint NUAA protocol
+feat: add folder-token-disjoint NUAA protocol
 feat: add identity leakage evaluation
 feat: add MSU-MFSD preprocessing and manifest support
 docs: add scientific audit and reproducibility notes

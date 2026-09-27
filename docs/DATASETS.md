@@ -9,7 +9,8 @@ not implemented by the new manifest layer.
 
 For deterministic source metadata generation and the unresolved identity
 provenance findings, see [NUAA source manifest](NUAA_SOURCE_MANIFEST.md).
-This preparation layer does not generate subject-disjoint folds.
+This preparation layer does not generate folds. The
+[scientific-role decision](NUAA_SCIENTIFIC_ROLE.md) limits human-identity claims.
 
 The project uses the NUAA face-detector-output format. Place these items under
 `datasets/`:
@@ -21,9 +22,11 @@ The project uses the NUAA face-detector-output format. Place these items under
 - `client_test_face.txt`
 - `imposter_test_face.txt`
 
-The legacy identity-generalization experiment used the official **test**
-partition as a source pool and created subject-disjoint five-fold splits.
+The legacy proxy-generalization experiment used the official **test**
+partition as a source pool and created folder-token-disjoint five-fold splits.
 This custom protocol is reproduced by the supplied configs for continuity.
+Raw tokens are not verified human identities; equal cross-class tokens remain
+an unresolved grouping convention, not evidence of the same person.
 
 For a paper comparison against published NUAA official-protocol numbers, add a
 separate official train/test experiment rather than mixing the two protocols.
