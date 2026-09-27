@@ -1,0 +1,32 @@
+# Prospective custom NUAA protocol, not official train/test reproduction.
+# Do not execute until identity provenance and experiment approval are resolved.
+identity_arms: [spoof_only, identity_positive, identity_adversarial]
+dataset:
+  name: NUAA
+  root: datasets/NUAA
+  partition: test
+  image_size: 160
+  horizontal_flip: false
+model:
+  name: controlled_identity_ecnn
+  identity_target_lambda: 0.05  # Configurable example, NOT a selected paper optimum.
+training:
+  seed: 42
+  folds: 5
+  val_subject_ratio: 0.20
+  initialization_policy: same_fold_seed
+  epochs: 100
+  batch_size: 32
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.01
+  num_workers: 0
+  subject_loss_weight: 0.10
+  grl_schedule: fixed  # Same absolute schedule for both identity arms.
+  warmup_epochs: 5
+  model_selection: lowest_validation_acer
+  early_stopping:
+    enabled: false
+    patience: 15
+    min_delta: 0.0
+  output_dir: outputs/controlled_identity_ablation_v1

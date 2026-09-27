@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import math
 import torch
 from torch import Tensor, nn
 
 
-class _GradientReversalFunction(torch.autograd.Function):
-    """Identity in the forward pass and sign-reversed scaling in backward."""
+class _GradientScaleFunction(torch.autograd.Function):
+    """Identity forward, explicitly signed encoder-gradient scale backward."""
 
     @staticmethod
     def forward(ctx, x: Tensor, coefficient: float) -> Tensor:
@@ -23,9 +24,25 @@ class _GradientReversalFunction(torch.autograd.Function):
         grad_output = grad_outputs[0]
 
         return (
-            -ctx.coefficient * grad_output,
+            ctx.coefficient * grad_output,
             None,
         )
+
+
+class GradientScaleLayer(nn.Module):
+    """Control only gradients upstream of this layer, including zero or positive."""
+
+    def __init__(self, scale: float = 0.0) -> None:
+        super().__init__()
+        self.set_scale(scale)
+
+    def set_scale(self, scale: float) -> None:
+        if not math.isfinite(scale):
+            raise ValueError("gradient scale must be finite")
+        self.scale = float(scale)
+
+    def forward(self, x: Tensor) -> Tensor:
+        return _GradientScaleFunction.apply(x, self.scale)
 
 
 class GradientReversalLayer(nn.Module):
@@ -54,4 +71,4 @@ class GradientReversalLayer(nn.Module):
         self.coefficient = float(coefficient)
 
     def forward(self, x: Tensor) -> Tensor:
-        return _GradientReversalFunction.apply(x, self.coefficient)
+        return _GradientScaleFunction.apply(x, -self.coefficient)

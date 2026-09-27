@@ -15,6 +15,7 @@ from identity_invariant_fas.data.transforms import (
 
 from identity_invariant_fas.models import (
     AblationECNN,
+    ControlledIdentityECNN,
     IdentityInvariantECNN,
     PaperECNNClassifier,
 )
@@ -31,6 +32,11 @@ def build_model(
 ):
 
     normalized = name.lower()
+
+    if normalized == "controlled_identity_ecnn":
+        return ControlledIdentityECNN(
+            num_subjects=num_subjects, identity_mode=model_config["identity_mode"],
+        )
 
     if normalized == "paper_ecnn":
 
@@ -220,7 +226,10 @@ def build_optimizer_and_trainer(
         ),
 
         total_epochs=config["training"]["epochs"],
-        grl_target_lambda=float(config["model"].get("grl_lambda", 0.05)),
+        grl_target_lambda=(None if config["model"].get("name") == "controlled_identity_ecnn"
+                           else float(config["model"].get("grl_lambda", 0.05))),
+        identity_mode=config["model"].get("identity_mode"),
+        identity_target_lambda=config["model"].get("identity_target_lambda"),
         grl_schedule=config["training"].get("grl_schedule", "fixed"),
         warmup_epochs=(
             config["training"].get(

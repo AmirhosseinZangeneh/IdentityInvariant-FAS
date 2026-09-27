@@ -177,8 +177,9 @@ def main() -> None:
                 train_loader,
                 epoch,
             )
-            history.append({"epoch": epoch, "grl_lambda": train_result.grl_lambda})
-            write_json(history, fold_dir / "grl_history.json")
+            history.append(train_result.history_record(epoch))
+            history_name = "identity_history.json" if trainer.identity_mode is not None else "grl_history.json"
+            write_json(history, fold_dir / history_name)
 
 
             validation = trainer.evaluate(
@@ -215,6 +216,7 @@ def main() -> None:
                     metadata={
                         "model": config["model"],
                         "dataset": config["dataset"],
+                        "training": config["training"],
                         "fold": fold_id,
                         "subject_mapping": subject_mapping,
                     },
@@ -291,6 +293,7 @@ def main() -> None:
     summary = {
 
         "model": config["model"]["name"],
+        "identity_mode": config["model"].get("identity_mode"),
 
         "protocol":
             "NUAA custom subject-disjoint k-fold",

@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 
 import torch
 from torch import Tensor, nn
+from ..models.controlled_identity_ecnn import validate_identity_mode
 
 
 @dataclass(frozen=True)
@@ -18,11 +20,16 @@ class LossOutput:
 class MultiTaskFASLoss(nn.Module):
     """Cross-entropy FAS loss with an optional adversarial subject objective."""
 
-    def __init__(self, subject_weight: float = 0.1) -> None:
+    def __init__(self, subject_weight: float = 0.1, *, identity_mode: str | None = None) -> None:
         super().__init__()
-        if subject_weight < 0:
+        if not math.isfinite(subject_weight) or subject_weight < 0:
             raise ValueError("subject_weight must be non-negative.")
         self.subject_weight = float(subject_weight)
+        if identity_mode is not None:
+            validate_identity_mode(identity_mode)
+            if identity_mode != "spoof_only" and subject_weight == 0:
+                raise ValueError("Identity arms require a positive subject weight")
+        self.identity_mode = identity_mode
         self.cross_entropy = nn.CrossEntropyLoss()
 
     def forward(
@@ -32,8 +39,20 @@ class MultiTaskFASLoss(nn.Module):
         subject_logits: Tensor | None = None,
         subject_labels: Tensor | None = None,
         *,
-        subject_loss_enabled: bool = True,
+        subject_loss_enabled: bool | None = None,
     ) -> LossOutput:
+        enabled = self.identity_mode != "spoof_only"
+        if subject_loss_enabled is None:
+            subject_loss_enabled = enabled
+        if self.identity_mode is not None and subject_loss_enabled != enabled:
+            raise ValueError("subject objective contradicts explicit identity_mode")
+        if self.identity_mode in {"identity_positive", "identity_adversarial"}:
+            if subject_logits is None or subject_labels is None:
+                raise ValueError("Identity arms require subject logits and labels")
+            if (subject_labels.shape != labels.shape or subject_labels.dtype != torch.long
+                    or torch.any(subject_labels < 0)
+                    or torch.any(subject_labels >= subject_logits.shape[1])):
+                raise ValueError("Every training sample requires a valid subject label")
         spoof_loss = self.cross_entropy(spoof_logits, labels)
         subject_loss: Tensor | None = None
 

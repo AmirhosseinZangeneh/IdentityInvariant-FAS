@@ -10,13 +10,17 @@ not contain the final `fc3` layer of the 256-dimensional ECNN encoder used by
 II-ECNN. Therefore the previous ablation comparison changed both the encoder
 and the presence of GRL.
 
-The public implementation fixes this: `AblationECNN` now uses the exact same
-ECNN encoder, spoof head, and subject head as II-ECNN, with GRL as the intended
-single causal difference.
+The legacy `AblationECNN` was subsequently architecture-matched to II-ECNN,
+but architecture matching alone was insufficient: the comparison was not
+gradient/schedule matched. Identity encoder gradients differed in sign,
+magnitude (+1 versus -lambda), and onset (epoch 1 versus after warm-up).
 
-**Consequence:** historical ablation numbers must not be presented as the final
-controlled GRL ablation. Re-train the corrected ablation before manuscript
-submission.
+**Consequence:** legacy AblationECNN versus II-ECNN results cannot support the
+final causal identity-suppression claim. Retraining those legacy arms does
+not resolve the mismatch. Prospective causal comparisons must use the new
+controlled three-arm implementation: `spoof_only`, `identity_positive`, and
+`identity_adversarial` (see below). Historical outputs remain untouched;
+legacy classes are not retroactively reinterpreted.
 
 ## 2. Representation analyses used a different image size
 
@@ -76,8 +80,77 @@ is not schedule/gradient-magnitude matched. Its subject branch contributes
 positive encoder gradients from epoch 1 without lambda scaling. II-ECNN now
 contributes zero subject encoder gradient during warm-up and a negative,
 lambda-scaled gradient afterward (both also use subject-loss weight). This
-task does not alter ablation behavior. A separate scientific design decision
-is required before claiming a sign-only causal comparison.
+GRL-fix task did not alter historical ablation behavior. The prospective
+controlled implementation below supplies a separate matched comparison;
+the historical classes and result directories retain their original meaning.
+
+### Prospective controlled identity ablation
+
+`configs/controlled_identity_ablation.yaml` and
+`experiments/controlled_identity_ablation.py` define three explicit arms of
+one `ControlledIdentityECNN` architecture. This execution path has not been
+run to produce scientific results. It delegates to the existing custom NUAA
+subject-k-fold runner; it does not change dataset identities or splits.
+
+| Arm | Objective | Encoder identity scale, epochs 1..N | Scale after N |
+| --- | --- | --- | --- |
+| Spoof-only | spoof CE only | 0, subject objective disabled | 0 |
+| Identity-positive | spoof CE + beta * identity CE | 0, subject head trains | +effective lambda |
+| Identity-adversarial | spoof CE + beta * identity CE | 0, subject head trains | -effective lambda |
+
+The signed gradient control is immediately **before** the subject classifier.
+Its forward pass is the identity. Subject-head gradients have the ordinary
+beta weighting and are never multiplied by lambda or its sign. Both identity
+arms use exactly the corrected fixed/DANN schedule above, with the same
+nonnegative target, warm-up, total epochs and beta. The Trainer freezes the
+target separately from mutable model routing state. `identity_history.json`
+records the explicit arm, actual signed `identity_encoder_scale`, subject
+objective enabled/disabled, and beta; controlled records do not label a
+positive routing scale as `grl_lambda`.
+
+All three arms instantiate the same encoder, spoof head, and subject head in
+the same order, with identical state-dict keys and parameter counts. The
+spoof-only subject head is dormant: its forward branch is skipped, its loss
+is disabled even if labels exist, and its gradients remain None, so AdamW
+does not apply updates or weight decay to those parameters. Its allocated
+capacity includes the unused head; its active optimization capacity does
+not. The two identity arms have identical active capacity. At identical
+weights/input, spoof features, logits and spoof-only gradients are identical.
+
+The canonical driver varies only the explicit arm and output path. Dataset,
+fold seed and subject split, per-fold initialization seed, transforms,
+augmentation, batch order, optimizer, learning rate, weight decay, epochs,
+early-stopping configuration, lowest-validation-ACER model-selection rule,
+and evaluation metrics all use the same existing runner. Model selection
+can select different epochs as an outcome of the intervention. It reserves
+a fresh output root and retains each generated configuration. Lambda 0.05
+is a configurable example, **not** a scientifically selected final value.
+No historical sweep is used to choose it. The existing config key
+`grl_schedule` now also names the shared absolute schedule for controlled
+arms; `identity_target_lambda` is their nonnegative target.
+
+Identity-positive means that the auxiliary objective encourages
+identity-discriminative shared representations; it does not assume that
+measured identity information necessarily increases. Opposite, equal-scale
+gradients are guaranteed at the same parameters and input, not identical
+gradient norms along subsequently diverging optimization trajectories.
+
+**Historical limit:** old AblationECNN versus II-ECNN outputs changed sign,
+magnitude (+1 versus -lambda), and onset (epoch 1 versus after warm-up).
+They cannot support a final causal claim attributing PAD or representation
+differences to identity-gradient direction or suppression. They remain
+historical/debug evidence only, alongside the invalid old lambda-sensitivity
+results described above. No historical output is deleted, rewritten, or
+retroactively repaired. Legacy model/config paths remain available for
+compatibility and are not the new controlled publication comparison.
+
+**Before execution:** resolve the outstanding NUAA identity-provenance gate,
+freeze an approved dataset/protocol and prospective hyperparameter-selection
+plan, and separately authorize experiments. The canonical configuration
+retains the existing custom repartitioning of NUAA's test partition; it is
+not an official-protocol result. Synthetic autograd tests validate the
+implementation, not identity suppression, scientific performance, or
+publication readiness. No MSU state or pilot evidence is involved.
 
 ## 4. APCER/BPCER naming was inconsistent in one historical sweep
 

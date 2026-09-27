@@ -80,8 +80,9 @@ def main() -> None:
     history = []
     for epoch in range(1, trainer.total_epochs + 1):
         train_result = trainer.train_epoch(train_loader, epoch)
-        history.append({"epoch": epoch, "grl_lambda": train_result.grl_lambda})
-        write_json(history, output_dir / "grl_history.json")
+        history.append(train_result.history_record(epoch))
+        history_name = "identity_history.json" if trainer.identity_mode is not None else "grl_history.json"
+        write_json(history, output_dir / history_name)
         validation = trainer.evaluate(val_loader)
         logger.info(
             "epoch=%d train_loss=%.6f train_acc=%.4f val_acer=%.4f",

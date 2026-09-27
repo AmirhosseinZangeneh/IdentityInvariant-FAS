@@ -13,6 +13,7 @@ import torch
 from torch import nn
 
 from ..evaluation.metrics import compute_classification_metrics
+from ..models.controlled_identity_ecnn import validate_identity_mode
 
 from .losses import LossOutput, MultiTaskFASLoss
 
@@ -23,7 +24,22 @@ class EpochResult:
     spoof_loss: float
     subject_loss: float | None
     accuracy: float
-    grl_lambda: float
+    grl_lambda: float | None
+    identity_mode: str | None = None
+    identity_encoder_scale: float | None = None
+    subject_loss_enabled: bool | None = None
+    subject_weight: float | None = None
+
+    def history_record(self, epoch: int) -> dict:
+        """Legacy GRL history stays compatible; controlled arms use signed names."""
+        if self.identity_mode is None:
+            return {"epoch": epoch, "grl_lambda": self.grl_lambda}
+        return {
+            "epoch": epoch, "identity_mode": self.identity_mode,
+            "identity_encoder_scale": self.identity_encoder_scale,
+            "subject_loss_enabled": self.subject_loss_enabled,
+            "subject_weight": self.subject_weight,
+        }
 
 
 def compute_grl_lambda(
@@ -87,14 +103,26 @@ class Trainer:
         total_epochs: int,
         grl_target_lambda: float | None = None,
         grl_schedule: str = "fixed",
+        identity_mode: str | None = None,
+        identity_target_lambda: float | None = None,
     ) -> None:
 
         self.model = model
         self.optimizer = optimizer
         self.device = torch.device(device)
 
+        self.identity_mode = identity_mode
+        model_mode = getattr(model, "identity_mode", None)
+        if identity_mode is not None:
+            validate_identity_mode(identity_mode)
+            if model_mode != identity_mode or not callable(getattr(model, "set_identity_encoder_scale", None)):
+                raise ValueError("Trainer and model must explicitly agree on identity_mode")
+            if grl_target_lambda is not None:
+                raise ValueError("Controlled arms use identity_target_lambda, not grl_target_lambda")
+        elif model_mode is not None or identity_target_lambda is not None:
+            raise ValueError("Controlled identity training requires an explicit identity_mode")
         self.loss_fn: MultiTaskFASLoss = MultiTaskFASLoss(
-            subject_weight=subject_weight
+            subject_weight=subject_weight, identity_mode=identity_mode
         )
 
         if type(total_epochs) is not int or total_epochs < 1:
@@ -110,6 +138,13 @@ class Trainer:
         self.warmup_epochs = warmup_epochs
         self.total_epochs = total_epochs
         self.grl_config = None
+        self.identity_config = None
+        if identity_mode is not None:
+            if identity_target_lambda is None:
+                raise ValueError("Controlled arms require an explicit identity target")
+            self.identity_config = GRLConfiguration(
+                identity_target_lambda, grl_schedule, warmup_epochs, total_epochs
+            )
         if callable(getattr(model, "set_grl_lambda", None)):
             if grl_target_lambda is None:
                 raise ValueError("GRL models require an explicit configured target")
@@ -118,6 +153,7 @@ class Trainer:
             )
 
         self.current_grl_lambda = 0.0
+        self.current_identity_encoder_scale = None
 
 
     def _update_grl_lambda(
@@ -130,6 +166,14 @@ class Trainer:
 
         if type(epoch) is not int or not 1 <= epoch <= self.total_epochs:
             raise ValueError("epoch must be in 1..total_epochs")
+        if self.identity_mode is not None:
+            magnitude = self.identity_config.coefficient(epoch)
+            sign = {"spoof_only": 0, "identity_positive": 1, "identity_adversarial": -1}[self.identity_mode]
+            scale = sign * magnitude
+            self.model.set_identity_encoder_scale(scale)
+            self.current_identity_encoder_scale = scale
+            self.current_grl_lambda = None
+            return
         grl_setter = getattr(
             self.model,
             "set_grl_lambda",
@@ -234,7 +278,7 @@ class Trainer:
                 labels=labels,
                 subject_logits=subject_logits,
                 subject_labels=subject_labels,
-                subject_loss_enabled=True,
+                subject_loss_enabled=self.identity_mode != "spoof_only",
             )
 
 
@@ -316,6 +360,10 @@ class Trainer:
             ),
 
             grl_lambda=self.current_grl_lambda,
+            identity_mode=self.identity_mode,
+            identity_encoder_scale=self.current_identity_encoder_scale,
+            subject_loss_enabled=self.identity_mode != "spoof_only",
+            subject_weight=self.loss_fn.subject_weight,
         )
 
 
