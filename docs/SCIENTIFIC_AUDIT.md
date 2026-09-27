@@ -183,8 +183,10 @@ paper reporting the official protocol without a clear qualification.
 
 For the manuscript, report separately:
 
-1. official-protocol baseline reproduction, and
-2. custom folder-token-disjoint evaluation used to test proxy generalization.
+1. official-source-list ECNN-inspired backbone evaluation (external-paper
+   reproduction requires a separate fidelity audit), and
+2. custom folder-token-disjoint proxy evaluation, only if separately planned;
+   the minimum publication matrix omits this optional experiment.
 
 ## 6. Validation must respect the audited grouping semantics
 
@@ -213,6 +215,9 @@ validated group-aware API and the current metadata limitations.
 
 ## Publication status
 
-The refactored code is suitable as the implementation base for the next
-experiments, but the corrected ablation, GRL sweep, and representation analyses
-should be re-run before final paper claims are frozen.
+The refactored code is an implementation base, not completed publication
+evidence. The [prospective publication matrix](PUBLICATION_EXPERIMENT_MATRIX.md)
+defines required versus optional experiments and remaining execution adapters
+and gates. Use the ECNN-inspired controlled-backbone name until external-paper
+fidelity is verified. Historical sweeps and unmatched ablations remain invalid
+for final claims; their existence does not require repeating every old study.
