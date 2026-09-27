@@ -163,12 +163,8 @@ def main() -> None:
         epochs_without_improvement = 0
 
 
-        max_epochs = int(
-            config["training"].get(
-                "epochs",
-                30
-            )
-        )
+        max_epochs = trainer.total_epochs
+        history = []
 
 
         for epoch in range(
@@ -181,6 +177,8 @@ def main() -> None:
                 train_loader,
                 epoch,
             )
+            history.append({"epoch": epoch, "grl_lambda": train_result.grl_lambda})
+            write_json(history, fold_dir / "grl_history.json")
 
 
             validation = trainer.evaluate(

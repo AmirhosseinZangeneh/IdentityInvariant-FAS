@@ -19,7 +19,11 @@ training:
   num_workers: 0
   subject_loss_weight: 0.10
   warmup_epochs: 5
-  output_dir: outputs/grl_lambda_sweep
+  grl_schedule: fixed
+  weight_decay: 0.01
+  early_stopping:
+    enabled: false
+  output_dir: outputs/grl_lambda_sweep_fixed_v2
 
 grl_values:
   - 0.01

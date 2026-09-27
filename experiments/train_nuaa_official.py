@@ -77,8 +77,11 @@ def main() -> None:
     checkpoint_path = output_dir / "best_model.pt"
     best_acer = float("inf")
 
-    for epoch in range(1, int(config["training"].get("epochs", 30)) + 1):
+    history = []
+    for epoch in range(1, trainer.total_epochs + 1):
         train_result = trainer.train_epoch(train_loader, epoch)
+        history.append({"epoch": epoch, "grl_lambda": train_result.grl_lambda})
+        write_json(history, output_dir / "grl_history.json")
         validation = trainer.evaluate(val_loader)
         logger.info(
             "epoch=%d train_loss=%.6f train_acc=%.4f val_acer=%.4f",

@@ -36,10 +36,48 @@ The historical main II-ECNN script used a five-epoch subject-loss warm-up,
 whereas the historical GRL sweep applied the subject loss from the first
 epoch. That means lambda was not isolated as the only changed variable.
 
-The refactored sweep uses the same training configuration for every lambda.
+The refactored implementation also had two critical bugs: the publication
+factory omitted `training.epochs`, leaving Trainer's default of 100, and the
+trainer replaced configured lambda with an unrelated unit-amplitude schedule.
+Its `epoch < warmup_epochs` check gave only four zero-lambda epochs when called
+with one-based epochs and warmup=5. Shared configuration alone did not make
+those runs a valid lambda sensitivity experiment.
 
-**Consequence:** re-run the GRL sweep before treating 0.05 as a final
-hyperparameter conclusion.
+**Prospective contract:** `model.grl_lambda` is the configured target, passed
+explicitly into an immutable GRL configuration independently of model state.
+Trainer requires an explicit epoch budget. Public epochs are 1..total_epochs;
+warmup N means exactly epochs 1..N have lambda zero. Subject loss remains
+enabled: during GRL warm-up its head can learn, but its encoder gradient is
+zero. This is not a subject-loss disabling warm-up.
+
+`training.grl_schedule: fixed` is the default and is explicit in the current
+sensitivity config. Epoch N+1 onward uses the exact configured target.
+Optional `dann` (`progressive` alias) uses target times
+`2/(1+exp(-10*p))-1`, where `p=(epoch-N)/(total_epochs-N)` after warm-up.
+It begins above zero in the first active epoch and approaches, but does not
+equal, the target at the last epoch. Invalid targets, modes and epoch ranges
+fail; GRL all-warmup runs are unsupported. Non-GRL models are not scheduled.
+The legacy zero-based script explicitly passes epoch+1 to Trainer.
+
+All sweep runs share folds, seeds, split construction, optimizer, learning
+rate, weight decay, subject-loss weight, warm-up, epoch budget, early-stopping
+policy, preprocessing and augmentation; only target and output location vary.
+The sweep uses a fresh v2 output root and refuses an existing root. Per-epoch
+effective coefficients are retained in EpochResult and runner histories.
+No sweep or new scientific experiment was executed to validate this fix.
+
+**Consequence:** any results produced under the previous semantics cannot
+support final claims about the effect of configured lambda values (including
+0.01/0.05/0.10 or an optimum at 0.05). Preserve historical outputs unchanged;
+this prospective fix does not repair or validate them retrospectively.
+
+**Outstanding ablation gate:** AblationECNN remains architecture-matched but
+is not schedule/gradient-magnitude matched. Its subject branch contributes
+positive encoder gradients from epoch 1 without lambda scaling. II-ECNN now
+contributes zero subject encoder gradient during warm-up and a negative,
+lambda-scaled gradient afterward (both also use subject-loss weight). This
+task does not alter ablation behavior. A separate scientific design decision
+is required before claiming a sign-only causal comparison.
 
 ## 4. APCER/BPCER naming was inconsistent in one historical sweep
 

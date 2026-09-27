@@ -219,7 +219,10 @@ def build_optimizer_and_trainer(
             )
         ),
 
-        warmup_epochs=int(
+        total_epochs=config["training"]["epochs"],
+        grl_target_lambda=float(config["model"].get("grl_lambda", 0.05)),
+        grl_schedule=config["training"].get("grl_schedule", "fixed"),
+        warmup_epochs=(
             config["training"].get(
                 "warmup_epochs",
                 5,

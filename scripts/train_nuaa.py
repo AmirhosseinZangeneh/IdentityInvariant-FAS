@@ -205,6 +205,8 @@ def main(config_path: str):
         subject_weight=config["training"]["subject_weight"],
         warmup_epochs=config["training"]["warmup_epochs"],
         total_epochs=config["training"]["epochs"],
+        grl_target_lambda=float(config["model"].get("grl_lambda", 0.05)),
+        grl_schedule=config["training"].get("grl_schedule", "fixed"),
     )
 
 
@@ -237,7 +239,7 @@ def main(config_path: str):
 
         train_result = trainer.train_epoch(
             train_loader,
-            epoch,
+            epoch + 1,  # Legacy loop is zero-based; Trainer's public epochs are 1-based.
         )
 
 

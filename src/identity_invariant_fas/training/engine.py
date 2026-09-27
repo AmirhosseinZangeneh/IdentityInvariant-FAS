@@ -30,17 +30,48 @@ def compute_grl_lambda(
     epoch: int,
     total_epochs: int,
 ) -> float:
-    """Compute progressive GRL coefficient."""
-
-    progress = epoch / max(
-        total_epochs - 1,
-        1,
-    )
+    """Unit DANN factor at a one-based active epoch (after warm-up)."""
+    if type(total_epochs) is not int or total_epochs < 1:
+        raise ValueError("total_epochs must be an integer >= 1")
+    if type(epoch) is not int or not 1 <= epoch <= total_epochs:
+        raise ValueError("epoch must be in 1..total_epochs")
+    progress = epoch / total_epochs
 
     return (
         2.0 /
         (1.0 + math.exp(-10 * progress))
     ) - 1.0
+
+
+@dataclass(frozen=True)
+class GRLConfiguration:
+    """Prospective contract; the target is independent of mutable model state."""
+
+    target: float
+    schedule: str
+    warmup_epochs: int
+    total_epochs: int
+
+    def __post_init__(self):
+        if not math.isfinite(self.target) or self.target < 0:
+            raise ValueError("GRL target must be finite and >= 0")
+        if self.schedule not in {"fixed", "dann", "progressive"}:
+            raise ValueError("Unknown GRL schedule")
+        if type(self.total_epochs) is not int or self.total_epochs < 1:
+            raise ValueError("total_epochs must be an integer >= 1")
+        if type(self.warmup_epochs) is not int or not 0 <= self.warmup_epochs < self.total_epochs:
+            raise ValueError("GRL warmup_epochs must be an integer in 0..total_epochs-1")
+
+    def coefficient(self, epoch: int) -> float:
+        if type(epoch) is not int or not 1 <= epoch <= self.total_epochs:
+            raise ValueError("epoch must be in 1..total_epochs")
+        if epoch <= self.warmup_epochs:
+            return 0.0
+        if self.schedule == "fixed":
+            return self.target
+        return self.target * compute_grl_lambda(
+            epoch - self.warmup_epochs, self.total_epochs - self.warmup_epochs
+        )
 
 
 class Trainer:
@@ -53,7 +84,9 @@ class Trainer:
         *,
         subject_weight: float = 0.1,
         warmup_epochs: int = 0,
-        total_epochs: int = 100,
+        total_epochs: int,
+        grl_target_lambda: float | None = None,
+        grl_schedule: str = "fixed",
     ) -> None:
 
         self.model = model
@@ -64,13 +97,25 @@ class Trainer:
             subject_weight=subject_weight
         )
 
-        self.warmup_epochs = int(
-            warmup_epochs
-        )
-
-        self.total_epochs = int(
-            total_epochs
-        )
+        if type(total_epochs) is not int or total_epochs < 1:
+            raise ValueError("total_epochs must be an integer >= 1")
+        if type(warmup_epochs) is not int or warmup_epochs < 0:
+            raise ValueError("warmup_epochs must be an integer >= 0")
+        if grl_schedule not in {"fixed", "dann", "progressive"}:
+            raise ValueError("Unknown GRL schedule")
+        if grl_target_lambda is not None and (
+            not math.isfinite(grl_target_lambda) or grl_target_lambda < 0
+        ):
+            raise ValueError("GRL target must be finite and >= 0")
+        self.warmup_epochs = warmup_epochs
+        self.total_epochs = total_epochs
+        self.grl_config = None
+        if callable(getattr(model, "set_grl_lambda", None)):
+            if grl_target_lambda is None:
+                raise ValueError("GRL models require an explicit configured target")
+            self.grl_config = GRLConfiguration(
+                grl_target_lambda, grl_schedule, warmup_epochs, total_epochs
+            )
 
         self.current_grl_lambda = 0.0
 
@@ -83,6 +128,8 @@ class Trainer:
         Update GRL coefficient when supported by the model.
         """
 
+        if type(epoch) is not int or not 1 <= epoch <= self.total_epochs:
+            raise ValueError("epoch must be in 1..total_epochs")
         grl_setter = getattr(
             self.model,
             "set_grl_lambda",
@@ -93,14 +140,7 @@ class Trainer:
             self.current_grl_lambda = 0.0
             return
 
-        if epoch < self.warmup_epochs:
-            value = 0.0
-
-        else:
-            value = compute_grl_lambda(
-                epoch,
-                self.total_epochs,
-            )
+        value = self.grl_config.coefficient(epoch)
 
         grl_setter(value)
 
