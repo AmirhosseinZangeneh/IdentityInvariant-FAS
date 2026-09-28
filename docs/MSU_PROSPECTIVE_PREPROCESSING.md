@@ -330,3 +330,59 @@ annotation/frame correspondence, historical `.face` fidelity, or attributing
 differences from literature solely to the model when preprocessing differs.
 RQs, client cohorts, three-arm gradient interventions, tuning/test separation,
 seeds, metrics and statistics remain those of the publication matrix.
+
+## 10. Contract implementation status (2026-09-28)
+
+`identity_invariant_fas.data.msu_publication_preprocessing` implements the separate
+Path B contract; it does not import the historical annotation preprocessor or
+protocol loader. Its source-only catalog validator reads the retained metadata,
+README and official lists and stats source paths. Content hashing is a separate
+explicit operation. No annotation file is opened or required.
+
+The module provides pinned command builders, incremental strict P6 parsing,
+decode/probe result validation, orientation and sampling, letterbox/remapping,
+crop/PNG helpers, artifact/environment lock validation, exact qualification
+scope, and deterministic manifest validation with write-once completion seals.
+The synthetic tests use temporary binary/RGB fixtures only, prohibit network
+and subprocess execution, and exercise the real hashing/geometry/PNG logic.
+They require no production-version match and no FFmpeg/YuNet installation.
+Validation on 2026-09-28: **88 focused synthetic tests passed; 548 full-suite
+tests passed** using `env_cuda/Scripts/python.exe`. No real decode, detector
+inference, qualification run or scientific training was executed.
+
+Transport is deliberately separated from the contract: no ffmpeg/ffprobe
+subprocess launcher or release-wide runner is provided here. The later bounded
+qualification harness must capture complete stdout/stderr and exit status,
+normalize ffprobe metadata into `DecodeResult`, and run `validate_decoded_frames`
+on all PPM frames before releasing selected frames. Its orientation matrix input
+is a normalized 3x3 Cartesian counterclockwise matrix, not ffprobe's raw fixed-point
+display-matrix text; the harness must validate/convert that representation and
+retain diagnostics. It must not assert completion on timeout, pipe failure or
+truncated JSON. ffprobe has no ffmpeg `-xerror` switch: its exact command plus
+strict stderr/exit/completion/frame-metadata validation supplies the probe gate.
+No alternative decode or detector settings are permitted.
+
+The detector factory is only for a fresh interpreter launched with
+`detector_worker_environment`; it refuses pre-imported cv2 or a missing/conflicting
+engine setting. It verifies runtime versions/model bytes before importing cv2,
+then configures classic CPU inference and the frozen letterbox. No worker was
+started. Production environment locks require executable build evidence,
+runtime binary fingerprints, and executable membership in the approved archive;
+supplied build evidence must be captured and verified during real qualification.
+
+Manifests retain portable command references and complete source/group metadata,
+bind catalog/snapshot/environment/policy/implementation digests, and recompute
+geometry rather than trusting stored boxes. Scientific digests contain no wall
+clock timestamps or absolute host paths. Qualification mode requires the ordered
+eight sources and 240 crops; publication mode requires all 280 sources and 8400
+crops. Neither mode sets `publication_ready=true`. A completion seal certifies
+only validated output coverage, not reviewer approval or experiment readiness.
+Readers require the seal, all PNG checks and no failure record. Partial writes
+are preserved and cannot be silently retried into an existing destination.
+
+**Real artifact qualification: NOT RUN. Training-video qualification: NOT RUN.
+Publication processing: NOT READY.** Historical P4/readiness states and Amendment
+001 are unchanged. The next separately authorized task is the bounded transport
+integration/artifact qualification followed by the prescribed training-only checks;
+passing synthetic contract tests does not demonstrate decoder/detector feasibility
+on licensed recordings.
