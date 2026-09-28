@@ -6,6 +6,12 @@ selection/reporting contract, not execution authorization or a readiness waiver.
 Changes require a dated amendment before affected outcomes are inspected; retain
 the original plan and disclose deviations. No historical result selects a setting.
 
+**MSU amendment (2026-09-27):** [Amendment 001](PUBLICATION_EXPERIMENT_MATRIX_AMENDMENT_001.md)
+supersedes the annotation-based MSU preprocessing clause and its publication
+readiness dependency with prospective Path B. The original wording below is
+retained as history; historical P4 remains unresolved. All other matrix rules
+remain unchanged, and Path B is not yet technically qualified.
+
 Authority: [NUAA role](NUAA_SCIENTIFIC_ROLE.md), [MSU client protocol](MSU_PROTOCOL.md),
 [MSU preprocessing](MSU_PREPROCESSING.md), [MSU gate](MSU_POLICY_GATE.md),
 [Replay protocol](REPLAY_PROTOCOL.md), [scientific audit](SCIENTIFIC_AUDIT.md),
