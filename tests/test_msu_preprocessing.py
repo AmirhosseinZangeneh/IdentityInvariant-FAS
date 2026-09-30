@@ -361,6 +361,7 @@ def test_boundary_audit_retains_unavailable_annotation_without_correction(locked
         prep.audit_decoder_boundaries(root, lock, [test_video.video_id])
 
 
+@pytest.mark.skip(reason="Licensed-media audit requires a separately authorized qualification; synthetic suite only")
 def test_real_annotation_index_audit_when_available(tmp_path):
     repository = Path(__file__).parents[1]
     root = repository / "datasets/MSU"

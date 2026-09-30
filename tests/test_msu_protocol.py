@@ -174,6 +174,7 @@ def test_legacy_loader_padding_limitation_is_reproduced(msu_root):
         index_msu_videos(msu_root)
 
 
+@pytest.mark.skip(reason="Licensed-media audit requires a separately authorized qualification; synthetic suite only")
 def test_local_release_matches_lock_when_available():
     repository = Path(__file__).parents[1]
     root = repository / "datasets/MSU"

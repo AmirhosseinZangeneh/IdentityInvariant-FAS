@@ -1,5 +1,11 @@
 # MSU prospective publication preprocessing
 
+**Runtime update (2026-09-28): [Amendment 002](PUBLICATION_EXPERIMENT_MATRIX_AMENDMENT_002.md)
+supersedes the OpenCV 5.0.0.93 pin and its engine-variable requirement below with
+opencv-python 4.11.0.86 / native OpenCV DNN, CPU, one thread, OpenCL disabled.
+Python/NumPy/Pillow, model, detector parameters and all scientific geometry remain
+unchanged. Historical runtime-attempt sections below are retained as provenance.**
+
 Date: 2026-09-27. Reviewed repository baseline:
 `534d7d91655d5fafe1b5ce2d862164545033c785`.
 **MSU_PROSPECTIVE_PREPROCESSING_SELECTED = true.** This selects a scientific
@@ -386,3 +392,108 @@ Publication processing: NOT READY.** Historical P4/readiness states and Amendmen
 integration/artifact qualification followed by the prescribed training-only checks;
 passing synthetic contract tests does not demonstrate decoder/detector feasibility
 on licensed recordings.
+
+## 11. Runtime integration attempt (2026-09-28)
+
+The separate runtime module and synthetic-only qualification script now provide
+explicit executable verification, ffprobe adaptation, incremental PPM transport
+with concurrent bounded stderr draining, source snapshot binding, and a fresh
+Python interpreter for the existing YuNet factory. These are **unqualified**.
+The frozen contract helpers and Amendment 001 have not changed.
+
+The official 2023mar model matched 232589 bytes and the frozen SHA-256. In the
+matching Python 3.12.10 / opencv-python 5.0.0.93 / NumPy 2.5.2 / Pillow 12.3.0
+environment, the fresh child passed the factory's pre-import engine and model
+checks but failed inside `FaceDetectorYN.create` with OpenCV's
+`Input shape redefinition is not allowed` (`tgtName` is `input`). No inference
+completed. This triggers the explicit stop condition; no alternate engine,
+model, geometry, runtime version, or scientific policy was attempted.
+
+FFmpeg acquisition was interrupted after that stop condition; no archive or
+executable qualification is claimed. H.264/ProRes real subprocess qualification
+and runtime repeatability remain unexecuted. Eight-video MSU qualification and
+full publication preprocessing remain pending and blocked. No licensed MSU
+media was accessed. Two historical tests that automatically accessed a locally
+installed release are now explicitly skipped in the synthetic suite; historical
+preprocessing implementations are unchanged.
+
+Validation: 108 existing focused contract tests passed; 11 subprocess-fixture
+tests passed; the artifact test skipped without explicit complete artifacts.
+The full synthetic suite passed with 577 passed and 3 skipped. `git diff --check`
+passed. These results do not qualify the real decoder or detector runtime.
+
+For a later authorized reproduction, use the pinned environment and explicit
+local artifacts (the output directory must be fresh and ignored):
+
+```powershell
+env_cuda/Scripts/python.exe scripts/qualify_msu_publication_runtime.py --archive <absolute-frozen-zip> --model <absolute-2023mar-onnx> --output <fresh-ignored-directory>
+```
+
+This command is a synthetic runtime qualification attempt, never an MSU runner.
+It fails closed and does not resolve the observed detector blocker.
+
+## 12. Synthetic runtime qualification completed (2026-09-30)
+
+Amendment 002's isolated OpenCV 4.11 runtime resolves the earlier constructor
+blocker. Retained successful YuNet inference/isolation evidence was verified
+against the current model and runtime binary fingerprints without rerunning
+inference. The main `env_cuda` environment remains unchanged.
+
+The frozen FFmpeg ZIP matched its SHA-256; fresh extracted ffmpeg/ffprobe 8.1.2
+executables were fingerprinted and their complete build/library output retained.
+Generated H.264 and ProRes fixtures each produced 35 progressive square-SAR
+96x64 frames, with clean diagnostics, matching sequential probe/decode counts
+and identical repeat RGB hashes. A +90-degree display-matrix remux matched exact
+quarter-turn RGB hashes. Invalid, absent and truncated inputs were rejected.
+Synthetic pipe-stress, timeout, malformed PPM and diagnostic tests also passed.
+
+Validation on resume: 123 focused tests passed (2 artifact tests deselected);
+2 real-artifact tests passed in the isolated environment (11 fixtures deselected);
+the full `env_cuda` suite passed with 581 passed and 4 skipped. The latter skips
+are the two licensed-release checks and the two separately executed artifact
+tests. `git diff --check` passed.
+
+Local evidence is ignored under `outputs/msu-runtime/qualification-20260930/`.
+Reproduce in the isolated runtime with a fresh output directory:
+
+```powershell
+$env:PYTHONPATH = (Resolve-Path src).Path
+outputs/msu-runtime/opencv411-env/Scripts/python.exe scripts/qualify_msu_publication_runtime.py --archive outputs/msu-runtime/artifacts/ffmpeg-8.1.2-essentials_build.zip --model outputs/msu-runtime/artifacts/face_detection_yunet_2023mar.onnx --yunet-evidence outputs/msu-runtime/yunet411-qualified.json --output outputs/msu-runtime/fresh-qualification
+```
+
+Omit `--yunet-evidence` only when a new inference qualification is intended.
+Eight-video training qualification still requires separate authorization and has
+not run. Full publication preprocessing remains pending. No licensed MSU media
+was accessed; runtime qualification is not MSU experiment readiness.
+
+### Runtime identity enforcement and implementation provenance
+
+Runtime entry points independently select the required executable role and
+verify absolute paths against these approved identities from the frozen archive:
+
+| Role | Bytes | SHA-256 |
+| --- | ---: | --- |
+| ffmpeg | 101897728 | `1326dde4c84ff1f96fe6b8916c5bed29e163e9b5dccf995f6f3db069d143ec5e` |
+| ffprobe | 101692928 | `b49ccc7c6547b141ad5a2f6ec69cc04323d7133d7704d70b331b904c63eecb07` |
+
+Both must actually report `8.1.2-essentials_build-www.gyan.dev`. Caller-created
+evidence objects cannot supply acceptance criteria; swapped roles fail. The
+runtime checks bytes before/after version execution and after successful media
+execution. Path-based Windows process creation leaves an unavoidable interval
+between hashing and opening the executable; the local artifact directory must
+remain protected from concurrent modification. No scientific command changed.
+
+Qualification records now fingerprint the contract, runtime, worker, qualification
+script and the two executed package initializers. The portable summary also
+binds the raw report hash. These implementation/provenance hashes are separate
+from the scientific policy digest. Previous local evidence is preserved;
+the fresh binding-enforced qualification has a sanitized summary at
+`docs/audit/msu_publication_runtime_qualification.json` and raw logs under
+`outputs/msu-runtime/qualification-binding-20260930/`.
+
+Targeted fix validation: 22 focused runtime tests passed (3 artifact tests
+deselected); 3 real-artifact tests passed (22 fixtures deselected); the full
+suite passed with 592 passed and 5 skipped (two licensed-data checks and three
+separately executed artifact tests). `git diff --check` passed. H.264, ProRes,
+rotation, repeatability, failure paths and fresh YuNet inference/isolation all
+passed under the enforced executable identities. No licensed media was accessed.

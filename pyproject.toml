@@ -23,6 +23,7 @@ dependencies = [
 
 [project.optional-dependencies]
 video = ["opencv-python>=4.9"]
+msu-runtime = ["opencv-python==4.11.0.86", "numpy==2.5.2", "Pillow==12.3.0"]
 plot = ["matplotlib>=3.8", "pandas>=2.2"]
 dev = ["pytest>=8.0", "ruff>=0.6"]
 
@@ -35,3 +36,4 @@ target-version = "py310"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["runtime_artifact: explicit pinned artifacts and generated media only"]

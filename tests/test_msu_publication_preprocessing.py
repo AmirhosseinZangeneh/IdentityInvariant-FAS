@@ -174,7 +174,7 @@ def environment():
     return p.EnvironmentLock(p.ARCHIVE_SHA256, p.MODEL_SHA256, "1" * 64, "2" * 64, p.RUNTIME,
         "ffmpeg version 8.1.2-build\nconfiguration: synthetic\nlibavcodec\nlibavformat",
         "ffprobe version 8.1.2-build\nconfiguration: synthetic\nlibavcodec\nlibavformat",
-        "ONNX Runtime: NO", tuple((n, "3" * 64) for n, _ in p.RUNTIME))
+        "General configuration for OpenCV 4.11.0", tuple((n, "3" * 64) for n, _ in p.RUNTIME))
 
 
 def test_environment_contract_immutable(environment, tmp_path):
@@ -386,20 +386,33 @@ def test_final_crop_original_pixels_and_reload(tmp_path):
 def test_worker_environment_no_mutation():
     original = {"EXAMPLE":"unchanged"}
     child = p.detector_worker_environment(original)
-    assert child['OPENCV_FORCE_DNN_ENGINE'] == '1' and original == {'EXAMPLE':'unchanged'}
-    with pytest.raises(p.ContractError, match="engine"):
-        p.detector_worker_environment({'OPENCV_FORCE_DNN_ENGINE':'4'})
+    assert 'OPENCV_FORCE_DNN_ENGINE' not in child and original == {'EXAMPLE':'unchanged'}
+    assert p.detector_worker_environment({'OPENCV_FORCE_DNN_ENGINE':'4'}) == {}
 
 
-def test_worker_refuses_imported_cv2_or_unset_engine(monkeypatch, tmp_path):
+def test_worker_refuses_imported_cv2_or_obsolete_engine(monkeypatch, tmp_path):
     monkeypatch.setitem(sys.modules,'cv2',object())
     monkeypatch.setenv('OPENCV_FORCE_DNN_ENGINE','1')
     with pytest.raises(p.ContractError,match='already imported'):
         _WORKER_INITIALIZER(tmp_path/'unused.onnx')
     monkeypatch.delitem(sys.modules,'cv2')
-    monkeypatch.delenv('OPENCV_FORCE_DNN_ENGINE')
-    with pytest.raises(p.ContractError,match='not established'):
+    with pytest.raises(p.ContractError,match='inapplicable'):
         _WORKER_INITIALIZER(tmp_path/'unused.onnx')
+
+
+@pytest.mark.parametrize('version', ['5.0.0', '4.12.0', '4.11.1'])
+def test_reject_wrong_cv2_version(version):
+    from types import SimpleNamespace
+    with pytest.raises(p.ContractError, match='cv2 runtime version'):
+        p.validate_cv2_runtime(SimpleNamespace(__version__=version))
+
+
+def test_amended_runtime_and_unchanged_detector_parameters():
+    assert dict(p.RUNTIME) == {'Python': '3.12.10', 'opencv-python': '4.11.0.86',
+                               'numpy': '2.5.2', 'Pillow': '12.3.0'}
+    assert p.DETECTOR == {'model_sha256': p.MODEL_SHA256, 'input_size': [640,640],
+        'backend': 3, 'target': 0, 'engine': 'opencv-4.11-native-dnn', 'onnx_runtime': False,
+        'score_threshold': .90, 'nms_threshold': .30, 'top_k': 5000}
 
 
 def test_scope_exact_training_only():

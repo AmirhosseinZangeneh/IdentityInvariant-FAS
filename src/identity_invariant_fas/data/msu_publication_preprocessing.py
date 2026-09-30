@@ -30,10 +30,10 @@ CAMERAS = {"android": "Google Nexus 5 front-facing camera", "laptop": "MacBook A
 ARCHIVE_SHA256 = "db580001caa24ac104c8cb856cd113a87b0a443f7bdf47d8c12b1d740584a2ec"
 MODEL_SHA256 = "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
 MODEL_NAME = "face_detection_yunet_2023mar.onnx"
-RUNTIME = (("Python", "3.12.10"), ("opencv-python", "5.0.0.93"),
+RUNTIME = (("Python", "3.12.10"), ("opencv-python", "4.11.0.86"),
            ("numpy", "2.5.2"), ("Pillow", "12.3.0"))
 DETECTOR = {"model_sha256": MODEL_SHA256, "input_size": [640, 640],
-            "backend": 3, "target": 0, "engine": 1, "onnx_runtime": False,
+            "backend": 3, "target": 0, "engine": "opencv-4.11-native-dnn", "onnx_runtime": False,
             "score_threshold": 0.90, "nms_threshold": 0.30, "top_k": 5000}
 
 SCORE_THRESHOLD_F32 = float(np.float32(DETECTOR["score_threshold"]))
@@ -245,7 +245,7 @@ class EnvironmentLock:
             _require(re.match(tool + r" version 8\.1\.2(?:[-\s])", output) is not None and
                      "configuration:" in output and "libavcodec" in output and "libavformat" in output,
                      "incomplete/wrong executable build evidence")
-        _require(re.search(r"ONNX Runtime:\s+NO", self.opencv_build), "ONNX Runtime prohibited")
+        validate_opencv_build(self.opencv_build)
         _require(tuple(n for n, _ in self.runtime_fingerprints) == tuple(n for n, _ in RUNTIME),
                  "runtime binary fingerprints required")
         for _, sha in self.runtime_fingerprints:
@@ -571,8 +571,21 @@ def inspect_png(path):
 
 def detector_worker_environment(parent):
     """Pass this environment to a fresh interpreter; never patch an already imported cv2."""
-    _require(parent.get("OPENCV_FORCE_DNN_ENGINE", "1") == "1", "conflicting DNN engine")
-    return {**parent, "OPENCV_FORCE_DNN_ENGINE": "1"}
+    # This OpenCV-5-only switch has no applicable semantics in the pinned 4.11 runtime.
+    return {k: v for k, v in parent.items() if k != "OPENCV_FORCE_DNN_ENGINE"}
+
+
+def validate_opencv_build(build):
+    _require("General configuration for OpenCV 4.11.0" in build and
+             not re.search(r"ONNX Runtime:\s+(?!NO\b)\S+", build),
+             "wrong OpenCV build or ONNX Runtime prohibited")
+
+
+def validate_cv2_runtime(cv2):
+    _require(cv2.__version__ == "4.11.0", "unqualified cv2 runtime version")
+    validate_opencv_build(cv2.getBuildInformation())
+    _require(cv2.dnn.DNN_BACKEND_OPENCV == 3 and cv2.dnn.DNN_TARGET_CPU == 0,
+             "unexpected DNN backend/target")
 
 
 def create_detector_in_worker(model):
@@ -582,17 +595,23 @@ def create_detector_in_worker(model):
     Even a correctly set environment cannot rescue an already-imported cv2.
     """
     _require("cv2" not in sys.modules, "cv2 already imported; fresh worker required")
-    _require(os.environ.get("OPENCV_FORCE_DNN_ENGINE") == "1", "worker engine not established")
+    _require("OPENCV_FORCE_DNN_ENGINE" not in os.environ, "inapplicable OpenCV-5 engine setting")
     actual = (("Python", platform.python_version()),) + tuple(
         (name, importlib.metadata.version(name)) for name, _ in RUNTIME[1:])
     _require(actual == RUNTIME, "unqualified runtime versions")
     verify_file(model, MODEL_SHA256, 232589)
     import cv2
-    _require(re.search(r"ONNX Runtime:\s+NO", cv2.getBuildInformation()), "ONNX Runtime prohibited")
+    validate_cv2_runtime(cv2)
+    _require(not any(n == "onnxruntime" or n.startswith("onnxruntime.") for n in sys.modules),
+             "ONNX Runtime prohibited")
     cv2.setNumThreads(1)
     cv2.ocl.setUseOpenCL(False)
     detector = cv2.FaceDetectorYN.create(str(model), "", (640, 640), .90, .30, 5000,
                                        cv2.dnn.DNN_BACKEND_OPENCV, cv2.dnn.DNN_TARGET_CPU)
+    _require(detector.getInputSize() == (640, 640) and
+             detector.getScoreThreshold() == float(np.float32(.90)) and
+             detector.getNMSThreshold() == float(np.float32(.30)) and
+             detector.getTopK() == 5000, "detector settings mismatch")
 
     def detect(rgb):
         _rgb(rgb)

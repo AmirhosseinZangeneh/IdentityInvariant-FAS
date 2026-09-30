@@ -1,0 +1,413 @@
+{
+  "amendments": [
+    "001",
+    "002"
+  ],
+  "artifacts": {
+    "archive_sha256": "db580001caa24ac104c8cb856cd113a87b0a443f7bdf47d8c12b1d740584a2ec",
+    "executables": {
+      "ffmpeg": {
+        "sha256": "1326dde4c84ff1f96fe6b8916c5bed29e163e9b5dccf995f6f3db069d143ec5e",
+        "size": 101897728,
+        "version": "ffmpeg version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\r\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband\r\nlibavutil      60. 26.102 / 60. 26.102\r\nlibavcodec     62. 28.102 / 62. 28.102\r\nlibavformat    62. 12.102 / 62. 12.102\r\nlibavdevice    62.  3.102 / 62.  3.102\r\nlibavfilter    11. 14.102 / 11. 14.102\r\nlibswscale      9.  5.102 /  9.  5.102\r\nlibswresample   6.  3.102 /  6.  3.102\r\n\r\nExiting with exit code 0\r\n"
+      },
+      "ffprobe": {
+        "sha256": "b49ccc7c6547b141ad5a2f6ec69cc04323d7133d7704d70b331b904c63eecb07",
+        "size": 101692928,
+        "version": "ffprobe version 8.1.2-essentials_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\r\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\r\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband\r\nlibavutil      60. 26.102 / 60. 26.102\r\nlibavcodec     62. 28.102 / 62. 28.102\r\nlibavformat    62. 12.102 / 62. 12.102\r\nlibavdevice    62.  3.102 / 62.  3.102\r\nlibavfilter    11. 14.102 / 11. 14.102\r\nlibswscale      9.  5.102 /  9.  5.102\r\nlibswresample   6.  3.102 /  6.  3.102\r\n"
+      }
+    },
+    "yunet": {
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "size": 232589
+    }
+  },
+  "checks": {
+    "failure_paths_qualified": true,
+    "ffmpeg_archive_verified": true,
+    "ffmpeg_executables_verified": true,
+    "ffmpeg_runtime_qualified": true,
+    "ffprobe_runtime_qualified": true,
+    "ppm_transport_qualified": true,
+    "repeatability_qualified": true,
+    "rotation_qualified": true,
+    "synthetic_h264_qualified": true,
+    "synthetic_prores_qualified": true,
+    "yunet_model_verified": true,
+    "yunet_runtime_qualified": true,
+    "yunet_worker_isolated": true
+  },
+  "eight_video_qualification": "not run",
+  "environment": {
+    "architecture": "AMD64",
+    "backend": 3,
+    "engine": "opencv-4.11-native-dnn",
+    "engine_environment": null,
+    "onnx_runtime_used": false,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10",
+    "target": 0,
+    "versions": {
+      "Pillow": "12.3.0",
+      "numpy": "2.5.2",
+      "opencv-python": "4.11.0.86"
+    }
+  },
+  "failure_paths": {
+    "invalid_ffmpeg": "rejected",
+    "invalid_ffprobe": "rejected",
+    "nonexistent_ffmpeg": "rejected",
+    "nonexistent_ffprobe": "rejected",
+    "truncated_ffmpeg": "rejected",
+    "truncated_ffprobe": "rejected"
+  },
+  "implementation_provenance": {
+    "files": {
+      "scripts/qualify_msu_publication_runtime.py": "1881c48d8de6f05ac9d347d78de52eab59fa9cfd7aefa6c006147d7457b4f692",
+      "src/identity_invariant_fas/__init__.py": "fef920dd0ecbe9e589611e4ed80099e2e1c2a0d8968ef9e80b113657c3196057",
+      "src/identity_invariant_fas/data/__init__.py": "9899cdd7eab7e43e8f6d1555462dbef4a983c10435c6c15bcc80ea24488561e7",
+      "src/identity_invariant_fas/data/msu_publication_preprocessing.py": "11fe6e76ad38b03561c00332287bfdfcbefd28f6fafa41edf6413dd611d92cca",
+      "src/identity_invariant_fas/data/msu_publication_runtime.py": "6333d6e8517768a38c8beacfb53b68c62eaa62f3b98fe4a2de2959e2d05b7c1f",
+      "src/identity_invariant_fas/data/msu_yunet_worker.py": "8de156f2b49bf0fd9830b7dc4a57d8c24e8c77d55d3151d0e43120d3a56c2f9e"
+    },
+    "raw_qualification_report_sha256": "3e3cdb6f276fd2a1fbc50eb5039ab4812a72381430a2fcbdc9e7a1c08303e934"
+  },
+  "licensed_media_accessed": false,
+  "msu_experiment_ready": false,
+  "policy": "msu-publication-path-b-v1",
+  "runtime_qualification_passed": true,
+  "schema": "msu-runtime-portable-summary-v2",
+  "scientific_policy_sha256": "29efd33d88fca0adc9ef54212e365f1c04864674a4832267ffa0ae70f9279c7c",
+  "synthetic_media": {
+    "h264": {
+      "clean_diagnostics": true,
+      "codec": "h264",
+      "frame_hashes": [
+        "1f5114d0f3c921b3f42694d54f07298cd182018f876daa3c32c964c368dff508",
+        "306608daf011f7bb08dce47496472e6b1a56b5be211d3072022e12a21c7d6d5f",
+        "b08db1b4aa9a791482495a680507e2ceb7ab76e1d04c5dd72ff0a112c0a73e0e",
+        "3f1ef0c22e034615c4c32dfdf4825ae13fa922b4a3a9c651376dda22a6331e0a",
+        "4ff692a22828e3080f56c47041e0abecea72c13b12c11f3bda20dc8072000d8a",
+        "33c3dbc0fe7ed20a6685bef3586a805cf035756b16f1f3c9be69cc36a212d1d9",
+        "ed51e6ea851f8a3b8f31699b75524544e0ec3571a0ec4a8b6eb1573fb61388ea",
+        "a89bb604fa7e9f597c72300e23891c6202830538f40f3572a257447f56256b5e",
+        "871cd20044329d04871296ad4371d65e09b0f18f1b71bfabdd490d2def765427",
+        "985810536f680738e71320e4cc39b1a4f215018dd413124e6be02239fdfd0168",
+        "dd55f3e78e1e203f2b410d6dd54f426d1b57de227d34cd031a3fd33fa40632e6",
+        "18498dd31f48bd7ad97d151b687f62520a4bf86b4356b8e570ef95221dba7c4e",
+        "3f08081baef4fa2d86acf53d28e1688bff5dcaee07b1c5418858050bb78bc7d4",
+        "2b9b3fe0b837ae06f0bb0a83d106540a525371b40e7494deabdd4d5e19cf1349",
+        "374013bcdb97ece93a7a8bc30cac3c9af241819444c29e40029a03901407dad9",
+        "84db77d45fb9453f02da71adac72ff47cb6e8f8bb7dc606b5c200119784e641e",
+        "6b101ff37e7fd7e5f697d156310c9874d3e292b1dd79a0b7e9f0e368aaf65cc0",
+        "f9ee0319406db88dcb9629a97efc2a5f4d58c13663dfafceb95abee4615b8ecd",
+        "653e8f871f5da9508fbf6720f96f6322a126e6559170ea63fc841002e8484aab",
+        "270ea502d3a489ee491d2f18d374aaaba770e99691d893ec244d9cb8b15410ba",
+        "2028a286a139d8cddb37eb0f47736c0ec108f3298db4c5f71f6d5c4696d2f1b0",
+        "1015317d0a03b0c1ceeb801516e2667110ebd49f91d04933da4626e0ed23712a",
+        "5c137fcb3ff6dd9bfb231908368f02732395e68956fd6973db04ccc436475829",
+        "94a7764bdc4fff612466f53f7a3ffb0ea67fa9ec97ec4f988d81221646cdf7de",
+        "00402385c74590eeed32a3f963d4f5a97469c1f3f375a52b8200bcbdd71329ed",
+        "13cc0f11c7dc93ca44152871b736e8815d8f0ce09ad3b2410fd0a699a9cd5033",
+        "f95b1816b9e23804a5e6722388e1ca744949071a5a758b3827498cb1bfaa2448",
+        "00382d364e887026d4744a18c426b3587da9aa885d1f8ffb9367a70fe350ed45",
+        "51288eea6cbf09ba8b34cab2d97e08e56bf2b661e0fd5f61ffc6a91148c65d6f",
+        "48f5db95314b52f6e2de7f51e6a878cbd0c2700d6d4d9640cb27714e380c514a",
+        "78c88e1902ce7b5fe2e31b1b39cee0a05fa03cb75e8f9784c8decbb4a80ca384",
+        "d638ff70dbd332ec46a3c8a786430229b2a9b84c19a4038f04ce02df47ecb734",
+        "ea726dbdd5b5a3abcb0cc5c80297b3604c538eeb006f3ca904c0136a04471bd9",
+        "ea7370dad78823e6b48baf967ea51b0471c4d4ded3dbe1af83890d3cfbefe77b",
+        "c1fb06aa76ffeee55e13fc547bd0e06aa5080da1cadff1bae978a8b949ccfa07"
+      ],
+      "matrix": null,
+      "n": 35,
+      "ordinals": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34
+      ],
+      "oriented_size": [
+        96,
+        64
+      ],
+      "probe_frame_count": 35,
+      "probe_returncode": 0,
+      "repeat_identical": true,
+      "returncode": 0,
+      "rotations": [],
+      "source_size": [
+        96,
+        64
+      ]
+    },
+    "prores": {
+      "clean_diagnostics": true,
+      "codec": "prores",
+      "frame_hashes": [
+        "f2d95b653fc36384359c6daffe7b4aa78ac805c4c5dd7ae0113b63cb1b641a24",
+        "0ea47f24e911bbbbf235bf808c483d342a8243c78940017f218453c610755731",
+        "3a98192b8f48e961d42743c34f434555bab6411eb527e76a40dd3c5517064f6a",
+        "91aac157fd885e13918d3e157b7c99663e705ae86d7f98de2df3fc9b4152359c",
+        "781bf1569555c2a5f6e278fb802e1d75c4fecf9e5340fe4717c455f34150e3dd",
+        "17472fe396258e6c0cab090c4beb587c1e1aa614878b51611ac0c26f78130975",
+        "f3042c61b4e3e4910cf00ed2598dabff57728f4c3dd531fa5f6471828d0bbb54",
+        "a825db11793ebeb577ba61db78914ab6c11ef528cae2b07f321ab6f53e47f439",
+        "14fbf50deefa7b350a386f0368eec1f9571ba09bf2de6fb32c0e4a2962bf60df",
+        "952839b328754a67a18869a4b3c70c7a217057fc7df597c6ea5670f3dfc6de59",
+        "2e57ca7b58697e9fc852496c1b751433bd340f991e003d6764b14c395e0dd250",
+        "6809b087951313705c5f9524de1df0f3978da447b3a10c290bb9981377c02b72",
+        "189147e6cd8eab8f8fc2d41c5de30ca4adc0e9f72d8dc1b71eb61d70682d23da",
+        "d3114f046882632798bec5d45397c6b481a74c0ceeb427233fd29a6c3dafd141",
+        "9edd6f3c6e811d1c407912ed2bda9a7531ec2d3315090c1d29b52ed602d078fd",
+        "692f1b49532c5fd3f5bc2f61372c7976a478abe9297c27fee22538dbb36f9ce3",
+        "618296bec26e34f7617a38e08ef069dbfd848bdfa1d79cd7e5b6327b30dbed9a",
+        "7439aa2b7b6d6bdff934bbe6a44cfb85c83862aebdb3acbd2febb5ce7c064b46",
+        "048fde585406cd378d1044a5a1999999b6e9f4062054887026277421b305c368",
+        "bd11d7ee56c74a11b7effbd58438b0331f0ec89a62d3ffbcd0bd81b8b6b788d0",
+        "c2502008b14263fa796c6d4fb061be798bd181755ee6aab4ecc96426d9dfed22",
+        "0fa1770799533c840253cf12ae7319e13996d80c90ebe15eec6222a85469ea26",
+        "71f1381bbb232f199d8c3be7165175f89f2803dd009881d131df5e108356e674",
+        "ec3fe706541ccdb40cd46aab3cf32fb14b444e17e60420463a326dd1ccd8aef5",
+        "386c524323ca30e96fee7555347449e024e1bbddcf3f50b0646a95029cb03df2",
+        "32ef4abbff9d9745927090a50fd08741a5fcbf6a182ef417ef31e2afba404504",
+        "2ca497d70498a79b96a5a3e0e09da86cf6acf694296646007e1fe158183501c4",
+        "208c9bccddfb3d4013a9446fbfe04cfc338b91c0c7cb30c55a4d4c9bd8defc20",
+        "1130574d204a561352664f7d9f4c4fcb22605ec34791541999fcda4b723106b9",
+        "4db727b4ea41a75040b13926e314ac2546f74aa540c99089097eaa8cc2a449bb",
+        "aa78217f7baaad20ba46be45f0e9677d6fb4d6b45cb2b76ce2f274234d13a49f",
+        "ad26df3565753693f6d99e330268fc992da7e35ce758d645db27a4a580014e71",
+        "780525b5d8726d7c9787aa13558118bd8475ad6987789af79685109ba19fa741",
+        "b92d37a3ed04fa2f235c979d4609c5062f97985444b61710287699b28002cd08",
+        "e9aec5e2a198f8555cae09f5dac635ade47d0c9e167ade170728c5263770b9ae"
+      ],
+      "matrix": null,
+      "n": 35,
+      "ordinals": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34
+      ],
+      "oriented_size": [
+        96,
+        64
+      ],
+      "probe_frame_count": 35,
+      "probe_returncode": 0,
+      "repeat_identical": true,
+      "returncode": 0,
+      "rotations": [],
+      "source_size": [
+        96,
+        64
+      ]
+    },
+    "rotation": {
+      "clean_diagnostics": true,
+      "codec": "h264",
+      "frame_hashes": [
+        "96ed8e29c3b3a15a0bf31fcd6f0d966ad7ced634c760cef9b2e45950b8f3f181",
+        "8e4b7eb9ba56f26ac364c4e4f296bb2aec48d19758afec7fc575d51e75841789",
+        "a49ccc68beb321270a7e3cf4031120ffa236328c5065c9421f42012d12f83c36",
+        "d791f9e2fac6c277f238237aaef079fa60d00068f37743e73c65267cebadd795",
+        "b91bb349f799af06c04901cf297f185580125668f866ca03e233ff65c952507d",
+        "ce9e083034257683af5a765c8471417f5f8e99a926bde04ac2da503b10b245ed",
+        "4bf18ea3b9fca5d5cd628e46c1a95c827075a4de5534c06d72f489b5cf5e6c3d",
+        "534e76ed3bcd4e6dac6823c30eb008d3febbd1f3d874f246cfcc46ef55ebb1bc",
+        "0df7ad67b120d1b60128551b3c32df359ffd1df4ad0029740e0172d9225bfadc",
+        "1e912c4bccc3601310e19900050d323b69a0d863a3d7b23f654f5db4249c8dd0",
+        "61ef17f9b6f91ea87cbb0564794c79e7929cbe5e86e9fa4b471224e9945a3b71",
+        "e7f20b715edebc1bdc936c19e40a6850dbea0ccd53ecd310cc2b838fcb298cd4",
+        "c410aac4c89e1a4ee109c21e889266f7c0dc1f0dd909661ce52b6fc2f5378beb",
+        "00be2b02218e552be1aa90973860fa47034c69d1dccb1b831bbcab5d7d049cd2",
+        "5d40de15341b4b4c490fed21f7a180cb99ddd250a1161308de85c66a1476ae3e",
+        "dcc9bc84c7177a31d58f4aa6f34dd9278d46094ea34848c4188c2f67e0681cc5",
+        "05de91e31aa762020e947c7b609cc5d33a0113e8fb4f8336f3100aee3fde03ab",
+        "6ea931095f1dd29641514333434b1c34edacc901641a7156d7df1822c0801861",
+        "0a2948e37ed58e5471fffb0d923736d0e1086422bf5cf2f1a5055b16ff4b1326",
+        "d09bf96aeb3161fb10ea2a5a0e778f99ea24515d240ac7a5aa38f29f28c5a62f",
+        "329e8fc97896d34b87a8a013ea4d9393b35a66fa133e2a743a6a194b15d90e72",
+        "5368ebfdbec2f4cd1f9bbea4e7037f9cafc01b0f27ee97cd7d20152ef235595c",
+        "ceee9826587d18a27173b3f935f05edf552e67a53c45d72e1d5a6740b2d9aeef",
+        "1c12e90c1e591981f9aa27275fae59b6636bc8eda7b6f051594f72de1caef545",
+        "5bc761ebb0cddb97b730779633b49f19fafe55948609d4848a8af623e05c46b1",
+        "52f81101cea72816ff1d5e131e2db0e4874885926292f43ffd6654aea839bb75",
+        "56c8ac608827d4310a13e3ebcb4fdc905893d3d77636b6127bd368a1e8527634",
+        "a798ec606d2817a0cb4bf2a7e389fe28acf089392474e72e1a9a6b313496a926",
+        "7414cda42de493ee6f87802b6eec357a73460aa9bf64f54fea4899f407bef466",
+        "b4496e5d13ea119f50d92131f6a43d94259b2eb9cc76e1e63913f3c939258b16",
+        "7cd3319d55d9196dbf2df4342ed3a43c50c82fd23c91ea07b87553d8073570c2",
+        "2d69ea6b6f4070b7fc81a7ef87d51d6e0df978bd460f42520044d6115455b5cb",
+        "4dcc8599bb4227980c787ffa664f5e316b208b0453a8a5886ec76d926a47c278",
+        "5a7e60635d0c46bc8e7b1b8584d24e395d9ea2b2b75c951e5356de8ad4ab93af",
+        "8de34921a13b200f35bb435d21960d602ff370b453154852d159e12ea79ae8ff"
+      ],
+      "matrix": [
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "n": 35,
+      "ordinals": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34
+      ],
+      "oriented_size": [
+        64,
+        96
+      ],
+      "probe_frame_count": 35,
+      "probe_returncode": 0,
+      "returncode": 0,
+      "rotations": [
+        90.0
+      ],
+      "sign_axis_verified": true,
+      "source_size": [
+        96,
+        64
+      ]
+    }
+  },
+  "yunet": {
+    "cv2_absent_before_import": true,
+    "cv2_version": "4.11.0",
+    "detections": [],
+    "engine_environment": null,
+    "evidence_reused": false,
+    "input_size": [
+      640,
+      640
+    ],
+    "onnx_runtime_used": false,
+    "opencl": false,
+    "python": "3.12.10",
+    "repeat_identical": true,
+    "runtime_fingerprints": [
+      [
+        "Python",
+        "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14"
+      ],
+      [
+        "opencv-python",
+        "d2e14633f0699469c37e43210ca9e167887ce4a162e01f1490be49fd8e45388f"
+      ],
+      [
+        "numpy",
+        "63169915c2d78aba0984bd5e235a92936c319d228c35919a41758b20cd8683c1"
+      ],
+      [
+        "Pillow",
+        "c8c519ec72bf75b2945b4fc4afa854af2fca8b970a403134f9ddda3e164d85e9"
+      ]
+    ],
+    "settings": {
+      "backend": 3,
+      "engine": "opencv-4.11-native-dnn",
+      "input_size": [
+        640,
+        640
+      ],
+      "model_sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "nms_threshold": 0.3,
+      "onnx_runtime": false,
+      "score_threshold": 0.9,
+      "target": 0,
+      "top_k": 5000
+    },
+    "threads": 1
+  }
+}
