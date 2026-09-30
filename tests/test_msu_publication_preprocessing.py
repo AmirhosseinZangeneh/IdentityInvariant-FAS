@@ -449,7 +449,7 @@ def test_output_root_safety(tmp_path):
 @pytest.fixture
 def manifest_case(catalog_files, environment, tmp_path):
     catalog = p.load_source_catalog(*catalog_files)
-    snapshot = p.source_snapshot(catalog_files[0],catalog)
+    snapshot = p.source_snapshot(catalog_files[0],catalog,p.TRAIN_QUALIFICATION)
     lookup = {s.video_id:s for s in catalog.sources}
     hashes = {x['source']['video_id']:x['sha256'] for x in snapshot['sources']}
     output = p.fresh_output(catalog_files[0],tmp_path/'output')
@@ -649,7 +649,7 @@ def test_decode_snapshot_relabeling_rejected(manifest_case):
     path = raw / source.filepath
     payload = path.read_bytes()
     path.write_bytes(b'!' + payload[1:])  # Same ID and size; different content.
-    new_snapshot = p.source_snapshot(raw, cat)
+    new_snapshot = p.source_snapshot(raw, cat, p.TRAIN_QUALIFICATION)
     new_sha = next(r['sha256'] for r in new_snapshot['sources'] if r['source']['video_id'] == video)
     altered = deepcopy(doc)
     altered['snapshot_sha256'] = p.digest(new_snapshot)

@@ -497,3 +497,28 @@ suite passed with 592 passed and 5 skipped (two licensed-data checks and three
 separately executed artifact tests). `git diff --check` passed. H.264, ProRes,
 rotation, repeatability, failure paths and fresh YuNet inference/isolation all
 passed under the enforced executable identities. No licensed media was accessed.
+
+### Bounded orchestrator implementation status
+
+The eight-source orchestrator is implemented in
+`msu_publication_qualification.py`, with an explicit CLI at
+`scripts/run_msu_eight_video_qualification.py`. It validates the full catalog as
+metadata without accessing recording paths, snapshots only the four codec-gate
+sources for Phase A, then snapshots the exact eight training sources for each of
+two independent runs. Both decoder APIs share one transport core; selected decode
+retains only the frozen 30 sample frames. Existing detector and crop helpers
+produce the technical manifests, followed by exact repeatability comparison and
+24 fixed review pairs with human review pending.
+
+The CLI requires explicit artifact/metadata/output paths, an absolute
+`--git-executable`, and `--expected-head`. It refuses uncommitted implementation
+changes, a mismatched isolated runtime, unapproved artifacts, and unsafe or reused
+output roots before recording access. Thus this implementation must be audited
+and committed separately before a future authorized real run.
+
+Synthetic orchestration tests passed. Real eight-video qualification is **NOT
+RUN**; no licensed MSU recording was accessed during implementation. Full MSU
+preprocessing remains unauthorized. The earlier artifact qualification report
+describes its recorded implementation hashes; it is not evidence that this new
+orchestrator has processed real media. Frozen scientific rules and Amendments
+001/002 are unchanged.

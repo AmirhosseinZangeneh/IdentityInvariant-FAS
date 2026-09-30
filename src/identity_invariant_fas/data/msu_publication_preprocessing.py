@@ -148,8 +148,8 @@ class SourceCatalog:
         return digest([asdict(s) for s in self.sources])
 
 
-def load_source_catalog(raw_root, catalog_path, lock_path):
-    """Read catalog/list/README metadata and stat videos, never annotations or media bytes."""
+def load_source_catalog_metadata(raw_root, catalog_path, lock_path):
+    """Validate the complete metadata inventory without resolving any recording path."""
     catalog, lock = read_json(catalog_path), read_json(lock_path)
     _require(digest(catalog) == lock["normalized_metadata_sha256"], "catalog digest mismatch")
     _require(catalog["schema_version"] == 1 and catalog["dataset"] == "MSU-MFSD" and
@@ -170,18 +170,12 @@ def load_source_catalog(raw_root, catalog_path, lock_path):
             _require(all(re.fullmatch(r"[0-9]{1,3}", t) for t in tokens), "invalid client list")
             ids = sorted(f"{int(t):03d}" for t in tokens)
             _require(ids == list(TRAIN if name.startswith("train") else TEST), "client list drift")
-    rows, paths, physical, slots = [], set(), set(), set()
+    rows, paths, slots = [], set(), set()
     for item in catalog["recordings"]:
         row = Source(**{k: item[k] for k in Source.__dataclass_fields__})
         _validate_source(row)
         _require(row.filepath not in paths, "duplicate relative path")
         paths.add(row.filepath)
-        path = _inside(raw_root, row.filepath)
-        _require(path.is_file() and path.stat().st_size == row.byte_size, "source missing/size drift")
-        stat = path.stat()
-        key = (stat.st_dev, stat.st_ino) if stat.st_ino else str(path.resolve()).casefold()
-        _require(key not in physical, "physical alias")
-        physical.add(key)
         slot = row.client_id, row.capture_device, row.attack_type
         _require(slot not in slots, "duplicate acquisition slot")
         slots.add(slot)
@@ -192,10 +186,42 @@ def load_source_catalog(raw_root, catalog_path, lock_path):
                          stream_sha256(lock_path), tuple(evidence))
 
 
-def source_snapshot(raw_root, catalog):
-    """Explicit opt-in media hashing; callers recheck this snapshot after processing."""
-    records, seen = [], set()
+def load_source_catalog(raw_root, catalog_path, lock_path):
+    """Full-release validation, including existence, sizes and physical aliases."""
+    catalog = load_source_catalog_metadata(raw_root, catalog_path, lock_path)
+    physical = set()
     for row in catalog.sources:
+        path = _inside(raw_root, row.filepath)
+        _require(path.is_file() and path.stat().st_size == row.byte_size, "source missing/size drift")
+        stat = path.stat()
+        key = (stat.st_dev, stat.st_ino) if stat.st_ino else str(path.resolve()).casefold()
+        _require(key not in physical, "physical alias")
+        physical.add(key)
+    return catalog
+
+
+def qualification_sources(catalog, video_ids):
+    """Resolve the frozen eight IDs from full metadata, with no filesystem calls."""
+    validate_qualification_scope(video_ids)
+    lookup = {s.video_id: s for s in catalog.sources}
+    _require(len(lookup) == len(catalog.sources) == 280, "full metadata catalog required")
+    _require(all(v in lookup for v in TRAIN_QUALIFICATION), "qualification source missing")
+    sources = tuple(lookup[v] for v in TRAIN_QUALIFICATION)
+    for source in sources:
+        _validate_source(source)
+        _require(source.pad_partition == "train", "qualification must be training-only")
+    return sources
+
+
+def source_codec(source):
+    """Frozen metadata/extension mapping; never infer a codec from decode outcomes."""
+    _validate_source(source)
+    return {"android": "h264", "laptop": "prores"}[source.capture_device]
+
+
+def _source_snapshot_records(raw_root, catalog, sources):
+    records, seen = [], set()
+    for row in sources:
         path = _inside(raw_root, row.filepath)
         before = path.stat()
         sha = stream_sha256(path)
@@ -208,8 +234,20 @@ def source_snapshot(raw_root, catalog):
     return {"projection_sha256": catalog.projection_sha256, "sources": records}
 
 
-def verify_snapshot(raw_root, catalog, frozen):
-    _require(source_snapshot(raw_root, catalog) == frozen, "source snapshot drift")
+def source_snapshot(raw_root, catalog, video_ids=None):
+    """Hash all sources by default, or only the exact ordered qualification eight."""
+    sources = catalog.sources if video_ids is None else qualification_sources(catalog, video_ids)
+    return _source_snapshot_records(raw_root, catalog, sources)
+
+
+def codec_gate_snapshot(raw_root, catalog):
+    """Phase A may touch only the frozen four, before any other qualification video."""
+    return _source_snapshot_records(raw_root, catalog,
+                                    qualification_sources(catalog, TRAIN_QUALIFICATION)[:len(TRAIN_CODEC_GATE)])
+
+
+def verify_snapshot(raw_root, catalog, frozen, video_ids=None):
+    _require(source_snapshot(raw_root, catalog, video_ids) == frozen, "source snapshot drift")
 
 
 def verify_file(path, sha256, size=None):
@@ -727,17 +765,20 @@ def _strict_equal(actual, expected, reason):
     _require(canonical_bytes(actual) == canonical_bytes(expected), reason)
 
 
-def _snapshot_sources(snapshot, catalog):
+def _snapshot_sources(snapshot, catalog, mode="publication"):
     _require(set(snapshot) == {"projection_sha256", "sources"} and
              snapshot["projection_sha256"] == catalog.projection_sha256, "snapshot catalog binding")
     rows = snapshot["sources"]
-    _require(len(rows) == len(catalog.sources) == 280, "snapshot coverage")
+    _require(mode in ("training_qualification", "publication"), "unsupported manifest mode")
+    sources = (qualification_sources(catalog, TRAIN_QUALIFICATION)
+               if mode == "training_qualification" else catalog.sources)
+    _require(len(catalog.sources) == 280 and len(rows) == len(sources), "snapshot coverage")
     hashes = {}
-    for item, source in zip(rows, catalog.sources):
+    for item, source in zip(rows, sources):
         _require(set(item) == {"source", "sha256"}, "snapshot schema")
         _strict_equal(item["source"], asdict(source), "snapshot source mismatch")
         hashes[source.video_id] = _sha(item["sha256"])
-    _require(len(set(hashes.values())) == 280, "duplicate source content")
+    _require(len(set(hashes.values())) == len(sources), "duplicate source content")
     return hashes
 
 
@@ -804,7 +845,7 @@ def validate_manifest(document, catalog, snapshot, environment, output_root=None
              document["dataset"] == "MSU-MFSD" and document["policy"] == POLICY and
              document["publication_ready"] is False, "manifest schema/readiness")
     environment.validate()
-    hashes = _snapshot_sources(snapshot, catalog)
+    hashes = _snapshot_sources(snapshot, catalog, document["mode"])
     for key, value in (("catalog_sha256", catalog.catalog_sha256),
                        ("protocol_lock_sha256", catalog.protocol_lock_sha256),
                        ("projection_sha256", catalog.projection_sha256),
@@ -847,7 +888,9 @@ def write_manifest(output_root, document, catalog, snapshot, environment, raw_ro
     _require(read_json(root / "state.json") == {"schema": SCHEMA, "state": "partial"} and
              not any((root / p).exists() for p in ("failure.json", "completion.json", "manifest.json", "completion.pending.json", "completion.tmp.json")),
              "output failed or already completed")
-    verify_snapshot(raw_root, catalog, snapshot)
+    _require(document["mode"] in ("training_qualification", "publication"), "unsupported manifest mode")
+    verify_snapshot(raw_root, catalog, snapshot,
+                    TRAIN_QUALIFICATION if document["mode"] == "training_qualification" else None)
     sha = validate_manifest(document, catalog, snapshot, environment, root)
     try:
         write_once(root / "completion.pending.json", {"schema": SCHEMA, "state": "pending"})

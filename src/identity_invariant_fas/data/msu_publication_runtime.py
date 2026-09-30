@@ -193,11 +193,40 @@ def probe(executable, source, codec):
              ('primaries', 'color_primaries'), ('transfer', 'color_transfer'))))
 
 
+@dataclass(frozen=True)
+class SelectedFrame:
+    """Transient pixels, never part of a JSON manifest."""
+    ordinal: int
+    oriented_rgb: object
+
+
+def validate_selected_frames(result, frames):
+    result.validate()
+    p._require(tuple(f.ordinal for f in frames) == p.sample_ordinals(result.n),
+               'selected frame scope/order')
+    for frame in frames:
+        p._rgb(frame.oriented_rgb)
+        p._require((frame.oriented_rgb.shape[1], frame.oriented_rgb.shape[0]) == result.oriented_size
+                   and p.pixel_sha256(frame.oriented_rgb) == result.frame_hashes[frame.ordinal],
+                   'selected oriented RGB binding')
+
+
 def decode(executables, root, source, snapshot, snapshot_sha256, codec):
+    result, raw_probe, _ = _decode_core(executables, root, source, snapshot, snapshot_sha256,
+                                        codec, retain_selected=False)
+    return result, raw_probe
+
+
+def decode_selected_frames(executables, root, source, snapshot, snapshot_sha256, codec):
+    return _decode_core(executables, root, source, snapshot, snapshot_sha256,
+                        codec, retain_selected=True)
+
+
+def _decode_core(executables, root, source, snapshot, snapshot_sha256, codec, *, retain_selected):
     """Bind a pre-existing snapshot before either scan and recheck after natural EOF.
 
-    Only hashes are retained, never the complete RGB stream. The caller supplies
-    a Source from its catalog; synthetic qualification uses a generated Source.
+    Hash every frame. Optionally retain only the 30 probe-derived sample positions;
+    no second media decode, and no successful result before all EOF checks pass.
     """
     # Never trust caller-supplied hashes, roles, version claims or verify methods.
     executable = verify_approved_executable(executables['ffmpeg'].path, 'ffmpeg')
@@ -217,13 +246,20 @@ def decode(executables, root, source, snapshot, snapshot_sha256, codec):
         return after.st_size, after.st_mtime_ns
     initial = verify()
     raw_probe, fields = probe(probe_executable, path, codec)
+    selected_ordinals = (p.sample_ordinals(len(fields['probe_frame_sizes']))
+                         if retain_selected else ())
+    selected_set, selected = set(selected_ordinals), []
     executable = verify_approved_executable(executable.path, 'ffmpeg')
     parser = p.PPMParser(fields['source_size'])
     hashes = []
     angle = p.normalize_orientation(fields['rotations'], fields['matrix'])
     def consume(block):
         for frame in parser.feed(block):
-            hashes.append(p.pixel_sha256(p.orient_rgb(frame, angle)))
+            oriented = p.orient_rgb(frame, angle)
+            ordinal = len(hashes)
+            hashes.append(p.pixel_sha256(oriented))
+            if ordinal in selected_set:
+                selected.append(SelectedFrame(ordinal, oriented))
     code, stderr = stream_process(p.build_decode_command(executable.path, path, codec), consume)
     _verify_approved_bytes(executable.path, 'ffmpeg')
     parser.finish()
@@ -235,7 +271,9 @@ def decode(executables, root, source, snapshot, snapshot_sha256, codec):
         oriented_size=(h, w) if angle % 180 else (w, h), n=len(hashes), stderr=stderr,
         returncode=code, complete=True, **fields)
     result.validate()
-    return result, raw_probe
+    if retain_selected:
+        validate_selected_frames(result, selected)
+    return result, raw_probe, tuple(selected)
 
 
 def infer_yunet(model, oriented_rgb):
